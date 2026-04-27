@@ -4,10 +4,10 @@ export default function Logo({ className = "" }: Props) {
   return (
     <span
       className={`display text-[22px] tracking-[-0.02em] leading-none ${className}`}
-      aria-label="ZEN Massage"
+      aria-label="Navajo Spa"
     >
-      ZEN Massage
-      <span className="italic font-light"> · </span>Spa
+      Navajo
+      <span className="italic font-light"> &middot; </span>Spa
     </span>
   );
 }

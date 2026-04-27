@@ -22,30 +22,30 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
-    template: "%s · Oasis 8 Massage",
+      "Navajo Spa — An Honest Hour on Baltimore Plaza, La Mesa",
+    template: "%s · Navajo Spa",
   },
   description:
-    "Oasis 8 Massage at 5575 Baltimore Dr #106-107, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 9 AM to 10 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
+    "Navajo Spa at 5575 Baltimore Dr #106-107, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 9 AM to 10 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
   keywords: [
-    "Oasis 8 Massage",
+    "Navajo Spa",
     "massage La Mesa",
-    "El Cajon Blvd massage",
+    "Baltimore Plaza massage",
     "foot massage La Mesa",
     "deep tissue massage San Diego",
     "hot stone massage La Mesa",
-    "combo massage El Cajon Blvd",
+    "foot reflexology La Mesa",
     "couples massage La Mesa",
     "walk-in massage La Mesa",
     "military discount massage",
   ],
   openGraph: {
     title:
-      "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
+      "Navajo Spa — An Honest Hour on Baltimore Plaza, La Mesa",
     description:
       "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 9 AM to 10 PM at 5575 Baltimore Dr #106-107, La Mesa.",
     url: SITE_URL,
-    siteName: "Oasis 8 Massage",
+    siteName: "Navajo Spa",
     locale: "en_US",
     type: "website",
     images: [
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
         url: "/images/og-01.jpg",
         width: 1200,
         height: 630,
-        alt: "Oasis 8 Massage — quiet, warm treatment room on El Cajon Boulevard",
+        alt: "Navajo Spa — quiet, warm treatment room on Baltimore Plaza",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
+      "Navajo Spa — An Honest Hour on Baltimore Plaza, La Mesa",
     description:
       "An honest hour for everywhere you carry it. Open every day, 9 AM to 10 PM.",
     images: ["/images/og-01.jpg"],
@@ -89,7 +89,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MassageTherapy",
               "@id": `${SITE_URL}/#business`,
-              name: "Oasis 8 Massage",
+              name: "Navajo Spa",
               image: `${SITE_URL}/images/hero-01.jpg`,
               url: SITE_URL,
               telephone: "+16196395282",
@@ -97,7 +97,7 @@ export default function RootLayout({
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "5575 Baltimore Dr #106-107, Floor 1, Baltimore Plaza",
+                streetAddress: "5575 Baltimore Dr #106-107",
                 addressLocality: "La Mesa",
                 addressRegion: "CA",
                 postalCode: "91942",
