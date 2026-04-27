@@ -30,7 +30,7 @@ export default function Hero() {
         style={{ background: "linear-gradient(180deg, rgba(31,26,20,0.55) 0%, rgba(31,26,20,0.18) 40%, rgba(31,26,20,0.65) 100%)" }} aria-hidden />
 
       <div className="mx-auto w-full max-w-[1100px] px-6 pt-40 pb-32 text-center md:px-10 md:pt-48 md:pb-40">
-        <p className="eyebrow text-cream/70">ZEN Massage &middot; 7086 El Cajon Blvd &middot; San Diego</p>
+        <p className="eyebrow text-cream/70">Navajo Spa &middot; 7086 El Cajon Blvd &middot; San Diego</p>
         <h1 className="display mt-10 text-[44px] leading-[1.02] sm:text-[60px] md:text-[84px] lg:text-[100px]">
           An honest hour
           <br />
@@ -43,7 +43,7 @@ export default function Hero() {
         </p>
         <div className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
           <a href="#booking" className="btn-primary inline-flex items-center rounded-full bg-cream px-8 py-4 text-[12px] tracking-[0.16em] uppercase text-ink">Book a session</a>
-          <a href="tel:+16195480773" className="link-underline text-[14px] tracking-[0.04em] text-cream/85">Or call (619) 548-0773</a>
+          <a href="tel:+16196395282" className="link-underline text-[14px] tracking-[0.04em] text-cream/85">Or call (619) 639-5282</a>
         </div>
       </div>
 

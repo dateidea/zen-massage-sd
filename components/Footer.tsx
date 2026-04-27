@@ -13,7 +13,7 @@ export default function Footer() {
 
           <div className="col-span-6 md:col-span-2 md:col-start-7">
             <p className="index-badge">Visit</p>
-            <address className="mt-4 not-italic text-[14px] leading-[1.85] text-ink">7086 El Cajon Blvd<br />Suite C<br />San Diego, CA 92115</address>
+            <address className="mt-4 not-italic text-[14px] leading-[1.85] text-ink">7086 El Cajon Blvd<br />Suite C<br />La Mesa, CA 91942</address>
             <a href="https://maps.app.goo.gl/JMd4asWRLgScwdAv7" target="_blank" rel="noreferrer" className="link-underline mt-4 inline-block text-[12px] uppercase tracking-[0.16em] text-mid">Get directions &rarr;</a>
           </div>
 
@@ -24,7 +24,7 @@ export default function Footer() {
 
           <div className="col-span-12 md:col-span-3">
             <p className="index-badge">Reach us</p>
-            <a href="tel:+16195480773" className="display mt-3 block text-[28px] leading-none text-ink">(619) 548-0773</a>
+            <a href="tel:+16196395282" className="display mt-3 block text-[28px] leading-none text-ink">(619) 639-5282</a>
             <a href="mailto:oasis8massage@gmail.com" className="link-underline mt-3 inline-block text-[12px] uppercase tracking-[0.16em] text-mid">oasis8massage@gmail.com</a>
             <ul className="mt-6 flex flex-col gap-2 text-[13px] text-ink-soft">
               <li><a className="link-underline" href="#services">Services</a></li>
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-[11px] uppercase tracking-[0.16em] text-mid md:flex-row md:items-center">
-          <p>&copy; {new Date().getFullYear()} ZEN Massage. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Navajo Spa. All rights reserved.</p>
           <p>Cash &amp; card &middot; Walk-ins welcome &middot; 10% off military</p>
         </div>
       </div>

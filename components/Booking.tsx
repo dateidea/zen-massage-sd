@@ -37,12 +37,12 @@ export default function Booking() {
           <div className="space-y-10 border-t border-hairline pt-10">
             <div>
               <p className="index-badge">Or, faster</p>
-              <a href="tel:+16195480773" className="display mt-4 block text-[36px] leading-none text-ink hover:text-eucalyptus-deep md:text-[44px]">(619) 548-0773</a>
+              <a href="tel:+16196395282" className="display mt-4 block text-[36px] leading-none text-ink hover:text-eucalyptus-deep md:text-[44px]">(619) 639-5282</a>
               <p className="mt-3 text-[13px] uppercase tracking-[0.16em] text-mid">Picked up by a real person, every day, 10 AM &ndash; 9:30 PM.</p>
             </div>
             <div>
               <p className="index-badge">Walk-ins</p>
-              <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">7086 El Cajon Blvd, San Diego, CA 92115. Free lot in front. We can almost always fit you in within 30 minutes &mdash; try us.</p>
+              <p className="mt-3 text-[15px] leading-[1.85] text-ink-soft">7086 El Cajon Blvd, La Mesa, CA 91942. Free lot in front. We can almost always fit you in within 30 minutes &mdash; try us.</p>
             </div>
             <div>
               <p className="index-badge">Email</p>
@@ -79,7 +79,7 @@ export default function Booking() {
               <div className="flex min-h-[420px] flex-col justify-center">
                 <p className="eyebrow text-eucalyptus-deep">Got it</p>
                 <h3 className="display mt-3 text-[34px] leading-[1.1] md:text-[40px]">Thanks. We will text you back today.</h3>
-                <p className="mt-6 max-w-[44ch] text-[16px] leading-[1.85] text-ink-soft">If you do not hear from us by tomorrow morning, please call <a href="tel:+16195480773" className="link-underline text-ink">(619) 548-0773</a>.</p>
+                <p className="mt-6 max-w-[44ch] text-[16px] leading-[1.85] text-ink-soft">If you do not hear from us by tomorrow morning, please call <a href="tel:+16196395282" className="link-underline text-ink">(619) 639-5282</a>.</p>
               </div>
             )}
           </div>
