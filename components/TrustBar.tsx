@@ -1,10 +1,10 @@
 import Reveal from "./Reveal";
 
 const stats = [
-  { value: "$79.99", label: "Custom Hour — Swedish, deep tissue, or both" },
-  { value: "9 — 11", label: "Open every day, last booking at 10 PM" },
-  { value: "4.5★", label: "Across Google reviews from neighborhood regulars" },
-  { value: "Free", label: "Hot stones & essential oil, included every time" },
+  { value: "$45", label: "30 min foot + 30 min body, all-in" },
+  { value: "10–9:30", label: "Open every day, seven days a week" },
+  { value: "10% off", label: "Active duty & veterans, with valid ID" },
+  { value: "Walk-ins", label: "Almost always an opening — try us" },
 ];
 
 export default function TrustBar() {
@@ -15,12 +15,8 @@ export default function TrustBar() {
           <ul className="grid grid-cols-2 gap-y-8 md:grid-cols-4 md:gap-10">
             {stats.map((s) => (
               <li key={s.label} className="flex flex-col">
-                <span className="display text-[36px] leading-none text-ink md:text-[44px]">
-                  {s.value}
-                </span>
-                <span className="mt-3 max-w-[20ch] text-[13px] leading-[1.5] text-mid">
-                  {s.label}
-                </span>
+                <span className="display text-[36px] leading-none text-ink md:text-[44px]">{s.value}</span>
+                <span className="mt-3 max-w-[20ch] text-[13px] leading-[1.5] text-mid">{s.label}</span>
               </li>
             ))}
           </ul>
