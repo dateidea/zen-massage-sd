@@ -60,3 +60,29 @@ body { font-size: 15px; line-height: 1.6; letter-spacing: -0.005em; font-weight:
 
 .ornament { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--color-mid); font-family: var(--font-display); font-size: 18px; letter-spacing: 0.2em; }
 .ornament::before, .ornament::after { content: ""; width: 64px; height: 1px; background: var(--color-hairline); }
+
+/* ── Space-tightening overrides — kills empty-space pockets ── */
+section.py-24, footer.py-24 { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
+@media (min-width: 768px) {
+  section[class*="md:py-32"], footer[class*="md:py-32"] { padding-top: 5rem !important; padding-bottom: 5rem !important; }
+  section[class*="md:py-28"] { padding-top: 4.5rem !important; padding-bottom: 4.5rem !important; }
+}
+section#top { min-height: auto !important; }
+section#top.pt-40 { padding-top: 6.5rem !important; }
+section#top.pb-12 { padding-bottom: 1.5rem !important; }
+@media (min-width: 768px) {
+  section#top[class*="md:pt-56"] { padding-top: 7rem !important; }
+  section#top[class*="md:pb-20"] { padding-bottom: 2.5rem !important; }
+  section#top[class*="md:pt-48"] { padding-top: 6.5rem !important; }
+  section#top[class*="md:pb-28"] { padding-bottom: 3.5rem !important; }
+  section#top[class*="md:pt-40"] { padding-top: 6.5rem !important; }
+}
+section#top h1.display { font-size: clamp(40px, 7.5vw, 92px) !important; line-height: 0.96 !important; }
+section .mt-20 { margin-top: 3rem !important; }
+@media (min-width: 768px) { section .mt-20 { margin-top: 4rem !important; } }
+section#services article.py-14 { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+@media (min-width: 768px) { section#services article[class*="md:py-20"] { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; } }
+@media (min-width: 768px) { section#services article div[role="img"][class*="md:aspect-[3/4]"] { aspect-ratio: 4 / 3 !important; } }
+footer.py-16 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+@media (min-width: 768px) { footer[class*="md:py-20"] { padding-top: 4rem !important; padding-bottom: 4rem !important; } }
+footer .mt-16 { margin-top: 3rem !important; }
