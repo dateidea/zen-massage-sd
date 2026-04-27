@@ -8,10 +8,10 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-5">
             <Logo />
             <p className="mt-6 max-w-[36ch] text-[14px] leading-[1.7] text-ink-soft">
-              A small neighborhood massage studio at 7900 El Cajon Blvd in La
+              A small neighborhood massage studio at 7086 El Cajon Blvd in La
               Mesa. Hot stones, deep tissue, foot reflexology. Open every day,
-              10 AM to 9:30 PM. Walk-ins welcome. 10% off active duty and
-              veterans.
+              9:30 AM to 10 PM. Walk-ins welcome. Cash and Apple Pay
+              accepted.
             </p>
             <a
               href="#booking"
@@ -26,14 +26,12 @@ export default function Footer() {
               Visit
             </p>
             <address className="mt-4 not-italic text-[14px] leading-[1.7] text-ink">
-              7900 El Cajon Blvd
+              7086 El Cajon Blvd
               <br />
-              Suite C
-              <br />
-              La Mesa, CA 91942
+              San Diego, CA 92115
             </address>
             <a
-              href="https://maps.app.goo.gl/BzZuUZrvG5NLdQzK6"
+              href="https://maps.app.goo.gl/JMd4asWRLgScwdAv7"
               target="_blank"
               rel="noreferrer"
               className="link-underline mt-4 inline-block text-[13px] text-mid"
@@ -49,7 +47,7 @@ export default function Footer() {
             <p className="mt-4 text-[14px] leading-[1.7] text-ink">
               Mon &ndash; Sun
               <br />
-              10:00 AM &ndash; 9:30 PM
+              9:30 AM 10:00 AM &ndash; 9:30 PMndash; 10 PM
             </p>
           </div>
 
@@ -58,16 +56,16 @@ export default function Footer() {
               Reach us
             </p>
             <a
-              href="tel:+16194396708"
+              href="tel:+16195480773"
               className="display mt-3 block text-[28px] leading-none text-ink"
             >
-              (619) 439-6708
+              (619) 548-0773
             </a>
             <a
-              href="mailto:oasis8massage@gmail.com"
+              href="mailto:hello@zenmassagesd.com"
               className="link-underline mt-3 inline-block text-[13px] text-ink-soft"
             >
-              oasis8massage@gmail.com
+              hello@zenmassagesd.com
             </a>
             <ul className="mt-6 flex flex-col gap-2 text-[13px] text-ink-soft">
               <li><a className="link-underline" href="#services">Services</a></li>
@@ -83,7 +81,7 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} ZEN Massage. All rights
             reserved.
           </p>
-          <p>Cash &amp; card &middot; Walk-ins welcome &middot; 10% off military</p>
+          <p>Cash &amp; Apple Pay accepted &middot; Tipping never required</p>
         </div>
       </div>
     </footer>
