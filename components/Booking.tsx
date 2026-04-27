@@ -4,11 +4,11 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 
 const services = [
-  "The Honest Hour, 60 min — $50",
-  "Deep Tissue, 60 min — $60",
-  "Foot Reflexology, 45 min — $40",
-  "Hot Stone, 75 min — $75",
-  "Add 30 min to any service — $20",
+  "Foot Massage — from $50 (60 min)",
+  "Full Body with Hot Stones — from $60 (60 min)",
+  "Deep Tissue — from $55 (60 min)",
+  "Combo: 30 foot + 30 body — $45",
+  "Couples Room — call for current rate",
   "Not sure — recommend something",
 ];
 
@@ -50,13 +50,13 @@ export default function Booking() {
                   Or, faster
                 </p>
                 <a
-                  href="tel:+18583815959"
+                  href="tel:+16194396708"
                   className="display mt-3 block text-[36px] leading-none text-ink hover:text-clay md:text-[44px]"
                 >
-                  (858) 381-5959
+                  (619) 439-6708
                 </a>
                 <p className="mt-3 text-[14px] text-mid">
-                  Picked up by a real person, every day, 9 AM – 11 PM.
+                  Picked up by a real person, every day, 10 AM – 9:30 PM.
                 </p>
               </div>
 
@@ -65,8 +65,9 @@ export default function Booking() {
                   Walk-ins
                 </p>
                 <p className="mt-3 text-[15px] text-ink-soft">
-                  6979 El Cajon Blvd, San Diego, CA 92115. Free lot in front.
-                  We can almost always fit you in within 30 minutes — try us.
+                  7900 El Cajon Blvd, Suite C, La Mesa. Free lot in the same
+                  plaza. We can almost always fit you in within 30 minutes —
+                  try us.
                 </p>
               </div>
             </div>
@@ -168,10 +169,10 @@ export default function Booking() {
                   <p className="mt-6 max-w-[44ch] text-[16px] text-ink-soft">
                     If you don't hear from us by tomorrow morning, please call{" "}
                     <a
-                      href="tel:+18583815959"
+                      href="tel:+16194396708"
                       className="link-underline text-ink"
                     >
-                      (858) 381-5959
+                      (619) 439-6708
                     </a>
                     . Sometimes texts don't make it through and we hate to keep
                     you waiting.

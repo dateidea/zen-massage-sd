@@ -8,9 +8,9 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-5">
             <Logo />
             <p className="mt-6 max-w-[36ch] text-[14px] leading-[1.7] text-ink-soft">
-              A small, Asian-owned massage studio on El Cajon Boulevard. Open
-              every day, 9 AM to 11 PM. Walk-ins welcome. New clients get $10
-              off the first hour.
+              A small, family-run massage studio on El Cajon Boulevard. Open
+              every day, 10 AM to 9:30 PM. Walk-ins welcome. 10% off for active
+              duty and veterans.
             </p>
             <a
               href="#booking"
@@ -25,12 +25,14 @@ export default function Footer() {
               Visit
             </p>
             <address className="mt-4 not-italic text-[14px] leading-[1.7] text-ink">
-              6979 El Cajon Blvd
+              7900 El Cajon Blvd
               <br />
-              San Diego, CA 92115
+              Suite C
+              <br />
+              La Mesa, CA
             </address>
             <a
-              href="https://maps.app.goo.gl/6R3zcMDtZ2aZ9SgF8"
+              href="https://maps.google.com/?q=7900+El+Cajon+Blvd+Suite+C+La+Mesa"
               target="_blank"
               rel="noreferrer"
               className="link-underline mt-4 inline-block text-[13px] text-mid"
@@ -46,7 +48,7 @@ export default function Footer() {
             <p className="mt-4 text-[14px] leading-[1.7] text-ink">
               Mon – Sun
               <br />
-              9:00 AM – 11:00 PM
+              10:00 AM – 9:30 PM
             </p>
           </div>
 
@@ -55,10 +57,10 @@ export default function Footer() {
               Reach us
             </p>
             <a
-              href="tel:+18583815959"
+              href="tel:+16194396708"
               className="display mt-3 block text-[28px] leading-none text-ink"
             >
-              (858) 381-5959
+              (619) 439-6708
             </a>
             <ul className="mt-6 flex flex-col gap-2 text-[13px] text-ink-soft">
               <li>
@@ -87,9 +89,9 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-[12px] text-mid md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} Pure Massage. All rights reserved.
+            © {new Date().getFullYear()} Oasis 8 Massage. All rights reserved.
           </p>
-          <p>Cash &amp; Apple Pay accepted · Tipping never required</p>
+          <p>Cash &amp; card accepted · Tipping never required</p>
         </div>
       </div>
     </footer>

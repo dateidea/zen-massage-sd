@@ -15,47 +15,47 @@ type Service = {
 const services: Service[] = [
   {
     num: "01",
-    name: "Full Body",
+    name: "Foot Massage",
     description:
-      "Sixty minutes head-to-toe — soothing strokes through the back, neck, shoulders, glutes, legs, and arms. Medium pressure unless you say otherwise. The default for a reason.",
-    outcome: "For: the long week, the stiff neck, the bad chair at work.",
+      "Sixty minutes in a heated recliner — Epsom-salt soak, hot towel, warm oil. Targeted pressure through the arch, the calf, and the reflex points along the heel. Most clients close their eyes inside the first ten minutes.",
+    outcome: "For: nurses, servers, parents, anyone who has been on their feet.",
     duration: "60 min",
-    price: "$50",
-    image: "/images/service-relax-01.jpg",
-    alt: "Practitioner's hands working on a client's upper back, soft window light",
+    price: "From $50",
+    image: "/images/service-foot-04.jpg",
+    alt: "Close-up detail of warm oil and a polished river stone on a folded ivory linen towel",
   },
   {
     num: "02",
-    name: "Foot Massage",
+    name: "Full Body with Hot Stones",
     description:
-      "Sixty minutes in a heated recliner with a hot towel and warm oil. Deep work through the arch, calf, and ear reflex points. Most clients fall asleep around minute fifteen.",
-    outcome: "For: nurses, servers, parents, anyone who's been on their feet.",
+      "A full hour head-to-toe — back, neck, shoulders, glutes, legs, arms — with smooth basalt stones warmed in water and worked along the back to draw the deep stuff out. Medium pressure unless you say otherwise.",
+    outcome: "For: the long week, the bad chair, the shoulders that will not drop.",
     duration: "60 min",
-    price: "$50",
-    image: "/images/service-foot-03.jpg",
-    alt: "Hands working on the arch of a foot resting on a folded warm towel",
+    price: "From $60",
+    image: "/images/service-relax-01.jpg",
+    alt: "Cedar massage table dressed with neatly folded ivory linen, soft window light",
   },
   {
     num: "03",
-    name: "Shiatsu",
+    name: "Deep Tissue & Combo",
     description:
-      "Japanese pressure-point therapy through loose clothing. Slow, loaded body weight on specific points along the meridians. Asks more of the practitioner than oil massage does, in our opinion.",
+      "Slow-loaded forearm and elbow work into the layer beneath the surface. Or split the hour: thirty on the feet, thirty on the body, for forty-five dollars. We pick the pressure together at the ten-minute mark.",
     outcome: "For: chronic knots, athletes, people who lift things for a living.",
-    duration: "60 min",
-    price: "$60",
+    duration: "60 min · 30/30 from $45",
+    price: "From $55",
     image: "/images/service-deep-02.jpg",
-    alt: "Forearm pressure on the upper back, soft tungsten lighting, deep shadow",
+    alt: "Warm tungsten light across a treatment table, deep shadow, neatly arranged towels",
   },
   {
     num: "04",
     name: "Couples Room",
     description:
-      "Two practitioners, one quiet room, side-by-side tables. Same hour, same warm towels, same hot tea afterward. Calling ahead is the difference between a yes and a maybe.",
-    outcome: "For: anniversaries, post-flight, after the move.",
-    duration: "60 min · per person",
-    price: "$95",
-    image: "/images/service-couple-04.jpg",
-    alt: "Two side-by-side massage tables in a warm dim couples room",
+      "Two practitioners, one quiet room, side-by-side tables. Hot stones included on request, same warm towels, same cup of tea afterward. The couples room books up before the rest of the studio — calling ahead is the difference between a yes and a maybe.",
+    outcome: "For: anniversaries, post-flight, the rare night you both have free.",
+    duration: "60 min · per pair",
+    price: "Call for current rate",
+    image: "/images/service-stone-03.jpg",
+    alt: "Six smooth basalt stones arranged on a folded ivory linen towel, faint steam rising",
   },
 ];
 
@@ -86,10 +86,10 @@ export default function Services() {
                 no upsell at the door.
               </h2>
               <p className="mt-8 max-w-[58ch] text-[17px] text-ink-soft">
-                Everyone who walks in is here for the same reason — something
-                hurts, sleep has been bad, or the week was too long. The list
-                below is the entire menu. Walk-ins welcome until 10 PM. Calling
-                ahead helps.
+                Most people walk in for one of these. Combo deals — foot plus
+                body in the same hour — are how regulars come in. Walk-ins
+                welcome until 9 PM. Calling ahead helps, especially for the
+                couples room.
               </p>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default function Services() {
                     <p className="mt-5 max-w-[44ch] text-[14px] italic text-mid">
                       {s.outcome}
                     </p>
-                    <div className="mt-8 flex items-center gap-6 text-[14px] text-ink">
+                    <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px] text-ink">
                       <span className="display text-[24px] text-ink">
                         {s.price}
                       </span>
@@ -156,10 +156,10 @@ export default function Services() {
 
         <Reveal>
           <p className="mt-14 max-w-[60ch] text-[14px] text-mid">
-            New clients get $10 off the first session — no code needed, just
-            mention it at the front desk. Add 30 minutes to any service for
-            $25. Cash, card, and Apple Pay all accepted. Tipping is appreciated
-            but never appears on the bill.
+            Combo deals: 30 min foot + 30 min body for $45 · 40 min foot + 40
+            min body for $60. Active duty and veterans get 10% off any service
+            with a valid ID — discounts cannot be combined. Cash and card both
+            accepted. Tipping is appreciated but never required.
           </p>
         </Reveal>
       </div>

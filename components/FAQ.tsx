@@ -10,11 +10,12 @@ const faqs: QA[] = [
     q: "Do I need an appointment, or can I walk in?",
     a: (
       <>
-        Both are fine. Walk-ins are honestly welcome — there's almost always an
-        opening within thirty minutes if you arrive before 9 PM. If you want a
-        specific time or therapist, please call ahead at{" "}
-        <a className="link-underline" href="tel:+18583815959">
-          (858) 381-5959
+        Both are fine. Walk-ins are honestly welcome — there&rsquo;s almost always
+        an opening within thirty minutes if you arrive before 10 PM. If you
+        want a specific time or therapist (Kiwi or Luna get requested by
+        name), please call ahead at{" "}
+        <a className="link-underline" href="tel:+16265222888">
+          (626) 522-2888
         </a>
         .
       </>
@@ -24,11 +25,11 @@ const faqs: QA[] = [
     q: "How much does it cost? Are there hidden fees?",
     a: (
       <>
-        Our prices: $50 for the standard 60-minute hour, $60 for deep tissue,
-        $40 for 45-minute foot reflexology, $75 for a 75-minute hot stone.
-        That's the entire price list. New clients get $10 off the first hour —
-        no code, just mention it. No membership fees, no booking fees. Tipping
-        is appreciated but never required and never appears on the bill.
+        The Custom Hour — Swedish, deep tissue, or both — is $79.99 with free
+        essential oil and free hot stone work included. Foot reflexology is
+        $59.99. That&rsquo;s the whole price list. No membership fees, no booking
+        fees. Tipping is appreciated but never required and never appears on
+        the bill.
       </>
     ),
   },
@@ -36,32 +37,31 @@ const faqs: QA[] = [
     q: "What kind of pressure should I ask for?",
     a: (
       <>
-        If you're not sure, start with medium and tell us within the first ten
-        minutes if you want more or less. We'd rather adjust five times than
-        leave you sore tomorrow. Deep tissue means we use forearms, elbows, and
-        slow-loaded body weight on specific knots — not just "harder pressure
-        everywhere."
+        If you&rsquo;re not sure, start with medium and tell us within the first ten
+        minutes if you want more or less. We&rsquo;d rather adjust five times than
+        leave you sore tomorrow. Deep work means slow-loaded forearms and
+        elbows on specific knots — not just &ldquo;harder pressure everywhere.&rdquo;
       </>
     ),
   },
   {
-    q: "Do you take walk-ins after 9 PM?",
+    q: "Are you really open until 11 PM?",
     a: (
       <>
-        Yes. The last appointment is taken at 10 PM and the doors lock at
-        11 PM. If you're coming late after a shift, please call so we can keep
-        someone on for you.
+        Yes — every day, including Sunday. The last appointment goes on the
+        table at 10 PM and the doors lock at 11 PM. If you&rsquo;re coming late
+        after a shift, please call so we can keep someone on for you.
       </>
     ),
   },
   {
-    q: "How do you handle injuries or pregnancy?",
+    q: "What&rsquo;s actually included in the $79.99?",
     a: (
       <>
-        We work around acute injuries and refer out to a chiropractor or PT
-        when something isn't ours to treat. We do prenatal massage in the
-        second and third trimester with the side-lying setup — please call
-        first so we can prep the room.
+        A full sixty minutes on the table, your choice of Swedish, deep tissue,
+        or a combination of both. Free hot stones placed along the back and
+        shoulders. Free essential oil — lavender, eucalyptus, or unscented.
+        Hot tea before, hot tea after. Nothing extra to opt into.
       </>
     ),
   },
@@ -69,30 +69,31 @@ const faqs: QA[] = [
     q: "Where do I park?",
     a: (
       <>
-        Free parking lot directly in front of the studio, off El Cajon Boulevard
-        between 69th and 70th. Street parking on College Avenue if the lot is
-        full. We're a one-minute drive from SDSU and on the 1 and 815 bus
+        Free parking lot directly in front of the studio at 7034 El Cajon Blvd,
+        between 70th and 71st. Street parking on either side if the lot fills
+        up. We&rsquo;re a five-minute drive from SDSU and on the 1 and 815 bus
         lines.
       </>
     ),
   },
   {
-    q: "Do you offer gift cards?",
+    q: "Is it OK during pregnancy?",
     a: (
       <>
-        Yes — paper gift cards in the front room, or we can mail one. Call or
-        come in. We don't sell them online yet because we like writing the
-        recipient's name in by hand.
+        Yes — please mention it when you call so we can put you with a
+        practitioner who works with prenatal clients. Side-lying with bolsters
+        from the second trimester onward, gentle pressure, no deep abdominal
+        work.
       </>
     ),
   },
   {
-    q: "What's your cancellation policy?",
+    q: "What&rsquo;s your cancellation policy?",
     a: (
       <>
-        Same-day cancellations are fine. We don't charge for them. If you
-        no-show three times in a row we'll ask for a card on file for the next
-        booking — that's the only enforcement we have.
+        Same-day cancellations are fine. We don&rsquo;t charge for them. If you
+        no-show three times in a row we&rsquo;ll ask for a card on file for the
+        next booking — that&rsquo;s the only enforcement we have.
       </>
     ),
   },

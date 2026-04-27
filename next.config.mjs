@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+// GitHub Pages (only when GITHUB_PAGES=true). Vercel / local dev use defaults.
 const isPagesBuild = process.env.GITHUB_PAGES === "true";
 const basePath = isPagesBuild ? "/the-unhurried-hour" : "";
 
@@ -10,13 +11,15 @@ const basePath = isPagesBuild ? "/the-unhurried-hour" : "";
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: __dirname,
-  output: isPagesBuild ? "export" : undefined,
-  basePath,
-  assetPrefix: basePath || undefined,
   trailingSlash: true,
+  ...(isPagesBuild && {
+    output: "export",
+    basePath,
+    assetPrefix: basePath,
+  }),
   images: {
-    unoptimized: isPagesBuild,
     formats: ["image/avif", "image/webp"],
+    ...(isPagesBuild && { unoptimized: true }),
   },
   env: {
     NEXT_PUBLIC_BASE_PATH: basePath,

@@ -5,7 +5,7 @@ const steps = [
     n: "01",
     title: "Tell us what's tired.",
     body:
-      "Two minutes in the front room. We ask what you do for work, where you carry stress, whether you're on your feet all day. No forms with twelve checkboxes — just a conversation.",
+      "Two minutes in the front room. We ask what you do for work, where you carry stress, whether you've been on your feet all day. No forms with twelve checkboxes — just a conversation.",
   },
   {
     n: "02",

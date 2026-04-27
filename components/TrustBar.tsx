@@ -1,10 +1,10 @@
 import Reveal from "./Reveal";
 
 const stats = [
-  { value: "$50", label: "One full hour, all-in pricing" },
-  { value: "9–11", label: "Open every day, last booking at 10" },
-  { value: "4.2★", label: "Across 17 Google reviews" },
-  { value: "$10 off", label: "First-visit welcome, no code needed" },
+  { value: "$45", label: "30 min foot + 30 min body, all-in" },
+  { value: "10–9:30", label: "Open every day, seven days a week" },
+  { value: "10% off", label: "Active duty & veterans, with valid ID" },
+  { value: "Walk-ins", label: "Almost always an opening — try us" },
 ];
 
 export default function TrustBar() {
