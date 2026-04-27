@@ -9,7 +9,7 @@ export default function Footer() {
             <Logo />
             <p className="mt-6 max-w-[36ch] text-[14px] leading-[1.7] text-ink-soft">
               A small, Asian-owned massage studio on El Cajon Boulevard. Open
-              every day, 9 AM to 11 PM. Walk-ins welcome. Custom Hour: $79.99,
+              every day, 9:30 AM to 10 PM. Walk-ins welcome. Custom Hour: $79.99,
               with hot stones and essential oil included.
             </p>
             <a
@@ -23,7 +23,7 @@ export default function Footer() {
           <div className="col-span-6 md:col-span-2 md:col-start-7">
             <p className="text-[12px] tracking-[0.18em] uppercase text-mid">Visit</p>
             <address className="mt-4 not-italic text-[14px] leading-[1.7] text-ink">
-              7034 El Cajon Blvd
+              7086 El Cajon Blvd
               <br />
               San Diego, CA 92115
             </address>
@@ -42,7 +42,7 @@ export default function Footer() {
             <p className="mt-4 text-[14px] leading-[1.7] text-ink">
               Mon – Sun
               <br />
-              9:00 AM – 11:00 PM
+              9:30 AM – 10 PM
             </p>
           </div>
 

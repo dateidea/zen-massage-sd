@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s · ZEN Massage",
   },
   description:
-    "A small, Asian-owned massage studio on El Cajon Boulevard. The Custom Hour: Swedish, deep tissue, or both — with hot stones and essential oil included, $79.99. Open every day, 9 AM to 11 PM. Walk-ins welcome.",
+    "A small, Asian-owned massage studio on El Cajon Boulevard. The Custom Hour: Swedish, deep tissue, or both — with hot stones and essential oil included, $79.99. Open every day, 9:30 AM to 10 PM. Walk-ins welcome.",
   keywords: [
     "ZEN Massage",
     "massage San Diego",
@@ -91,7 +91,7 @@ export default function RootLayout({
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "7034 El Cajon Blvd",
+                streetAddress: "7086 El Cajon Blvd",
                 addressLocality: "San Diego",
                 addressRegion: "CA",
                 postalCode: "92115",
@@ -114,8 +114,8 @@ export default function RootLayout({
                     "Saturday",
                     "Sunday",
                   ],
-                  opens: "09:00",
-                  closes: "23:00",
+                  opens: "09:30",
+                  closes: "22:00",
                 },
               ],
               paymentAccepted: "Cash, Credit Card",

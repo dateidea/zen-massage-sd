@@ -70,12 +70,12 @@ export default function About() {
               </div>
               <div>
                 <p className="text-mid">Hours</p>
-                <p className="mt-1 text-ink">Daily, 9 AM – 11 PM</p>
+                <p className="mt-1 text-ink">Daily, 9:30 AM – 10 PM</p>
               </div>
               <div>
                 <p className="text-mid">Address</p>
                 <p className="mt-1 text-ink">
-                  7034 El Cajon Blvd, San Diego, CA 92115
+                  7086 El Cajon Blvd, San Diego, CA 92115
                 </p>
               </div>
               <div>

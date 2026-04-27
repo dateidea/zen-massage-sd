@@ -56,7 +56,7 @@ export default function Booking() {
                   (626) 522-2888
                 </a>
                 <p className="mt-3 text-[14px] text-mid">
-                  Picked up by a real person, every day, 9 AM – 11 PM.
+                  Picked up by a real person, every day, 9:30 AM – 10 PM.
                 </p>
               </div>
 
@@ -65,7 +65,7 @@ export default function Booking() {
                   Walk-ins
                 </p>
                 <p className="mt-3 text-[15px] text-ink-soft">
-                  7034 El Cajon Blvd, San Diego, CA 92115. Free lot in front.
+                  7086 El Cajon Blvd, San Diego, CA 92115. Free lot in front.
                   We can almost always fit you in within thirty minutes — try us.
                 </p>
               </div>

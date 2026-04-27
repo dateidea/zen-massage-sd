@@ -115,7 +115,7 @@ export default function Testimonials() {
             <span className="display text-[28px] text-cream">4.5★</span>
             <span>Across Google reviews · still growing by word of mouth</span>
             <span aria-hidden className="hidden md:inline">·</span>
-            <span>7034 El Cajon Blvd, San Diego · open daily 9 – 11</span>
+            <span>7086 El Cajon Blvd, San Diego · open daily 9 – 11</span>
           </div>
         </Reveal>
       </div>

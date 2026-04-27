@@ -69,7 +69,7 @@ const faqs: QA[] = [
     q: "Where do I park?",
     a: (
       <>
-        Free parking lot directly in front of the studio at 7034 El Cajon Blvd,
+        Free parking lot directly in front of the studio at 7086 El Cajon Blvd,
         between 70th and 71st. Street parking on either side if the lot fills
         up. We&rsquo;re a five-minute drive from SDSU and on the 1 and 815 bus
         lines.
