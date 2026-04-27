@@ -13,7 +13,7 @@ export default function Hero() {
         <div className="grid grid-cols-12 gap-6">
           <Reveal variant="fade" className="col-span-12">
             <p className="eyebrow mb-10">
-              Blue Moon Spa &middot; <span className="smallcaps">Established</span>
+              ZEN Massage &middot; <span className="smallcaps">Established</span>
               {" "}on El Cajon Boulevard, San Diego
             </p>
           </Reveal>
@@ -44,10 +44,10 @@ export default function Hero() {
                 Book a session
               </a>
               <a
-                href="tel:+16265222888"
+                href="tel:+16195480773"
                 className="link-underline text-[14px] tracking-[0.05em] text-ink"
               >
-                Or call (626) 522-2888
+                Or call (619) 548-0773
               </a>
             </div>
           </Reveal>
@@ -71,7 +71,7 @@ export default function Hero() {
         <div
           className="img-placeholder h-full w-full"
           role="img"
-          aria-label="Blue Moon Spa — a century-old hammam interior, marble walls, weathered brass fixtures, faint steam, painterly tungsten light"
+          aria-label="ZEN Massage — a century-old hammam interior, marble walls, weathered brass fixtures, faint steam, painterly tungsten light"
           style={{
             backgroundImage: `url(${asset("/images/hero-01.jpg")})`,
             backgroundSize: "cover",
@@ -82,7 +82,7 @@ export default function Hero() {
 
       <div className="mx-auto w-full max-w-[1180px] px-6 py-6 text-[11px] tracking-[0.22em] uppercase text-ink/55 md:px-10 md:py-8 flex flex-wrap items-center justify-between gap-4">
         <span>Asian-owned · LGBTQ+ friendly</span>
-        <span>4.5★ — Google reviews</span>
+        <span>4.7★ — Google reviews</span>
         <span aria-hidden>Scroll ↓</span>
       </div>
     </section>

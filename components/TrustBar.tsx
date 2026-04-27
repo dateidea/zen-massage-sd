@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 const stats = [
   { value: "$79.99", label: "Custom Hour — Swedish, deep tissue, or both" },
   { value: "9 — 11", label: "Open every day, last booking at 10 PM" },
-  { value: "4.5★", label: "Across Google reviews from neighborhood regulars" },
+  { value: "4.7★", label: "Across Google reviews from neighborhood regulars" },
   { value: "Free", label: "Hot stones & essential oil, included every time" },
 ];
 

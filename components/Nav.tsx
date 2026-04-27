@@ -99,8 +99,8 @@ export default function Nav() {
             ))}
           </ul>
           <div className="flex flex-col gap-4">
-            <a href="tel:+16265222888" className="display text-[28px] text-clay">
-              (626) 522-2888
+            <a href="tel:+16195480773" className="display text-[28px] text-clay">
+              (619) 548-0773
             </a>
             <a
               href="#booking"
@@ -110,8 +110,7 @@ export default function Nav() {
               Book a session
             </a>
             <p className="text-[12px] text-ink/55">
-              7034 El Cajon Blvd · San Diego · Open every day, 9 AM – 11 PM
-            </p>
+              7086 El Cajon Blvd</p>
           </div>
         </div>
       </div>

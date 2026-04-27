@@ -32,7 +32,7 @@ export default function About() {
           >
             <div
               role="img"
-              aria-label="Blue Moon Spa front room — warm cream walls, a marble counter with a brass kettle, a folded ivory towel, painterly tungsten light"
+              aria-label="ZEN Massage front room — warm cream walls, a marble counter with a brass kettle, a folded ivory towel, painterly tungsten light"
               className="img-placeholder h-full w-full"
               style={{
                 backgroundImage: `url(${asset("/images/about-01.png")})`,
@@ -45,7 +45,7 @@ export default function About() {
           <Reveal variant="fade" delay={120} className="col-span-12 md:col-span-7 md:col-start-1">
             <div className="space-y-6 text-[16px] leading-[1.8] text-ink/75">
               <p>
-                Blue Moon Spa is the kind of place we wished existed when we were
+                ZEN Massage is the kind of place we wished existed when we were
                 the ones working twelve-hour shifts. A small front room with
                 warm decor. Quiet treatment rooms with crisp linen and neatly
                 folded towels. Hot stones warming on the counter most days,
@@ -78,8 +78,7 @@ export default function About() {
               <div>
                 <p className="eyebrow">Address</p>
                 <p className="mt-2 text-ink/85">
-                  7034 El Cajon Blvd, San Diego, CA 92115
-                </p>
+                  7086 El Cajon Blvd</p>
               </div>
               <div>
                 <p className="eyebrow">House rate</p>
