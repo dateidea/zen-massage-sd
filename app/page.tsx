@@ -8,14 +8,7 @@ import About from "@/components/About";
 import FAQ from "@/components/FAQ";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
-import Marquee from "@/components/Marquee";
-
-const SERVICE_TICKER = [
-  "Foot Massage",
-  "Full Body with Hot Stones",
-  "Deep Tissue & Combo",
-  "Couples Room",
-];
+import HorizonBand from "@/components/HorizonBand";
 
 export default function Home() {
   return (
@@ -23,18 +16,26 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Marquee items={SERVICE_TICKER} />
         <TrustBar />
+        <HorizonBand
+          src="/images/hero-01.jpg"
+          alt="Linen curtain breathing in afternoon light, ocean glimpsed through the window"
+        />
         <Services />
-        <Marquee items={SERVICE_TICKER} inverse />
+        <HorizonBand
+          src="/images/about-01.jpg"
+          alt="Bare wood floor, salt-bleached wall, soft cool daylight"
+        />
         <Process />
         <Testimonials />
-        <Marquee items={SERVICE_TICKER} />
+        <HorizonBand
+          src="/images/og-01.jpg"
+          alt="Folded linen on a cedar bench, ocean light through gauze curtain"
+        />
         <About />
         <FAQ />
         <Booking />
       </main>
-      <Marquee items={SERVICE_TICKER} inverse />
       <Footer />
     </>
   );
