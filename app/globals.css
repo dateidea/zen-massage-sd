@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #f1f0ec;
-  --color-cream-deep: #e6e5e0;
-  --color-ink: #2a2a28;
-  --color-ink-soft: #4a4a47;
-  --color-mid: #8a8a85;
-  --color-hairline: #cdcdc8;
-  --color-clay: #6e8b98;
-  --color-clay-deep: #506b78;
-  --color-night: #1c1c1a;
-  --color-brass: #6e8b98;
+  /* Coastal Clean — salt white / deep sea / sand */
+  --color-cream: #f5f3ee;
+  --color-cream-deep: #ebe8df;
+  --color-ink: #2e3a42;
+  --color-ink-soft: #475a65;
+  --color-mid: #8c9aa2;
+  --color-hairline: #dcd7cb;
+  --color-clay: #d8c7a7;
+  --color-clay-deep: #b8a47f;
+  --color-night: #1b252c;
+  --color-brass: #d8c7a7;
 
   --font-display: "Source Serif 4", "Source Serif Pro", "Times New Roman", Georgia, serif;
   --font-sans: "Inter Tight", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
