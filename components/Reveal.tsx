@@ -1,16 +1,21 @@
 "use client";
 
-import { useEffect, useRef, useState, type ElementType } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Props = {
   children: React.ReactNode;
   delay?: number;
   className?: string;
-  as?: ElementType;
-  zoom?: boolean;
+  as?: "div" | "section" | "article" | "li" | "header";
 };
 
-export default function Reveal({ children, delay = 0, className = "", as: Tag = "div", zoom = false }: Props) {
+// Editorial Minimal motion: subtle fade-up only, 700ms ease-out.
+export default function Reveal({
+  children,
+  delay = 0,
+  className = "",
+  as: Tag = "div",
+}: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [shown, setShown] = useState(false);
 
@@ -21,24 +26,27 @@ export default function Reveal({ children, delay = 0, className = "", as: Tag = 
       setShown(true);
       return;
     }
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          setShown(true);
-          obs.disconnect();
-        }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            setShown(true);
+            obs.disconnect();
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+    );
     obs.observe(node);
     return () => obs.disconnect();
   }, []);
 
-  const Element = Tag;
+  const Element = Tag as React.ElementType;
   return (
     <Element
       ref={ref}
-      className={"reveal " + (zoom ? "zoom " : "") + (shown ? "is-in " : "") + className}
-      style={{ transitionDelay: shown ? delay + "ms" : "0ms" }}
+      className={`reveal ${shown ? "is-in" : ""} ${className}`}
+      style={{ transitionDelay: shown ? `${delay}ms` : "0ms" }}
     >
       {children}
     </Element>
