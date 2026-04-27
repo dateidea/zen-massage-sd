@@ -15,31 +15,32 @@ const inter = Inter({
   variable: "--font-inter",
 });
 
-const SITE_URL = "https://feelgoodspa.com";
+const SITE_URL = "https://dateidea.github.io/the-unhurried-hour";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Feel Good Spa — Massage on El Cajon Boulevard, San Diego",
-    template: "%s · Feel Good Spa",
+    default: "Pure Massage — An Honest Hour on El Cajon Boulevard, San Diego",
+    template: "%s · Pure Massage",
   },
   description:
-    "A small, family-run massage studio on El Cajon Boulevard. Relaxing, deep tissue, hot stone, and reflexology. Open every day, 9 AM to 10:30 PM. Walk-ins welcome.",
+    "A small, Asian-owned neighborhood massage studio on El Cajon Boulevard. Sixty minutes, fifty dollars, no upsell. Open every day, 9 AM to 11 PM. New clients get $10 off the first hour. Walk-ins welcome.",
   keywords: [
     "massage San Diego",
     "El Cajon Blvd massage",
-    "deep tissue massage",
-    "foot reflexology",
+    "deep tissue massage San Diego",
+    "foot reflexology San Diego",
     "hot stone massage",
-    "Chinese massage",
+    "Asian-owned massage",
     "College Area massage",
+    "Pure Massage San Diego",
   ],
   openGraph: {
-    title: "Feel Good Spa — Massage on El Cajon Boulevard",
+    title: "Pure Massage — An Honest Hour on El Cajon Boulevard",
     description:
-      "An unhurried hour. Quiet hands. Warm room. Open daily 9–10:30 on El Cajon Boulevard.",
+      "An honest hour your shoulders have been waiting for. Sixty minutes, fifty dollars, no upsell. Open daily 9–11 in San Diego. $10 off the first hour.",
     url: SITE_URL,
-    siteName: "Feel Good Spa",
+    siteName: "Pure Massage",
     locale: "en_US",
     type: "website",
     images: [
@@ -47,15 +48,15 @@ export const metadata: Metadata = {
         url: "/images/og-01.jpg",
         width: 1200,
         height: 630,
-        alt: "Feel Good Spa — quiet, warm treatment room on El Cajon Boulevard",
+        alt: "Pure Massage — quiet, warm treatment room on El Cajon Boulevard",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Feel Good Spa — Massage on El Cajon Boulevard",
+    title: "Pure Massage — An Honest Hour on El Cajon Boulevard",
     description:
-      "An unhurried hour. Quiet hands. Warm room. Open daily 9–10:30.",
+      "An honest hour your shoulders have been waiting for. Open daily 9–11.",
     images: ["/images/og-01.jpg"],
   },
   alternates: { canonical: SITE_URL },
@@ -82,14 +83,14 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MassageTherapy",
               "@id": `${SITE_URL}/#business`,
-              name: "Feel Good Spa",
+              name: "Pure Massage",
               image: `${SITE_URL}/images/hero-01.jpg`,
               url: SITE_URL,
-              telephone: "+16198253033",
+              telephone: "+18583815959",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "6917 El Cajon Blvd",
+                streetAddress: "6979 El Cajon Blvd",
                 addressLocality: "San Diego",
                 addressRegion: "CA",
                 postalCode: "92115",
@@ -97,8 +98,8 @@ export default function RootLayout({
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 32.7682228,
-                longitude: -117.0489569,
+                latitude: 32.76787,
+                longitude: -117.04812,
               },
               openingHoursSpecification: [
                 {
@@ -113,12 +114,16 @@ export default function RootLayout({
                     "Sunday",
                   ],
                   opens: "09:00",
-                  closes: "22:30",
+                  closes: "23:00",
                 },
               ],
               paymentAccepted: "Cash, Apple Pay",
-              hasMap:
-                "https://www.google.com/maps/place/Feel+Good+Spa/@32.7682228,-117.0489569,17z",
+              hasMap: "https://maps.app.goo.gl/6R3zcMDtZ2aZ9SgF8",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "4.2",
+                reviewCount: "17",
+              },
             }),
           }}
         />

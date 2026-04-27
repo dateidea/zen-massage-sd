@@ -15,47 +15,47 @@ type Service = {
 const services: Service[] = [
   {
     num: "01",
-    name: "The Honest Hour",
+    name: "Full Body",
     description:
-      "Our standard sixty-minute full-body session. Medium pressure, slow pace, warm room, no clock-watching. The default for a reason.",
+      "Sixty minutes head-to-toe — soothing strokes through the back, neck, shoulders, glutes, legs, and arms. Medium pressure unless you say otherwise. The default for a reason.",
     outcome: "For: the long week, the stiff neck, the bad chair at work.",
     duration: "60 min",
-    price: "$60",
+    price: "$50",
     image: "/images/service-relax-01.jpg",
-    alt: "Hands of a practitioner working on a client's shoulder, dim warm room",
+    alt: "Practitioner's hands working on a client's upper back, soft window light",
   },
   {
     num: "02",
-    name: "Deep Tissue",
+    name: "Foot Massage",
     description:
-      "Heavier pressure where you actually need it. We talk first about what's hurting, then we work — slow, deliberate, with a real plan.",
-    outcome: "For: chronic knots, athletes, people who lift things for a living.",
+      "Sixty minutes in a heated recliner with a hot towel and warm oil. Deep work through the arch, calf, and ear reflex points. Most clients fall asleep around minute fifteen.",
+    outcome: "For: nurses, servers, parents, anyone who's been on their feet.",
     duration: "60 min",
-    price: "$65",
-    image: "/images/service-deep-02.jpg",
-    alt: "Forearm pressure on the upper back, soft tungsten lighting",
+    price: "$50",
+    image: "/images/service-foot-03.jpg",
+    alt: "Hands working on the arch of a foot resting on a folded warm towel",
   },
   {
     num: "03",
-    name: "Hot Stone",
+    name: "Shiatsu",
     description:
-      "Smooth basalt stones, warmed and placed along the spine, then drawn through the long muscles. Heat does half the work for you.",
-    outcome: "For: the cold, the wound-up, the impossible-to-relax.",
-    duration: "75 min",
-    price: "$80",
-    image: "/images/service-stone-03.jpg",
-    alt: "Smooth dark river stones arranged on a folded towel, warm tones",
+      "Japanese pressure-point therapy through loose clothing. Slow, loaded body weight on specific points along the meridians. Asks more of the practitioner than oil massage does, in our opinion.",
+    outcome: "For: chronic knots, athletes, people who lift things for a living.",
+    duration: "60 min",
+    price: "$60",
+    image: "/images/service-deep-02.jpg",
+    alt: "Forearm pressure on the upper back, soft tungsten lighting, deep shadow",
   },
   {
     num: "04",
-    name: "Foot Reflexology",
+    name: "Couples Room",
     description:
-      "Thirty years of Chinese reflexology, applied to the feet, calves, hands, and ears. You sit in a recliner. You don't say a word unless you want to.",
-    outcome: "For: nurses, servers, parents, anyone who stands all day.",
-    duration: "45 min",
-    price: "$45",
-    image: "/images/service-foot-04.jpg",
-    alt: "Reflexology chart and warm towel, hands working on the arch of a foot",
+      "Two practitioners, one quiet room, side-by-side tables. Same hour, same warm towels, same hot tea afterward. Calling ahead is the difference between a yes and a maybe.",
+    outcome: "For: anniversaries, post-flight, after the move.",
+    duration: "60 min · per person",
+    price: "$95",
+    image: "/images/service-couple-04.jpg",
+    alt: "Two side-by-side massage tables in a warm dim couples room",
   },
 ];
 
@@ -80,15 +80,16 @@ export default function Services() {
                 Four services.
                 <br />
                 <span className="italic font-light text-ink-soft">
-                  No upsells, no packages,
+                  No memberships, no add-on traps,
                 </span>
                 <br />
-                no timeshare pitch.
+                no upsell at the door.
               </h2>
               <p className="mt-8 max-w-[58ch] text-[17px] text-ink-soft">
-                Everyone we work on is here for the same reason — something hurts,
-                or sleep has been bad, or the week was too long. The list below is
-                the entire menu. Walk-ins are welcome. Calling ahead helps.
+                Everyone who walks in is here for the same reason — something
+                hurts, sleep has been bad, or the week was too long. The list
+                below is the entire menu. Walk-ins welcome until 10 PM. Calling
+                ahead helps.
               </p>
             </div>
           </div>
@@ -104,10 +105,7 @@ export default function Services() {
                     reverse ? "md:[direction:rtl]" : ""
                   }`}
                 >
-                  {/* Image */}
-                  <div
-                    className={`col-span-12 md:col-span-6 md:[direction:ltr]`}
-                  >
+                  <div className="col-span-12 md:col-span-6 md:[direction:ltr]">
                     <div
                       role="img"
                       aria-label={s.alt}
@@ -120,7 +118,6 @@ export default function Services() {
                     />
                   </div>
 
-                  {/* Body */}
                   <div className="col-span-12 md:col-span-6 md:[direction:ltr]">
                     <div className="flex items-baseline gap-6">
                       <span className="display text-[18px] text-mid">
@@ -158,10 +155,11 @@ export default function Services() {
         </div>
 
         <Reveal>
-          <p className="mt-14 max-w-[58ch] text-[14px] text-mid">
-            Add 30 minutes to any service for $25. Couples-room available with
-            advance notice. Tipping appreciated but never expected — gratuity
-            never appears on the bill.
+          <p className="mt-14 max-w-[60ch] text-[14px] text-mid">
+            New clients get $10 off the first session — no code needed, just
+            mention it at the front desk. Add 30 minutes to any service for
+            $25. Cash, card, and Apple Pay all accepted. Tipping is appreciated
+            but never appears on the bill.
           </p>
         </Reveal>
       </div>

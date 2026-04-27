@@ -4,11 +4,11 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 
 const services = [
-  "The Honest Hour — $60",
-  "Deep Tissue — $65",
-  "Hot Stone — $80 (75 min)",
-  "Foot Reflexology — $45 (45 min)",
-  "30-minute add-on — $25",
+  "The Honest Hour, 60 min — $50",
+  "Deep Tissue, 60 min — $60",
+  "Foot Reflexology, 45 min — $40",
+  "Hot Stone, 75 min — $75",
+  "Add 30 min to any service — $20",
   "Not sure — recommend something",
 ];
 
@@ -17,8 +17,6 @@ export default function Booking() {
 
   function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    // In production, wire to Formspree, Resend, or your booking endpoint.
-    // For now we just simulate the success state.
     setSubmitted(true);
   }
 
@@ -30,7 +28,6 @@ export default function Booking() {
     >
       <div className="mx-auto max-w-[1320px] px-6 md:px-10">
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-          {/* Left column — copy + reassurance */}
           <Reveal className="col-span-12 md:col-span-5">
             <p className="eyebrow">Book a session</p>
             <h2
@@ -53,13 +50,13 @@ export default function Booking() {
                   Or, faster
                 </p>
                 <a
-                  href="tel:+16198253033"
+                  href="tel:+18583815959"
                   className="display mt-3 block text-[36px] leading-none text-ink hover:text-clay md:text-[44px]"
                 >
-                  (619) 825-3033
+                  (858) 381-5959
                 </a>
                 <p className="mt-3 text-[14px] text-mid">
-                  Picked up by a real person, every day, 9 AM – 10:30 PM.
+                  Picked up by a real person, every day, 9 AM – 11 PM.
                 </p>
               </div>
 
@@ -68,14 +65,13 @@ export default function Booking() {
                   Walk-ins
                 </p>
                 <p className="mt-3 text-[15px] text-ink-soft">
-                  6917 El Cajon Blvd, San Diego, CA 92115. Free lot in front.
+                  6979 El Cajon Blvd, San Diego, CA 92115. Free lot in front.
                   We can almost always fit you in within 30 minutes — try us.
                 </p>
               </div>
             </div>
           </Reveal>
 
-          {/* Right column — form */}
           <Reveal
             delay={120}
             className="col-span-12 md:col-span-6 md:col-start-7"
@@ -147,7 +143,7 @@ export default function Booking() {
                       name="message"
                       rows={4}
                       className="border-b border-hairline bg-transparent py-3 text-[18px] text-ink placeholder:text-mid/60 focus:border-ink focus:outline-none"
-                      placeholder="e.g. Tuesday after 6 — lower back, side sleeper."
+                      placeholder="e.g. Tuesday after 6 — lower back, side sleeper. First visit."
                     />
                   </div>
 
@@ -172,10 +168,10 @@ export default function Booking() {
                   <p className="mt-6 max-w-[44ch] text-[16px] text-ink-soft">
                     If you don't hear from us by tomorrow morning, please call{" "}
                     <a
-                      href="tel:+16198253033"
+                      href="tel:+18583815959"
                       className="link-underline text-ink"
                     >
-                      (619) 825-3033
+                      (858) 381-5959
                     </a>
                     . Sometimes texts don't make it through and we hate to keep
                     you waiting.

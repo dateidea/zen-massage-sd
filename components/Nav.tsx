@@ -35,10 +35,6 @@ export default function Nav() {
           ? "bg-cream/85 backdrop-blur-md border-b border-hairline"
           : "bg-transparent border-b border-transparent"
       }`}
-      style={{
-        // @ts-expect-error CSS var
-        "--tw-border-opacity": 1,
-      }}
     >
       <nav
         className="mx-auto flex max-w-[1320px] items-center justify-between px-6 py-5 md:px-10 md:py-6"
@@ -70,12 +66,12 @@ export default function Nav() {
           ))}
           <li>
             <a
-              href="tel:+16198253033"
+              href="tel:+18583815959"
               className={`text-[14px] tracking-[0.01em] ${
                 scrolled ? "text-ink-soft" : "text-cream/85"
               }`}
             >
-              (619) 825-3033
+              (858) 381-5959
             </a>
           </li>
           <li>
@@ -112,7 +108,6 @@ export default function Nav() {
         </button>
       </nav>
 
-      {/* Mobile overlay */}
       <div
         className={`fixed inset-0 z-40 bg-cream md:hidden ${
           open ? "pointer-events-auto" : "pointer-events-none"
@@ -147,10 +142,10 @@ export default function Nav() {
           </ul>
           <div className="flex flex-col gap-4">
             <a
-              href="tel:+16198253033"
+              href="tel:+18583815959"
               className="display text-[28px] text-ink"
             >
-              (619) 825-3033
+              (858) 381-5959
             </a>
             <a
               href="#booking"
@@ -160,7 +155,7 @@ export default function Nav() {
               Book a session
             </a>
             <p className="text-[12px] text-mid">
-              6917 El Cajon Blvd · Open 9 AM – 10:30 PM, daily
+              6979 El Cajon Blvd · Open 9 AM – 11 PM, daily
             </p>
           </div>
         </div>

@@ -12,7 +12,7 @@ type Quote = {
 const quotes: Quote[] = [
   {
     body:
-      "I work twelve-hour shifts at Sharp Memorial and my lower back is always wrecked by Friday. I've tried four massage places in San Diego. This is the only one I rebook every week. They don't talk through it. They just work.",
+      "I work twelve-hour shifts at Sharp Memorial and my lower back is wrecked by Friday. I've tried four spots in San Diego. This is the only one I rebook every week. They don't talk through it. They just work.",
     name: "Daniela R.",
     role: "ICU nurse · Normal Heights",
     image: "/images/testimonial-01.jpg",
@@ -20,7 +20,7 @@ const quotes: Quote[] = [
   },
   {
     body:
-      "I came in for a 30-minute foot massage after a long shift on a Tuesday and stayed an extra half-hour because I forgot what relaxed felt like. The price is honestly a little embarrassing for them — it should be more.",
+      "Came in for a thirty-minute add-on after a Tuesday double and stayed an extra hour because I forgot what relaxed felt like. The price is honestly a little embarrassing for them — it should be more.",
     name: "Marcus T.",
     role: "Line cook · College Area",
     image: "/images/testimonial-02.jpg",
@@ -110,11 +110,11 @@ export default function Testimonials() {
         </div>
 
         <Reveal>
-          <div className="mt-20 flex flex-wrap items-center gap-8 border-t border-cream/15 pt-10 text-[13px] text-cream/60">
-            <span className="display text-[28px] text-cream">4.7</span>
-            <span>average across Google, Yelp, and Fresha</span>
-            <span aria-hidden>·</span>
-            <span>200+ five-star reviews since 2014</span>
+          <div className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-cream/15 pt-10 text-[13px] text-cream/60">
+            <span className="display text-[28px] text-cream">4.2★</span>
+            <span>17 Google reviews · still building word-of-mouth</span>
+            <span aria-hidden className="hidden md:inline">·</span>
+            <span>On El Cajon Boulevard, open daily 9 – 11</span>
           </div>
         </Reveal>
       </div>

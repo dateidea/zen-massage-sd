@@ -10,11 +10,11 @@ const faqs: QA[] = [
     q: "Do I need an appointment, or can I walk in?",
     a: (
       <>
-        Both are fine. Walk-ins are honestly welcome — there's almost always
-        an opening within thirty minutes if you arrive before 8 PM. If you
-        want a specific time or therapist, please call ahead at{" "}
-        <a className="link-underline" href="tel:+16198253033">
-          (619) 825-3033
+        Both are fine. Walk-ins are honestly welcome — there's almost always an
+        opening within thirty minutes if you arrive before 9 PM. If you want a
+        specific time or therapist, please call ahead at{" "}
+        <a className="link-underline" href="tel:+18583815959">
+          (858) 381-5959
         </a>
         .
       </>
@@ -24,11 +24,11 @@ const faqs: QA[] = [
     q: "How much does it cost? Are there hidden fees?",
     a: (
       <>
-        Our prices are: $40 for 30 minutes, $60 for 60 minutes, $80 for 75
-        minutes (hot stone), $45 for 45-minute reflexology. That's the entire
-        price list. There are no membership fees, no booking fees, no surprise
-        upcharges for "premium oils." Tipping is appreciated but never required
-        and never appears on the bill.
+        Our prices: $50 for the standard 60-minute hour, $60 for deep tissue,
+        $40 for 45-minute foot reflexology, $75 for a 75-minute hot stone.
+        That's the entire price list. New clients get $10 off the first hour —
+        no code, just mention it. No membership fees, no booking fees. Tipping
+        is appreciated but never required and never appears on the bill.
       </>
     ),
   },
@@ -38,9 +38,9 @@ const faqs: QA[] = [
       <>
         If you're not sure, start with medium and tell us within the first ten
         minutes if you want more or less. We'd rather adjust five times than
-        leave you sore tomorrow. Deep tissue means we're using forearms,
-        elbows, and slow-loaded body weight on specific knots — not just
-        "harder pressure everywhere."
+        leave you sore tomorrow. Deep tissue means we use forearms, elbows, and
+        slow-loaded body weight on specific knots — not just "harder pressure
+        everywhere."
       </>
     ),
   },
@@ -48,14 +48,14 @@ const faqs: QA[] = [
     q: "Do you take walk-ins after 9 PM?",
     a: (
       <>
-        Yes. The last appointment is taken at 9:30 PM and the doors lock at
-        10:30 PM. If you're coming late after a shift, please call so we can
-        keep someone on for you.
+        Yes. The last appointment is taken at 10 PM and the doors lock at
+        11 PM. If you're coming late after a shift, please call so we can keep
+        someone on for you.
       </>
     ),
   },
   {
-    q: "How do you handle pain, injuries, or pregnancy?",
+    q: "How do you handle injuries or pregnancy?",
     a: (
       <>
         We work around acute injuries and refer out to a chiropractor or PT
@@ -69,7 +69,7 @@ const faqs: QA[] = [
     q: "Where do I park?",
     a: (
       <>
-        Free parking lot directly in front of the spa, off El Cajon Boulevard
+        Free parking lot directly in front of the studio, off El Cajon Boulevard
         between 69th and 70th. Street parking on College Avenue if the lot is
         full. We're a one-minute drive from SDSU and on the 1 and 815 bus
         lines.
@@ -90,8 +90,8 @@ const faqs: QA[] = [
     q: "What's your cancellation policy?",
     a: (
       <>
-        Same-day cancellations are fine. We don't charge for them. If you no-
-        show three times in a row we'll ask for a card on file for the next
+        Same-day cancellations are fine. We don't charge for them. If you
+        no-show three times in a row we'll ask for a card on file for the next
         booking — that's the only enforcement we have.
       </>
     ),

@@ -6,7 +6,6 @@ import { asset } from "@/lib/asset";
 export default function Hero() {
   const imgRef = useRef<HTMLDivElement | null>(null);
 
-  // Subtle parallax on the hero image
   useEffect(() => {
     const node = imgRef.current;
     if (!node) return;
@@ -37,7 +36,6 @@ export default function Hero() {
       id="top"
       className="relative isolate flex min-h-[100svh] w-full items-end overflow-hidden bg-ink text-cream"
     >
-      {/* Image plate (replace with /images/hero-01.jpg once generated) */}
       <div
         ref={imgRef}
         className="img-placeholder absolute inset-0 -z-10 will-change-transform"
@@ -48,12 +46,11 @@ export default function Hero() {
         }}
         aria-hidden
       />
-      {/* Scrim for legibility */}
       <div
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(180deg, rgba(28,26,23,0.45) 0%, rgba(28,26,23,0.10) 35%, rgba(28,26,23,0.55) 100%)",
+            "linear-gradient(180deg, rgba(28,26,23,0.55) 0%, rgba(28,26,23,0.10) 35%, rgba(28,26,23,0.65) 100%)",
         }}
         aria-hidden
       />
@@ -61,14 +58,11 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-[1320px] px-6 pb-20 pt-40 md:px-10 md:pb-28 md:pt-48">
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-9 lg:col-span-8">
-            <p
-              className="eyebrow mb-8 text-cream/70"
-              style={{ animationDelay: "0ms" }}
-            >
+            <p className="eyebrow mb-8 text-cream/70">
               Massage · El Cajon Boulevard · San Diego
             </p>
             <h1 className="display text-[44px] leading-[0.98] sm:text-[64px] md:text-[88px] lg:text-[108px]">
-              An unhurried hour
+              An honest hour
               <br />
               <span className="italic font-light text-cream/85">
                 your shoulders have been
@@ -76,10 +70,10 @@ export default function Hero() {
               <br />
               waiting for.
             </h1>
-            <p className="mt-8 max-w-[44ch] text-[17px] leading-[1.65] text-cream/80 md:text-[19px]">
-              A small, family-run massage studio on El Cajon Boulevard. Sixty
-              honest minutes — no membership, no upsell, no rushed handoff.
-              Open every day, 9 AM to 10:30 PM.
+            <p className="mt-8 max-w-[46ch] text-[17px] leading-[1.65] text-cream/80 md:text-[19px]">
+              A neighborhood massage studio on El Cajon Boulevard. Sixty
+              minutes, fifty dollars, no upsell, no membership pitch. Open
+              every day, 9 AM to 11 PM. New clients get $10 off the first hour.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -90,19 +84,18 @@ export default function Hero() {
                 Book a session
               </a>
               <a
-                href="tel:+16198253033"
+                href="tel:+18583815959"
                 className="link-underline text-[14px] tracking-[0.02em] text-cream/85"
               >
-                Or call (619) 825-3033
+                Or call (858) 381-5959
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Bottom marker */}
       <div className="pointer-events-none absolute inset-x-0 bottom-6 mx-auto flex max-w-[1320px] items-end justify-between px-6 text-[11px] tracking-[0.18em] uppercase text-cream/55 md:px-10">
-        <span>Est. 2014 · 6917 El Cajon Blvd</span>
+        <span>Asian-owned · 6979 El Cajon Blvd</span>
         <span aria-hidden className="hidden md:inline">
           Scroll ↓
         </span>

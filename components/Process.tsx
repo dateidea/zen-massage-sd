@@ -3,9 +3,9 @@ import Reveal from "./Reveal";
 const steps = [
   {
     n: "01",
-    title: "Tell us where it hurts.",
+    title: "Tell us what's tired.",
     body:
-      "Two minutes in the front room. We ask what you do for work, where you carry stress, whether you sleep on your side. No forms with twelve checkboxes — just a conversation.",
+      "Two minutes in the front room. We ask what you do for work, where you carry stress, whether you're on your feet all day. No forms with twelve checkboxes — just a conversation.",
   },
   {
     n: "02",
@@ -17,11 +17,11 @@ const steps = [
     n: "03",
     title: "An hour of quiet work.",
     body:
-      "Warm room, weighted blanket, hot towel for the feet. The clock isn't on the wall on purpose. We'll tell you when there are five minutes left.",
+      "Warm room, weighted blanket on the table, hot towel for the feet. The clock isn't on the wall on purpose. We'll tell you when there are five minutes left.",
   },
   {
     n: "04",
-    title: "Walk out looser than you came in.",
+    title: "Walk out lighter than you came in.",
     body:
       "A glass of water, a stretch we want you to try at home, and the door. No package pitch. Most people rebook by text the same week — that's the whole sales process.",
   },

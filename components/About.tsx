@@ -10,11 +10,10 @@ export default function About() {
     >
       <div className="mx-auto max-w-[1320px] px-6 md:px-10">
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-          {/* Photo */}
           <Reveal className="col-span-12 md:col-span-5">
             <div
               role="img"
-              aria-label="Lin, founder, in the front room of Feel Good Spa, warm window light"
+              aria-label="The front room of Pure Massage on El Cajon Boulevard, soft window light"
               className="img-placeholder relative aspect-[4/5] w-full overflow-hidden"
               style={{
                 backgroundImage: `url(${asset("/images/about-01.jpg")})`,
@@ -23,11 +22,10 @@ export default function About() {
               }}
             />
             <p className="mt-4 text-[12px] text-mid">
-              Lin in the front room, March 2026.
+              The front room, late afternoon.
             </p>
           </Reveal>
 
-          {/* Body */}
           <Reveal
             delay={120}
             className="col-span-12 md:col-span-6 md:col-start-7"
@@ -37,53 +35,53 @@ export default function About() {
               id="about-heading"
               className="display mt-4 text-[40px] leading-[1.05] md:text-[56px]"
             >
-              We opened in 2014
+              A small, Asian-owned
               <br />
               <span className="italic font-light text-ink-soft">
-                because the kind of place
+                neighborhood studio
               </span>
               <br />
-              we wanted didn't exist here yet.
+              on El Cajon Boulevard.
             </h2>
             <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-soft">
               <p>
-                I grew up in Guangzhou and trained for nine years before I ever
-                worked on a paying client. My mother taught me reflexology;
-                a teacher in Shenzhen taught me deep tissue; a chiropractor
-                in El Cajon taught me which referrals to send back.
+                Pure Massage is the kind of place we wished existed when we
+                were the ones working twelve-hour shifts. A small front room
+                with warm decor. Comfortable rooms with crisp white sheets and
+                neatly arranged towels. Hot tea in the kettle, every day.
               </p>
               <p>
-                We opened a small storefront on El Cajon Boulevard in 2014.
-                It's still small. There are four rooms, two recliners, and a
-                kettle that's almost always on. We don't sell memberships.
-                We don't have a points program. We're not trying to scale.
+                Our practitioners — Sia and the team — are trained in full
+                body, foot, shiatsu, and couples massage. We don't sell
+                memberships. We don't push add-ons. We don't have a points
+                program. The price you see at the door is the price you pay,
+                and a real hour means sixty minutes on the table.
               </p>
               <p>
-                What we are trying to do is the same thing every day: give
-                people an honest hour. The kind you talk about at dinner
-                three days later.
+                What we are trying to do is straightforward: give people an
+                honest hour. The kind your shoulders remember three days later.
               </p>
             </div>
 
             <div className="mt-10 grid grid-cols-2 gap-6 border-t border-hairline pt-8 text-[13px]">
               <div>
-                <p className="text-mid">Trained at</p>
+                <p className="text-mid">Specialties</p>
                 <p className="mt-1 text-ink">
-                  Guangzhou Massage Institute, '02
+                  Full body, foot, shiatsu, couples
                 </p>
               </div>
               <div>
-                <p className="text-mid">Languages</p>
-                <p className="mt-1 text-ink">English, Mandarin, Cantonese</p>
+                <p className="text-mid">Hours</p>
+                <p className="mt-1 text-ink">Daily, 9 AM – 11 PM</p>
               </div>
               <div>
-                <p className="text-mid">CAMTC license</p>
-                <p className="mt-1 text-ink">#0042-XXXXX</p>
+                <p className="text-mid">Pricing</p>
+                <p className="mt-1 text-ink">$50 / hour, all-in</p>
               </div>
               <div>
-                <p className="text-mid">On the team</p>
+                <p className="text-mid">First visit</p>
                 <p className="mt-1 text-ink">
-                  Lin, YoYo, Mei, and Wei (since 2018)
+                  $10 off — mention it at the desk
                 </p>
               </div>
             </div>

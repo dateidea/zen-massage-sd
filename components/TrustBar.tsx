@@ -1,10 +1,10 @@
 import Reveal from "./Reveal";
 
 const stats = [
-  { value: "10+", label: "Years on El Cajon Boulevard" },
-  { value: "60 min", label: "Sessions, by default" },
-  { value: "9–10:30", label: "Open every day, no exceptions" },
-  { value: "$60", label: "Standard hour, no surprise add-ons" },
+  { value: "$50", label: "One full hour, all-in pricing" },
+  { value: "9–11", label: "Open every day, last booking at 10" },
+  { value: "4.2★", label: "Across 17 Google reviews" },
+  { value: "$10 off", label: "First-visit welcome, no code needed" },
 ];
 
 export default function TrustBar() {
@@ -21,7 +21,7 @@ export default function TrustBar() {
                 <span className="display text-[36px] leading-none text-ink md:text-[44px]">
                   {s.value}
                 </span>
-                <span className="mt-3 max-w-[18ch] text-[13px] leading-[1.5] text-mid">
+                <span className="mt-3 max-w-[20ch] text-[13px] leading-[1.5] text-mid">
                   {s.label}
                 </span>
               </li>
