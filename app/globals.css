@@ -1,55 +1,30 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Midnight Apothecary palette ─────────────────────────────
-     The whole site is dark-luxe. `cream` (the legacy token name)
-     now maps to a warm ivory used for INVERTED light sections
-     like Testimonials. `ink` is the dominant midnight background. */
+  /* ── Heritage Cream palette ─────────────────────────────── */
+  --color-cream: #f2ebdb;
+  --color-cream-deep: #e8decd;
+  --color-ink: #2a1a1f;
+  --color-ink-soft: #4a2d33;
+  --color-mid: #806870;
+  --color-hairline: #d9cfb9;
+  --color-clay: #5c1f23;
+  --color-clay-deep: #441316;
+  --color-night: #1a0f12;
+  --color-brass: #b58a4a;
 
-  /* Surface */
-  --color-midnight: #0E1620;
-  --color-midnight-deep: #060B12;
-  --color-midnight-soft: #161F2C;
+  /* ── Typography (Cormorant display + Inter body) ─────────── */
+  --font-display: "Cormorant Garamond", "Cormorant", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  /* Ivory (used as the inverted-section ground and as primary type colour) */
-  --color-ivory: #F1ECDF;
-  --color-ivory-soft: #DAD3C3;
-  --color-ivory-mute: #8C8475;
-
-  /* Brass accent */
-  --color-brass: #B58A4A;
-  --color-brass-deep: #8C6531;
-
-  /* Hairlines */
-  --color-edge: #2A323D;
-  --color-edge-light: #C7BFAE;
-
-  /* ── Legacy aliases (so existing class names in components still
-     resolve while we redesign in place) ───────────────────────── */
-  --color-cream: #0E1620;          /* was warm cream → now midnight */
-  --color-cream-deep: #060B12;     /* was deeper cream → deeper midnight */
-  --color-ink: #F1ECDF;            /* was charcoal → now ivory */
-  --color-ink-soft: #DAD3C3;       /* was soft ink → soft ivory */
-  --color-mid: #8C8475;            /* muted */
-  --color-hairline: #2A323D;       /* was hairline cream → edge midnight */
-  --color-clay: #B58A4A;           /* was terracotta → brass */
-  --color-clay-deep: #8C6531;      /* deep brass */
-
-  /* ── Typography ─────────────────────────────────────────────── */
-  --font-display: "Cormorant Garamond", "GT Sectra", "Times New Roman", Georgia, serif;
-  --font-sans: "Manrope", "Söhne", ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, sans-serif;
-
-  /* ── Motion ─────────────────────────────────────────────────── */
   --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --ease-zoom: cubic-bezier(0.16, 0.84, 0.32, 1);
+  --ease-curtain: cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
-/* ── Base resets ──────────────────────────────────────────────── */
 html,
 body {
-  background: var(--color-midnight);
-  color: var(--color-ivory);
+  background: var(--color-cream);
+  color: var(--color-ink);
   font-family: var(--font-sans);
   font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
@@ -58,67 +33,65 @@ body {
 }
 
 body {
-  font-size: 16px;
-  line-height: 1.65;
+  font-size: 17px;
+  line-height: 1.7;
   letter-spacing: 0;
+  font-weight: 400;
 }
 
-/* Display headings */
 .display {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 500;
+  letter-spacing: -0.012em;
   line-height: 1.04;
 }
 
 .eyebrow {
   font-family: var(--font-sans);
   font-size: 11px;
-  letter-spacing: 0.32em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-brass);
+  color: var(--color-mid);
   font-weight: 500;
 }
 
-/* ── Reveal: signature gesture is SLOW IMAGE ZOOM ───────────── */
-/* Text reveals: quiet fade only, no translate (different from before). */
+.col-prose { max-width: 720px; }
+.col-prose-wide { max-width: 880px; }
+
+/* ── Reveal — opacity-only fade-up, fail-safe ───────────────
+   Content stays VISIBLE if IntersectionObserver fails or is slow,
+   so the site never appears blank to the visitor. */
 .reveal {
-  opacity: 0;
-  transition: opacity 1100ms var(--ease-editorial);
-  will-change: opacity;
+  opacity: 1;
+  transform: none;
+  transition: opacity 700ms var(--ease-editorial),
+    transform 700ms var(--ease-editorial);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reveal:not(.is-in) {
+    opacity: 0;
+    transform: translateY(14px);
+  }
 }
 .reveal.is-in {
   opacity: 1;
+  transform: none;
 }
 
-/* Images get the signature slow zoom-out as they enter view. */
-.zoom-frame {
+.img-placeholder {
+  background: var(--color-cream-deep);
   overflow: hidden;
-  position: relative;
 }
-.zoom-frame > .zoom-img {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.12);
-  transition: transform 2200ms var(--ease-zoom),
-    filter 2200ms var(--ease-zoom);
-  filter: brightness(0.92);
-  will-change: transform, filter;
+.img-placeholder > * {
+  transition: transform 14s var(--ease-editorial);
 }
-.zoom-frame.is-in > .zoom-img {
-  transform: scale(1);
-  filter: brightness(1);
+.img-placeholder:hover > * {
+  transform: scale(1.05);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transition: none; }
-  .zoom-frame > .zoom-img {
-    transform: none;
-    filter: none;
-    transition: none;
-  }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .img-placeholder, .img-placeholder > * { transition: none; }
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
@@ -127,55 +100,24 @@ body {
   }
 }
 
-/* ── Selection ────────────────────────────────────────────────── */
-::selection {
-  background: var(--color-brass);
-  color: var(--color-midnight);
-}
+::selection { background: var(--color-clay); color: var(--color-cream); }
 
-/* ── Focus ring ───────────────────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--color-brass);
+  outline: 2px solid var(--color-clay);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 
-.hairline {
-  border-color: var(--color-edge);
-}
+.hairline { border-color: var(--color-hairline); }
 
-/* ── Image placeholder fallback (deep night) ──────────────────── */
-.img-placeholder {
-  background:
-    radial-gradient(at 30% 20%, rgba(181, 138, 74, 0.18), transparent 60%),
-    radial-gradient(at 70% 80%, rgba(241, 236, 223, 0.05), transparent 50%),
-    var(--color-midnight-soft);
-}
-
-/* ── Buttons: brass-on-midnight by default, ghost on dark ────── */
 .btn-primary {
-  background: var(--color-brass);
-  color: var(--color-midnight);
-  transition: transform 350ms var(--ease-editorial),
-    background 350ms var(--ease-editorial),
-    color 350ms var(--ease-editorial);
+  background: var(--color-ink);
+  color: var(--color-cream);
+  transition: background 350ms var(--ease-editorial),
+    transform 350ms var(--ease-editorial);
+  border-radius: 0;
 }
-.btn-primary:hover {
-  background: var(--color-ivory);
-  color: var(--color-midnight);
-  transform: translateY(-1px);
-}
-.btn-ghost {
-  background: transparent;
-  color: var(--color-ivory);
-  border: 1px solid var(--color-edge);
-  transition: border-color 350ms var(--ease-editorial),
-    color 350ms var(--ease-editorial);
-}
-.btn-ghost:hover {
-  border-color: var(--color-brass);
-  color: var(--color-brass);
-}
+.btn-primary:hover { background: var(--color-clay); transform: translateY(-1px); }
 
 .link-underline {
   background-image: linear-gradient(currentColor, currentColor);
@@ -184,7 +126,40 @@ body {
   background-repeat: no-repeat;
   transition: background-size 400ms var(--ease-editorial);
 }
-.link-underline:hover {
-  background-size: 0% 1px;
-  background-position: 100% 100%;
+.link-underline:hover { background-size: 0% 1px; background-position: 100% 100%; }
+
+.card-surface {
+  background: var(--color-cream);
+  border: 1px solid var(--color-hairline);
+  border-radius: 0;
+  transition: border-color 400ms var(--ease-editorial),
+    transform 400ms var(--ease-editorial);
+}
+.card-surface:hover { border-color: var(--color-clay); transform: translateY(-1px); }
+
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  float: left;
+  font-size: 4.6em;
+  line-height: 0.9;
+  padding: 0.05em 0.08em 0 0;
+  font-weight: 500;
+  color: var(--color-clay);
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--color-mid);
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.2em;
+}
+.ornament::before, .ornament::after {
+  content: "";
+  width: 64px;
+  height: 1px;
+  background: var(--color-hairline);
 }
