@@ -1,176 +1,62 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Heritage Classic — palette ───────────────────────────── */
-  --color-cream: #F2EBDB;        /* dominant cream */
-  --color-cream-deep: #E8DECD;   /* slightly deeper cream for alt sections */
-  --color-cream-soft: #FAF6EE;   /* lightest, for the inverted ivory section */
-  --color-ink: #2A1A1F;          /* deep ink (warm near-black) */
-  --color-ink-soft: #4A2D33;     /* soft ink for body */
-  --color-mid: #806870;          /* muted plum-grey */
-  --color-hairline: #D9CFB9;     /* warm hairline */
-  --color-clay: #5C1F23;         /* burgundy accent */
-  --color-clay-deep: #441316;    /* deep burgundy */
+  --color-cream: #f1f0ec;
+  --color-cream-deep: #e6e5e0;
+  --color-ink: #2a2a28;
+  --color-ink-soft: #4a4a47;
+  --color-mid: #8a8a85;
+  --color-hairline: #cdcdc8;
+  --color-clay: #6e8b98;
+  --color-clay-deep: #506b78;
+  --color-night: #1c1c1a;
+  --color-brass: #6e8b98;
 
-  /* ── Type pairing — Tiempos system (Google substitutes) ──── */
-  --font-display: "Newsreader", "Tiempos Headline", "Times New Roman", Georgia, serif;
-  --font-text:    "Source Serif 4", "Tiempos Text", "Iowan Old Style", Georgia, serif;
-  --font-sans:    var(--font-text); /* alias for legacy classes */
+  --font-display: "Source Serif 4", "Source Serif Pro", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter Tight", "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
-  /* ── Motion ─────────────────────────────────────────────── */
-  --ease-curtain: cubic-bezier(0.83, 0, 0.17, 1);
   --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
-
-  /* ── Sidebar geometry ───────────────────────────────────── */
-  --sidebar: 260px;
+  --ease-curtain: cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
-html,
-body {
-  background: var(--color-cream);
-  color: var(--color-ink);
-  font-family: var(--font-text);
-  font-feature-settings: "ss01", "kern", "liga", "onum";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+html, body { background: var(--color-cream); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
+body { font-size: 15px; line-height: 1.6; letter-spacing: -0.005em; font-weight: 400; }
 
-body {
-  font-size: 16px;
-  line-height: 1.7;
-  letter-spacing: 0;
-}
+.display { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.022em; line-height: 1.0; font-optical-sizing: auto; }
+.eyebrow { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--color-mid); font-weight: 500; }
 
-/* Display (Newsreader) */
-.display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.012em;
-  line-height: 1.04;
-  font-feature-settings: "ss01", "kern", "liga", "onum";
-}
+.col-prose { max-width: 64ch; }
+.col-prose-wide { max-width: 72ch; }
+.rule { height: 1px; background: var(--color-hairline); width: 100%; }
 
-/* Eyebrow now uses serif small caps — heritage editorial */
-.eyebrow {
-  font-family: var(--font-text);
-  font-size: 12px;
-  letter-spacing: 0.22em;
-  font-variant: all-small-caps;
-  text-transform: uppercase;
-  color: var(--color-clay);
-  font-weight: 500;
-}
+.reveal { opacity: 1; transform: none; transition: opacity 700ms var(--ease-editorial), transform 700ms var(--ease-editorial); }
+@media (prefers-reduced-motion: no-preference) { .reveal:not(.is-in) { opacity: 0; transform: translateY(12px); } }
+.reveal.is-in { opacity: 1; transform: none; }
 
-.smallcaps {
-  font-feature-settings: "smcp", "c2sc";
-  font-variant: all-small-caps;
-  letter-spacing: 0.08em;
-}
-
-/* ── Curtain reveal — signature motion ───────────────────── */
-/* Sections wipe in from left to right via clip-path. Image
-   frames also use the curtain treatment so the whole site
-   feels like it's drawing back velvet curtains, panel by panel. */
-.curtain {
-  clip-path: inset(0 100% 0 0);
-  transition: clip-path 1200ms var(--ease-curtain);
-  will-change: clip-path;
-}
-.curtain.is-in {
-  clip-path: inset(0 0 0 0);
-}
-
-.curtain-up {
-  clip-path: inset(100% 0 0 0);
-  transition: clip-path 1100ms var(--ease-curtain);
-  will-change: clip-path;
-}
-.curtain-up.is-in {
-  clip-path: inset(0 0 0 0);
-}
-
-.reveal {
-  opacity: 0;
-  transition: opacity 900ms var(--ease-editorial);
-}
-.reveal.is-in { opacity: 1; }
+.sticky-stage { position: relative; }
+.sticky-stage > .sticky-pin { position: sticky; top: 96px; align-self: start; }
+.img-placeholder { background: var(--color-cream-deep); overflow: hidden; }
 
 @media (prefers-reduced-motion: reduce) {
-  .curtain, .curtain-up, .reveal {
-    clip-path: inset(0) !important;
-    opacity: 1 !important;
-    transition: none !important;
-  }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .sticky-stage > .sticky-pin { position: static; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
-::selection {
-  background: var(--color-clay);
-  color: var(--color-cream);
-}
-
-:focus-visible {
-  outline: 2px solid var(--color-clay);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
-
+::selection { background: var(--color-ink); color: var(--color-cream); }
+:focus-visible { outline: 1px solid var(--color-clay); outline-offset: 4px; border-radius: 0; }
 .hairline { border-color: var(--color-hairline); }
 
-.img-placeholder {
-  background:
-    radial-gradient(at 30% 20%, rgba(92, 31, 35, 0.18), transparent 60%),
-    radial-gradient(at 70% 80%, rgba(42, 26, 31, 0.12), transparent 50%),
-    var(--color-cream-deep);
-}
+.btn-primary { background: var(--color-ink); color: var(--color-cream); transition: background 350ms var(--ease-editorial), transform 350ms var(--ease-editorial); border-radius: 0; font-family: var(--font-sans); letter-spacing: 0.18em; font-weight: 500; }
+.btn-primary:hover { background: var(--color-clay); transform: translateY(-1px); }
 
-/* Buttons — burgundy primary with serif label */
-.btn-primary {
-  background: var(--color-clay);
-  color: var(--color-cream-soft);
-  font-family: var(--font-text);
-  letter-spacing: 0.18em;
-  transition: background 350ms var(--ease-editorial),
-    color 350ms var(--ease-editorial),
-    transform 350ms var(--ease-editorial);
-}
-.btn-primary:hover {
-  background: var(--color-clay-deep);
-  color: var(--color-cream-soft);
-  transform: translateY(-1px);
-}
+.link-underline { background-image: linear-gradient(currentColor, currentColor); background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 400ms var(--ease-editorial); }
+.link-underline:hover { background-size: 0% 1px; background-position: 100% 100%; }
 
-.btn-ghost {
-  background: transparent;
-  color: var(--color-ink);
-  border: 1px solid var(--color-ink);
-  transition: background 350ms var(--ease-editorial),
-    color 350ms var(--ease-editorial);
-}
-.btn-ghost:hover {
-  background: var(--color-ink);
-  color: var(--color-cream);
-}
+.card-surface { background: var(--color-cream); border: 1px solid var(--color-hairline); border-radius: 0; transition: border-color 400ms var(--ease-editorial); }
+.card-surface:hover { border-color: var(--color-clay); }
 
-.link-underline {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 100% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 400ms var(--ease-editorial);
-}
-.link-underline:hover {
-  background-size: 0% 1px;
-  background-position: 100% 100%;
-}
+.dropcap::first-letter { font-family: var(--font-display); float: left; font-size: 4.6em; line-height: 0.9; padding: 0.05em 0.08em 0 0; font-weight: 400; color: var(--color-clay); }
 
-/* Body shifts right by sidebar width on desktop. */
-@media (min-width: 1024px) {
-  body { padding-left: var(--sidebar); }
-}
+.ornament { display: flex; align-items: center; justify-content: center; gap: 12px; color: var(--color-mid); font-family: var(--font-display); font-size: 18px; letter-spacing: 0.2em; }
+.ornament::before, .ornament::after { content: ""; width: 64px; height: 1px; background: var(--color-hairline); }
