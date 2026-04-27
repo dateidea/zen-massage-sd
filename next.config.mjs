@@ -5,7 +5,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // GitHub Pages (only when GITHUB_PAGES=true). Vercel / local dev use defaults.
 const isPagesBuild = process.env.GITHUB_PAGES === "true";
-const basePath = isPagesBuild ? "/the-unhurried-hour" : "";
+const basePath = isPagesBuild ? "/blue-moon-spa" : "";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
