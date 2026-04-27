@@ -1,4 +1,3 @@
-import Sidebar from "@/components/Sidebar";
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import TrustBar from "@/components/TrustBar";
@@ -13,7 +12,6 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <Sidebar />
       <Nav />
       <main>
         <Hero />

@@ -11,39 +11,20 @@ const links = [
 ];
 
 export default function Nav() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
-
-  useEffect(() => {
     document.documentElement.style.overflow = open ? "hidden" : "";
-    return () => {
-      document.documentElement.style.overflow = "";
-    };
+    return () => { document.documentElement.style.overflow = ""; };
   }, [open]);
 
   return (
-    <header
-      className={`lg:hidden fixed inset-x-0 top-0 z-40 transition-[background,backdrop-filter,border-color] duration-500 ${
-        scrolled || open
-          ? "bg-cream/90 backdrop-blur-md border-b border-hairline"
-          : "bg-cream/80 border-b border-transparent"
-      }`}
-    >
-      <nav
-        className="mx-auto flex max-w-[1320px] items-center justify-between px-6 py-5"
-        aria-label="Primary"
-      >
+    <>
+      {/* ── Mobile top bar ─────────────────────────────────── */}
+      <header className="fixed inset-x-0 top-0 z-40 flex items-center justify-between border-b border-hairline bg-cream/90 px-6 py-4 backdrop-blur-md lg:hidden">
         <a href="#top" className="text-ink">
           <Logo />
         </a>
-
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
@@ -53,67 +34,108 @@ export default function Nav() {
           <span className="sr-only">Menu</span>
           <span className="relative block h-3 w-6">
             <span
-              className={`absolute left-0 top-0 block h-px w-full bg-current transition-transform duration-300 ${
-                open ? "translate-y-[6px] rotate-45" : ""
-              }`}
+              className={`absolute left-0 top-0 block h-px w-full bg-current transition-transform duration-300 ${open ? "translate-y-[6px] rotate-45" : ""}`}
             />
             <span
-              className={`absolute left-0 bottom-0 block h-px w-full bg-current transition-transform duration-300 ${
-                open ? "-translate-y-[6px] -rotate-45" : ""
-              }`}
+              className={`absolute left-0 bottom-0 block h-px w-full bg-current transition-transform duration-300 ${open ? "-translate-y-[6px] -rotate-45" : ""}`}
             />
           </span>
         </button>
-      </nav>
+      </header>
 
-      <div
-        className={`fixed inset-0 z-40 bg-cream ${
-          open ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-        aria-hidden={!open}
+      {/* ── Desktop sidebar (≥lg) ──────────────────────────── */}
+      <aside
+        className="fixed inset-y-0 left-0 z-30 hidden w-[260px] flex-col justify-between border-r border-hairline bg-cream px-8 py-10 lg:flex"
+        aria-label="Primary"
       >
-        <div
-          className={`flex h-full flex-col justify-between px-6 pt-28 pb-12 transition-opacity duration-500 ${
-            open ? "opacity-100" : "opacity-0"
-          }`}
-        >
-          <ul className="flex flex-col gap-7">
-            {links.map((l, i) => (
-              <li
+        <div>
+          <a href="#top" className="text-ink">
+            <Logo />
+          </a>
+          <p className="mt-6 max-w-[28ch] text-[13px] leading-[1.55] text-ink-soft">
+            A small, family-run massage spa inside Baltimore Plaza, La Mesa.
+          </p>
+
+          <nav className="mt-12 flex flex-col gap-5" aria-label="Sections">
+            {links.map((l) => (
+              <a
                 key={l.href}
-                style={{
-                  transition: "all 600ms var(--ease-editorial)",
-                  transitionDelay: open ? `${100 + i * 60}ms` : "0ms",
-                  transform: open ? "translateY(0)" : "translateY(20px)",
-                  opacity: open ? 1 : 0,
-                }}
+                href={l.href}
+                className="text-[14px] tracking-[0.04em] text-ink hover:text-clay"
               >
-                <a
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  className="display block text-[44px] tracking-[-0.01em] text-ink"
-                >
-                  {l.label}
-                </a>
-              </li>
+                {l.label}
+              </a>
             ))}
-          </ul>
-          <div className="flex flex-col gap-4">
-            <a href="tel:+16195480773" className="display text-[28px] text-clay">
-              (619) 548-0773
-            </a>
-            <a
-              href="#booking"
-              onClick={() => setOpen(false)}
-              className="btn-primary inline-flex w-full items-center justify-center rounded-none px-6 py-4 text-[12px] tracking-[0.22em] uppercase"
-            >
-              Book a session
-            </a>
-            <p className="text-[12px] text-ink/55">
-              7086 El Cajon Blvd</p>
+          </nav>
+
+          <div className="rule mt-10" />
+
+          <p className="eyebrow mt-10">Reserve</p>
+          <a
+            href="tel:+16196395282"
+            className="mt-3 block text-[20px] tracking-[-0.01em] text-clay hover:text-clay-deep"
+          >
+            (619) 639-5282
+          </a>
+          <p className="mt-2 text-[12px] text-mid">Daily, 9 AM – 10 PM</p>
+
+          <a
+            href="#booking"
+            className="btn-primary mt-8 inline-flex items-center px-6 py-3 text-[11px] uppercase"
+          >
+            Book a session
+          </a>
+        </div>
+
+        <div className="text-[12px] leading-[1.6] text-mid">
+          <p>5575 Baltimore Dr #106-107</p>
+          <p>La Mesa, CA 91942</p>
+          <a
+            href="https://maps.app.goo.gl/3bFERDjYsj1cpB3c6"
+            target="_blank"
+            rel="noreferrer"
+            className="link-underline mt-3 inline-block text-clay"
+          >
+            Open in Google Maps →
+          </a>
+        </div>
+      </aside>
+
+      {/* ── Mobile fullscreen overlay menu ─────────────────── */}
+      {open ? (
+        <div className="fixed inset-0 z-40 bg-cream lg:hidden">
+          <div className="flex h-full flex-col justify-between px-6 pt-24 pb-10">
+            <ul className="flex flex-col gap-6">
+              {links.map((l) => (
+                <li key={l.href}>
+                  <a
+                    href={l.href}
+                    onClick={() => setOpen(false)}
+                    className="display block text-[40px] leading-[1.04] text-ink"
+                  >
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <div className="flex flex-col gap-4">
+              <a href="tel:+16196395282" className="display text-[26px] text-clay">
+                (619) 639-5282
+              </a>
+              <a
+                href="#booking"
+                onClick={() => setOpen(false)}
+                className="btn-primary inline-flex w-full items-center justify-center px-6 py-4 text-[11px] uppercase"
+              >
+                Book a session
+              </a>
+              <p className="text-[12px] text-mid">
+                5575 Baltimore Dr #106-107 · La Mesa · Daily, 9 AM – 10 PM
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      ) : null}
+    </>
   );
 }
