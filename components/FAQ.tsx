@@ -45,11 +45,11 @@ const faqs: QA[] = [
     ),
   },
   {
-    q: "Are you really open until 10 PM every night?",
+    q: "Are you really open until 11 PM?",
     a: (
       <>
         Yes — every day, including Sunday. The last appointment goes on the
-        table at 9 PM and the doors lock at 10 PM. If you&rsquo;re coming late
+        table at 10 PM and the doors lock at 11 PM. If you&rsquo;re coming late
         after a shift, please call so we can keep someone on for you.
       </>
     ),
@@ -69,7 +69,7 @@ const faqs: QA[] = [
     q: "Where do I park?",
     a: (
       <>
-        Free parking lot directly in front of the studio at 7086 El Cajon Blvd,
+        Free parking lot directly in front of the studio at 7034 El Cajon Blvd,
         between 70th and 71st. Street parking on either side if the lot fills
         up. We&rsquo;re a five-minute drive from SDSU and on the 1 and 815 bus
         lines.

@@ -149,7 +149,7 @@ export default function Nav() {
               Book a session
             </a>
             <p className="text-[12px] text-mid">
-              7086 El Cajon Blvd · San Diego · Open every day, 9:30 AM – 10 PM
+              7034 El Cajon Blvd · San Diego · Open every day, 9 AM – 11 PM
             </p>
           </div>
         </div>

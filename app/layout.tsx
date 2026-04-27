@@ -20,13 +20,13 @@ const SITE_URL = "https://dateidea.github.io/blue-moon-spa";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "ZEN Massage — An Honest Hour on El Cajon Boulevard, San Diego",
-    template: "%s · ZEN Massage",
+    default: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard, San Diego",
+    template: "%s · Blue Moon Spa",
   },
   description:
-    "A small, Asian-owned massage studio on El Cajon Boulevard. The Custom Hour: Swedish, deep tissue, or both — with hot stones and essential oil included, $79.99. Open every day, 9:30 AM to 10 PM. Walk-ins welcome.",
+    "A small, Asian-owned massage studio on El Cajon Boulevard. The Custom Hour: Swedish, deep tissue, or both — with hot stones and essential oil included, $79.99. Open every day, 9 AM to 11 PM. Walk-ins welcome.",
   keywords: [
-    "ZEN Massage",
+    "Blue Moon Spa",
     "massage San Diego",
     "El Cajon Blvd massage",
     "deep tissue massage San Diego",
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     "foot reflexology San Diego",
   ],
   openGraph: {
-    title: "ZEN Massage — An Honest Hour on El Cajon Boulevard",
+    title: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard",
     description:
       "Swedish, deep tissue, or both — with hot stones and essential oil included. $79.99 Custom Hour. Open daily 9–11 in San Diego.",
     url: SITE_URL,
-    siteName: "ZEN Massage",
+    siteName: "Blue Moon Spa",
     locale: "en_US",
     type: "website",
     images: [
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
         url: "/images/og-01.png",
         width: 1200,
         height: 630,
-        alt: "ZEN Massage — quiet, warm treatment room on El Cajon Boulevard",
+        alt: "Blue Moon Spa — quiet, warm treatment room on El Cajon Boulevard",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZEN Massage — An Honest Hour on El Cajon Boulevard",
+    title: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard",
     description:
       "Swedish, deep tissue, or both — with hot stones included. $79.99. Open daily 9–11.",
     images: ["/images/og-01.png"],
@@ -84,14 +84,14 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MassageTherapy",
               "@id": `${SITE_URL}/#business`,
-              name: "ZEN Massage",
+              name: "Blue Moon Spa",
               image: `${SITE_URL}/images/hero-01.jpg`,
               url: SITE_URL,
               telephone: "+16265222888",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "7086 El Cajon Blvd",
+                streetAddress: "7034 El Cajon Blvd",
                 addressLocality: "San Diego",
                 addressRegion: "CA",
                 postalCode: "92115",
@@ -114,8 +114,8 @@ export default function RootLayout({
                     "Saturday",
                     "Sunday",
                   ],
-                  opens: "09:30",
-                  closes: "22:00",
+                  opens: "09:00",
+                  closes: "23:00",
                 },
               ],
               paymentAccepted: "Cash, Credit Card",

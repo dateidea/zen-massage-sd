@@ -59,7 +59,7 @@ export default function Hero() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-9 lg:col-span-8">
             <p className="eyebrow mb-8 text-cream/70">
-              ZEN Massage · 7086 El Cajon Blvd · San Diego
+              Blue Moon Spa · 7034 El Cajon Blvd · San Diego
             </p>
             <h1 className="display text-[44px] leading-[0.98] sm:text-[64px] md:text-[88px] lg:text-[108px]">
               An honest hour
@@ -74,7 +74,7 @@ export default function Hero() {
               A small, Asian-owned massage studio on El Cajon Boulevard.
               Sixty minutes of Swedish, deep tissue, or both — with hot
               stones and warm essential oil included, every time. Open
-              every day, 9:30 AM to 10 PM. The Custom Hour, $79.99.
+              every day, 9 AM to 11 PM. The Custom Hour, $79.99.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-6">
