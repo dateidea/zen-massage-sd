@@ -1,22 +1,23 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { asset } from "@/lib/asset";
 
 type Props = {
-  children: React.ReactNode;
-  delay?: number;
+  src: string;
+  alt: string;
   className?: string;
-  as?: "div" | "section" | "article" | "li" | "header";
+  ratio?: string;
 };
 
-export default function Reveal({
-  children,
-  delay = 0,
+export default function ZoomImage({
+  src,
+  alt,
   className = "",
-  as: Tag = "div",
+  ratio = "aspect-[4/5]",
 }: Props) {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [shown, setShown] = useState(false);
+  const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
@@ -25,32 +26,37 @@ export default function Reveal({
       typeof window !== "undefined" &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches
     ) {
-      setShown(true);
+      setInView(true);
       return;
     }
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            setShown(true);
+            setInView(true);
             obs.disconnect();
           }
         });
       },
-      { threshold: 0.1, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.18, rootMargin: "0px 0px -6% 0px" }
     );
     obs.observe(node);
     return () => obs.disconnect();
   }, []);
 
-  const Element = Tag as React.ElementType;
   return (
-    <Element
+    <div
       ref={ref}
-      className={`reveal ${shown ? "is-in" : ""} ${className}`}
-      style={{ transitionDelay: shown ? `${delay}ms` : "0ms" }}
+      role="img"
+      aria-label={alt}
+      className={`zoom-frame img-placeholder ${ratio} w-full ${
+        inView ? "is-in" : ""
+      } ${className}`}
     >
-      {children}
-    </Element>
+      <div
+        className="zoom-img"
+        style={{ backgroundImage: `url(${asset(src)})` }}
+      />
+    </div>
   );
 }

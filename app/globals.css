@@ -1,26 +1,28 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Color tokens ───────────────────────────────────────── */
-  --color-cream: #f7f3ec;
-  --color-cream-deep: #efe9dd;
-  --color-ink: #1c1a17;
-  --color-ink-soft: #3a352e;
-  --color-mid: #8b7e70;
-  --color-hairline: #e5dfd4;
-  --color-clay: #b8754a;
-  --color-clay-deep: #8e5736;
+  /* ── Heritage Cream palette ─────────────────────────────── */
+  --color-cream: #f2ebdb;
+  --color-cream-deep: #e8decd;
+  --color-ink: #2a1a1f;
+  --color-ink-soft: #4a2d33;
+  --color-mid: #806870;
+  --color-hairline: #d9cfb9;
+  --color-clay: #5c1f23;
+  --color-clay-deep: #441316;
+  /* Aliases for components that reference legacy token names */
+  --color-night: #1a0f12;
+  --color-brass: #5c1f23;
 
-  /* ── Typography ─────────────────────────────────────────── */
-  --font-display: "Fraunces", "Times New Roman", Georgia, serif;
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
-    Roboto, sans-serif;
+  /* ── Typography (Cormorant display + Inter body) ─────────── */
+  --font-display: "Cormorant Garamond", "Cormorant", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 
   /* ── Easing ─────────────────────────────────────────────── */
   --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-curtain: cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
-/* ── Base resets ──────────────────────────────────────────── */
 html,
 body {
   background: var(--color-cream);
@@ -34,46 +36,64 @@ body {
 
 body {
   font-size: 17px;
-  line-height: 1.65;
-  letter-spacing: -0.005em;
+  line-height: 1.7;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
-/* Display headings */
+/* Display headings — Cormorant serif, light italic optional */
 .display {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.025em;
-  line-height: 1.02;
-  font-optical-sizing: auto;
-  font-variation-settings: "SOFT" 50, "WONK" 0;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  line-height: 1.04;
 }
 
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: 12px;
-  letter-spacing: 0.18em;
+  font-size: 11px;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
   color: var(--color-mid);
   font-weight: 500;
 }
 
-/* ── Reveal on scroll ─────────────────────────────────────── */
+/* Long-form column constraint — magazine-essay measure */
+.col-prose { max-width: 720px; }
+.col-prose-wide { max-width: 880px; }
+
+/* ── Curtain Reveal — clip-path drawn back from top ──────── */
 .reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 800ms var(--ease-editorial),
-    transform 800ms var(--ease-editorial);
-  will-change: opacity, transform;
+  clip-path: inset(0 0 100% 0);
+  opacity: 0.5;
+  transition: clip-path 1100ms var(--ease-curtain),
+    opacity 800ms var(--ease-editorial);
+  will-change: clip-path, opacity;
 }
 .reveal.is-in {
+  clip-path: inset(0 0 0% 0);
   opacity: 1;
-  transform: translateY(0);
+}
+
+.img-placeholder {
+  background: var(--color-cream-deep);
+  overflow: hidden;
+}
+.img-placeholder > * {
+  transition: transform 14s var(--ease-editorial);
+}
+.img-placeholder:hover {
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
+    clip-path: none;
     opacity: 1;
-    transform: none;
+    transition: none;
+  }
+  .img-placeholder,
+  .img-placeholder > * {
     transition: none;
   }
   *,
@@ -86,41 +106,30 @@ body {
   }
 }
 
-/* ── Selection ────────────────────────────────────────────── */
 ::selection {
-  background: var(--color-ink);
+  background: var(--color-clay);
   color: var(--color-cream);
 }
 
-/* ── Focus ring ───────────────────────────────────────────── */
 :focus-visible {
   outline: 2px solid var(--color-clay);
   outline-offset: 3px;
-  border-radius: 2px;
+  border-radius: 1px;
 }
 
-/* ── Section divider hairline ─────────────────────────────── */
 .hairline {
   border-color: var(--color-hairline);
 }
 
-/* ── Image placeholder fallback (warm tone, not gray) ─────── */
-.img-placeholder {
-  background:
-    radial-gradient(at 30% 20%, rgba(184, 117, 74, 0.18), transparent 60%),
-    radial-gradient(at 70% 80%, rgba(28, 26, 23, 0.12), transparent 50%),
-    var(--color-cream-deep);
-}
-
-/* ── Subtle button hover lift ─────────────────────────────── */
 .btn-primary {
   background: var(--color-ink);
   color: var(--color-cream);
-  transition: transform 350ms var(--ease-editorial),
-    background 350ms var(--ease-editorial);
+  transition: background 350ms var(--ease-editorial),
+    transform 350ms var(--ease-editorial);
+  border-radius: 0;
 }
 .btn-primary:hover {
-  background: var(--color-clay-deep);
+  background: var(--color-clay);
   transform: translateY(-1px);
 }
 
@@ -134,4 +143,47 @@ body {
 .link-underline:hover {
   background-size: 0% 1px;
   background-position: 100% 100%;
+}
+
+/* Card surface — kept for components that still use the class */
+.card-surface {
+  background: var(--color-cream);
+  border: 1px solid var(--color-hairline);
+  border-radius: 0;
+  transition: border-color 400ms var(--ease-editorial),
+    transform 400ms var(--ease-editorial);
+}
+.card-surface:hover {
+  border-color: var(--color-clay);
+  transform: translateY(-1px);
+}
+
+/* Drop cap for the first paragraph of long-form sections */
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  float: left;
+  font-size: 4.6em;
+  line-height: 0.9;
+  padding: 0.05em 0.08em 0 0;
+  font-weight: 500;
+  color: var(--color-clay);
+}
+
+/* Editorial divider — small ornament between long-form sections */
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--color-mid);
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.2em;
+}
+.ornament::before,
+.ornament::after {
+  content: "";
+  width: 64px;
+  height: 1px;
+  background: var(--color-hairline);
 }

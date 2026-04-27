@@ -51,36 +51,34 @@ export default function Services() {
             </div>
           </div>
         </Reveal>
-        <div className="mt-20 flex flex-col">
-          {services.map((s, i) => {
-            const reverse = i % 2 === 1;
-            return (
-              <Reveal key={s.num}>
-                <article className={`grid grid-cols-12 items-center gap-6 border-t border-hairline py-14 md:gap-10 md:py-20 ${reverse ? "md:[direction:rtl]" : ""}`}>
-                  <div className="col-span-12 md:col-span-6 md:[direction:ltr]">
-                    <div role="img" aria-label={s.alt} className="img-placeholder relative aspect-[4/5] w-full overflow-hidden md:aspect-[3/4]"
-                      style={{ backgroundImage: `url(${asset(s.image)})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+
+        <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+          {services.map((s) => (
+            <Reveal key={s.num}>
+              <article className="card-surface flex h-full flex-col overflow-hidden">
+                <div role="img" aria-label={s.alt}
+                  className="img-placeholder relative aspect-[4/3] w-full"
+                  style={{ backgroundImage: `url(${asset(s.image)})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+                <div className="flex flex-1 flex-col p-8 md:p-10">
+                  <div className="flex items-baseline gap-4">
+                    <span className="display text-[14px] tracking-[0.16em] text-clay">{s.num}</span>
+                    <span className="h-px flex-1 bg-hairline" />
                   </div>
-                  <div className="col-span-12 md:col-span-6 md:[direction:ltr]">
-                    <div className="flex items-baseline gap-6">
-                      <span className="display text-[18px] text-mid">{s.num}</span>
-                      <span className="h-px flex-1 bg-hairline" />
-                    </div>
-                    <h3 className="display mt-6 text-[34px] leading-[1.05] md:text-[48px]">{s.name}</h3>
-                    <p className="mt-5 max-w-[44ch] text-[17px] text-ink-soft">{s.description}</p>
-                    <p className="mt-5 max-w-[44ch] text-[14px] italic text-mid">{s.outcome}</p>
-                    <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-[14px] text-ink">
-                      <span className="display text-[24px] text-ink">{s.price}</span>
-                      <span className="text-mid">·</span>
-                      <span className="text-mid">{s.duration}</span>
-                      <a href="#booking" className="ml-auto link-underline tracking-[0.02em]">Book this →</a>
-                    </div>
+                  <h3 className="display mt-5 text-[28px] leading-[1.08] md:text-[34px]">{s.name}</h3>
+                  <p className="mt-5 max-w-[44ch] text-[15px] leading-[1.65] text-ink-soft">{s.description}</p>
+                  <p className="mt-4 max-w-[44ch] text-[13px] italic text-mid">{s.outcome}</p>
+                  <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-8 text-[13px] text-ink">
+                    <span className="display text-[20px] text-ink">{s.price}</span>
+                    <span className="text-mid">·</span>
+                    <span className="text-mid">{s.duration}</span>
+                    <a href="#booking" className="ml-auto link-underline tracking-[0.04em] uppercase text-[12px]">Book this →</a>
                   </div>
-                </article>
-              </Reveal>
-            );
-          })}
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
+
         <Reveal>
           <p className="mt-14 max-w-[60ch] text-[14px] text-mid">
             Combo deals: 30 min foot + 30 min body for $45 · 40 min foot + 40 min body for $60. Active duty and veterans get 10% off any service with a valid ID — discounts cannot be combined. Cash and card both accepted. Tipping is appreciated but never required.
