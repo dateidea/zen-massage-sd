@@ -48,20 +48,20 @@ export default function Booking() {
               <div>
                 <p className="eyebrow">Or, faster</p>
                 <a
-                  href="tel:+16195480773"
+                  href="tel:+16196395282"
                   className="display mt-3 block text-[40px] leading-none text-clay hover:text-clay-deep md:text-[52px]"
                 >
-                  (619) 548-0773
+                  (619) 639-5282
                 </a>
                 <p className="mt-3 text-[14px] text-ink/55">
-                  Picked up by a real person, every day, 9 AM – 11 PM.
+                  Picked up by a real person, every day, 9 AM – 10 PM.
                 </p>
               </div>
 
               <div>
                 <p className="eyebrow">Walk-ins</p>
                 <p className="mt-3 text-[15px] text-ink/75">
-                  7086 El Cajon Blvd</p>
+                  5575 Baltimore Dr #106-107</p>
               </div>
             </div>
           </Reveal>
@@ -165,10 +165,10 @@ export default function Booking() {
                   <p className="mt-6 max-w-[44ch] text-[16px] text-ink/75">
                     If you don&rsquo;t hear from us by tomorrow morning, please call{" "}
                     <a
-                      href="tel:+16195480773"
+                      href="tel:+16196395282"
                       className="link-underline text-clay"
                     >
-                      (619) 548-0773
+                      (619) 639-5282
                     </a>
                     . Sometimes texts don&rsquo;t make it through and we hate to keep
                     you waiting.
