@@ -1,14 +1,13 @@
 "use client";
 
-import { useEffect, useRef, createElement } from "react";
-import type { ElementType, ReactNode } from "react";
+import { useEffect, useRef } from "react";
 
 type Props = {
-  as?: ElementType;
+  as?: "div" | "li" | "section";
   className?: string;
   delay?: number;
   zoom?: boolean;
-  children: ReactNode;
+  children: React.ReactNode;
 };
 
 /**
@@ -45,6 +44,12 @@ export default function Reveal({
     return () => obs.disconnect();
   }, [delay]);
 
+  const Tag = as as keyof JSX.IntrinsicElements;
   const cls = `${zoom ? "zoom-frame" : "reveal"} ${className}`;
-  return createElement(as, { ref, className: cls }, children);
+  return (
+    // @ts-expect-error - dynamic tag, ref typing
+    <Tag ref={ref} className={cls}>
+      {children}
+    </Tag>
+  );
 }
