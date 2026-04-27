@@ -45,11 +45,11 @@ const faqs: QA[] = [
     ),
   },
   {
-    q: "Are you really open until 11 PM?",
+    q: "Are you really open until 10 PM every night?",
     a: (
       <>
         Yes — every day, including Sunday. The last appointment goes on the
-        table at 10 PM and the doors lock at 11 PM. If you&rsquo;re coming late
+        table at 9 PM and the doors lock at 10 PM. If you&rsquo;re coming late
         after a shift, please call so we can keep someone on for you.
       </>
     ),
