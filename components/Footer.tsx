@@ -8,8 +8,7 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-5">
             <Logo />
             <p className="mt-6 max-w-[36ch] text-[14px] leading-[1.7] text-ink-soft">
-              A small neighborhood massage studio at 7086 El Cajon Blvd in La
-              Mesa. Hot stones, deep tissue, foot reflexology. Open every day,
+              A small neighborhood massage studio at 7086 El Cajon Blvd in San Diego. Hot stones, deep tissue, foot reflexology. Open every day,
               9:30 AM to 10 PM. Walk-ins welcome. Cash and Apple Pay
               accepted.
             </p>
@@ -47,7 +46,7 @@ export default function Footer() {
             <p className="mt-4 text-[14px] leading-[1.7] text-ink">
               Mon &ndash; Sun
               <br />
-              9:30 AM 10:00 AM &ndash; 9:30 PMndash; 10 PM
+              9:30 AM &ndash; 10 PM
             </p>
           </div>
 
