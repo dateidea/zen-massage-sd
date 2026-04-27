@@ -1,130 +1,95 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import Reveal from "./Reveal";
 import { asset } from "@/lib/asset";
 
-/**
- * Hero — image-with-text-overlay.
- * Full-bleed photograph, gentle dark scrim for legibility,
- * headline + subhead + CTAs floating on top.
- * Slow background zoom on scroll (parallax-like, respects
- * prefers-reduced-motion).
- */
 export default function Hero() {
-  const imgRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    const node = imgRef.current;
-    if (!node) return;
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    )
-      return;
-
-    let raf = 0;
-    const onScroll = () => {
-      cancelAnimationFrame(raf);
-      raf = requestAnimationFrame(() => {
-        const y = window.scrollY;
-        node.style.transform = `translate3d(0, ${y * 0.08}px, 0) scale(1.06)`;
-      });
-    };
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => {
-      cancelAnimationFrame(raf);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
-
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-[100svh] w-full items-end overflow-hidden bg-ink text-cream"
+      className="relative isolate w-full overflow-hidden text-cream min-h-[100svh] flex flex-col justify-end"
     >
+      {/* Background image */}
       <div
-        ref={imgRef}
-        className="img-placeholder absolute inset-0 -z-10 will-change-transform"
+        aria-hidden
+        className="absolute inset-0 -z-20"
         style={{
           backgroundImage: `url(${asset("/images/hero-01.jpg")})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        aria-hidden
       />
+      {/* Scrim for text legibility */}
       <div
+        aria-hidden
         className="absolute inset-0 -z-10"
         style={{
           background:
-            "linear-gradient(180deg, rgba(42,26,31,0.55) 0%, rgba(42,26,31,0.10) 35%, rgba(42,26,31,0.78) 100%)",
+            "linear-gradient(180deg, rgba(20,20,18,0.50) 0%, rgba(20,20,18,0.18) 35%, rgba(20,20,18,0.55) 70%, rgba(20,20,18,0.88) 100%)",
         }}
-        aria-hidden
       />
 
-      <div className="relative mx-auto w-full max-w-[1320px] px-6 pb-20 pt-40 md:px-10 md:pb-28 md:pt-48">
+      <div className="relative mx-auto w-full max-w-[1180px] px-6 pt-32 pb-16 md:px-10 md:pt-40 md:pb-24">
         <div className="grid grid-cols-12 gap-6">
-          <div className="col-span-12 md:col-span-10 lg:col-span-9">
-            <p
-              className="eyebrow mb-8"
-              style={{ color: "rgba(242,235,219,0.78)" }}
-            >
-              Blue Moon Spa &middot;{" "}
-              <span className="smallcaps">Established</span> on El Cajon
-              Boulevard, San Diego
+          <Reveal variant="fade" className="col-span-12">
+            <p className="eyebrow mb-10 text-cream/80">
+              ZEN Massage &middot; <span className="smallcaps">Established</span>
+              {" "}on El Cajon Boulevard, San Diego
             </p>
-            <h1 className="display text-cream text-[44px] leading-[0.98] sm:text-[64px] md:text-[88px] lg:text-[108px]">
+          </Reveal>
+          <Reveal variant="curtain-up" className="col-span-12">
+            <h1 className="display text-[44px] leading-[1.0] sm:text-[64px] md:text-[92px] lg:text-[112px] text-cream">
               An honest hour
               <br />
-              <span
-                className="italic font-light"
-                style={{ color: "rgba(242,235,219,0.85)" }}
-              >
+              <span className="italic font-light text-cream/70">
                 your shoulders have been
               </span>
               <br />
               waiting for.
             </h1>
-            <p
-              className="mt-8 max-w-[46ch] text-[17px] leading-[1.7] md:text-[19px]"
-              style={{ color: "rgba(242,235,219,0.82)" }}
-            >
+          </Reveal>
+
+          <Reveal variant="fade" delay={200} className="col-span-12 md:col-span-7 mt-12">
+            <p className="max-w-[46ch] text-[17px] leading-[1.75] text-cream/85 md:text-[19px]">
               A small, Asian-owned massage studio on El Cajon Boulevard.
               Sixty minutes of Swedish, deep tissue, or both — with hot
               stones and warm essential oil included, every time. Open
-              every day, 9 AM to 11 PM. Custom Hour, $79.99.
+              every day, 9:30 AM – 10 PM. Custom Hour, $79.99.
             </p>
-
             <div className="mt-10 flex flex-wrap items-center gap-6">
               <a
                 href="#booking"
-                className="btn-primary inline-flex items-center rounded-none px-7 py-4 text-[12px] tracking-[0.22em] uppercase"
+                className="inline-flex items-center bg-cream text-ink px-7 py-4 text-[12px] tracking-[0.22em] uppercase hover:bg-clay hover:text-cream transition-colors"
               >
                 Book a session
               </a>
               <a
-                href="tel:+16265222888"
-                className="link-underline text-[14px] tracking-[0.05em]"
-                style={{ color: "rgba(242,235,219,0.9)" }}
+                href="tel:+16195480773"
+                className="link-underline text-[14px] tracking-[0.05em] text-cream"
               >
-                Or call (626) 522-2888
+                Or call (619) 548-0773
               </a>
             </div>
-          </div>
+          </Reveal>
+
+          <Reveal
+            variant="fade"
+            delay={300}
+            className="col-span-12 md:col-span-4 md:col-start-9 mt-12 self-end"
+          >
+            <div className="border-t border-cream/30 pt-6 text-[13px] text-cream/70 md:text-right">
+              <span className="block eyebrow text-[10px] mb-2 text-cream/60">Open Tonight</span>
+              Until 11&nbsp;PM &middot; walk-ins welcome <br />
+              Hot stones &middot; essential oil &middot; included
+            </div>
+          </Reveal>
         </div>
       </div>
 
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-6 mx-auto flex max-w-[1320px] items-end justify-between px-6 text-[11px] tracking-[0.22em] uppercase md:px-10"
-        style={{ color: "rgba(242,235,219,0.6)" }}
-      >
+      <div className="relative mx-auto w-full max-w-[1180px] px-6 pb-6 text-[11px] tracking-[0.22em] uppercase text-cream/65 md:px-10 md:pb-8 flex flex-wrap items-center justify-between gap-4">
         <span>Asian-owned · LGBTQ+ friendly</span>
-        <span aria-hidden className="hidden md:inline">
-          4.5★ — Google reviews
-        </span>
-        <span aria-hidden className="hidden md:inline">
-          Scroll ↓
-        </span>
+        <span>4.7★ — Google reviews</span>
+        <span aria-hidden>Scroll ↓</span>
       </div>
     </section>
   );
