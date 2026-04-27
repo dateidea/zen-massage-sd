@@ -14,8 +14,8 @@ const faqs: QA[] = [
         an opening within thirty minutes if you arrive before 10 PM. If you
         want a specific time or therapist (Kiwi or Luna get requested by
         name), please call ahead at{" "}
-        <a className="link-underline text-clay" href="tel:+16265222888">
-          (626) 522-2888
+        <a className="link-underline text-clay" href="tel:+16195480773">
+          (619) 548-0773
         </a>
         .
       </>
@@ -69,11 +69,7 @@ const faqs: QA[] = [
     q: "Where do I park?",
     a: (
       <>
-        Free parking lot directly in front of the studio at 7034 El Cajon Blvd,
-        between 70th and 71st. Street parking on either side if the lot fills
-        up. We&rsquo;re a five-minute drive from SDSU and on the 1 and 815 bus
-        lines.
-      </>
+        Free parking lot directly in front of the studio at 7086 El Cajon Blvd</>
     ),
   },
   {

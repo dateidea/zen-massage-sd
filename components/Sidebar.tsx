@@ -12,7 +12,7 @@ const links = [
 export default function Sidebar() {
   return (
     <aside
-      aria-label="Blue Moon Spa primary"
+      aria-label="ZEN Massage primary"
       className="hidden lg:flex fixed inset-y-0 left-0 z-40 w-[260px] flex-col justify-between border-r border-hairline bg-cream-deep px-8 py-12"
     >
       <div>
@@ -42,7 +42,7 @@ export default function Sidebar() {
         <div className="border-t border-hairline pt-7">
           <p className="eyebrow">Reserve</p>
           <a
-            href="tel:+16265222888"
+            href="tel:+16195480773"
             className="display mt-2 block text-[28px] leading-none text-clay hover:text-clay-deep"
           >
             (626) 522&#x2011;2888
@@ -60,7 +60,7 @@ export default function Sidebar() {
       </nav>
 
       <div className="text-[11px] text-ink/45 leading-[1.7]">
-        7034 El Cajon Blvd<br />
+        7086 El Cajon Blvd<br />
         San Diego, CA 92115
         <br />
         <span className="text-clay">— established neighborhood —</span>
