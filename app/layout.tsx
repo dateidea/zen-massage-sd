@@ -16,7 +16,7 @@ const inter = Inter({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://oasis-8-massage.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://oasis8massage.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · Oasis 8 Massage",
   },
   description:
-    "A small, family-run massage studio on El Cajon Boulevard at 79th. Foot, hot stone, deep tissue, and combo work. Open every day, 10 AM to 9:30 PM. Combo: 30 min foot + 30 min body for $45. Walk-ins welcome.",
+    "Oasis 8 Massage at 7900 El Cajon Blvd, Suite C, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 10 AM to 9:30 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
   keywords: [
     "Oasis 8 Massage",
     "massage La Mesa",
@@ -35,13 +35,15 @@ export const metadata: Metadata = {
     "deep tissue massage San Diego",
     "hot stone massage La Mesa",
     "combo massage El Cajon Blvd",
+    "couples massage La Mesa",
     "walk-in massage La Mesa",
+    "military discount massage",
   ],
   openGraph: {
     title:
       "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
     description:
-      "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 10 AM to 9:30 PM at 7900 El Cajon Blvd.",
+      "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 10 AM to 9:30 PM at 7900 El Cajon Blvd, Suite C, La Mesa.",
     url: SITE_URL,
     siteName: "Oasis 8 Massage",
     locale: "en_US",
@@ -57,7 +59,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
+    title:
+      "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
     description:
       "An honest hour for everywhere you carry it. Open every day, 10 AM to 9:30 PM.",
     images: ["/images/og-01.jpg"],
@@ -90,13 +93,20 @@ export default function RootLayout({
               image: `${SITE_URL}/images/hero-01.jpg`,
               url: SITE_URL,
               telephone: "+16194396708",
+              email: "oasis8massage@gmail.com",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "7900 El Cajon Blvd, Ste C",
+                streetAddress: "7900 El Cajon Blvd, Suite C",
                 addressLocality: "La Mesa",
                 addressRegion: "CA",
+                postalCode: "91942",
                 addressCountry: "US",
+              },
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: 32.7696314,
+                longitude: -117.0269936,
               },
               openingHoursSpecification: [
                 {
@@ -115,13 +125,26 @@ export default function RootLayout({
                 },
               ],
               paymentAccepted: "Cash, Credit Card",
-              hasMap:
-                "https://maps.google.com/?q=7900+El+Cajon+Blvd+Suite+C+La+Mesa",
+              hasMap: "https://maps.app.goo.gl/BzZuUZrvG5NLdQzK6",
               makesOffer: [
-                "Foot massage",
-                "Full body massage with hot stones",
-                "Deep tissue massage",
-                "Couples massage",
+                {
+                  "@type": "Offer",
+                  name: "Combo: 30 min foot + 30 min body",
+                  price: "45.00",
+                  priceCurrency: "USD",
+                },
+                {
+                  "@type": "Offer",
+                  name: "Combo: 40 min foot + 40 min body",
+                  price: "60.00",
+                  priceCurrency: "USD",
+                },
+                {
+                  "@type": "Offer",
+                  name: "10% off — active duty and veterans",
+                  description:
+                    "Discount on any service with a valid military ID. Cannot be combined.",
+                },
               ],
             }),
           }}

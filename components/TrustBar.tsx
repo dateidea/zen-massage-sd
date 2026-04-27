@@ -1,10 +1,16 @@
 import Reveal from "./Reveal";
 
 const stats = [
-  { value: "$45", label: "30 min foot + 30 min body, all-in" },
-  { value: "10–9:30", label: "Open every day, seven days a week" },
-  { value: "10% off", label: "Active duty & veterans, with valid ID" },
-  { value: "Walk-ins", label: "Almost always an opening — try us" },
+  { value: "4.7★", label: "Google rating across 26 verified reviews" },
+  { value: "9 – 10", label: "Open every day, last booking at 9 PM" },
+  {
+    value: "4 styles",
+    label: "Full body · Foot reflexology · Deep tissue · Hot stone",
+  },
+  {
+    value: "Walk-ins",
+    label: "Private rooms, almost always an opening within 30 min",
+  },
 ];
 
 export default function TrustBar() {

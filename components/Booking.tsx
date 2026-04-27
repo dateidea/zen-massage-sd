@@ -50,13 +50,13 @@ export default function Booking() {
                   Or, faster
                 </p>
                 <a
-                  href="tel:+16194396708"
+                  href="tel:+16195480773"
                   className="display mt-3 block text-[36px] leading-none text-ink hover:text-clay md:text-[44px]"
                 >
-                  (619) 439-6708
+                  (619) 548-0773
                 </a>
                 <p className="mt-3 text-[14px] text-mid">
-                  Picked up by a real person, every day, 10 AM – 9:30 PM.
+                  Picked up by a real person, every day, 9:30 AM – 10 PM.
                 </p>
               </div>
 
@@ -65,7 +65,7 @@ export default function Booking() {
                   Walk-ins
                 </p>
                 <p className="mt-3 text-[15px] text-ink-soft">
-                  7900 El Cajon Blvd, Suite C, La Mesa. Free lot in the same
+                  7086 El Cajon Blvd, Suite C, La Mesa. Free lot in the same
                   plaza. We can almost always fit you in within 30 minutes —
                   try us.
                 </p>
@@ -169,10 +169,10 @@ export default function Booking() {
                   <p className="mt-6 max-w-[44ch] text-[16px] text-ink-soft">
                     If you don't hear from us by tomorrow morning, please call{" "}
                     <a
-                      href="tel:+16194396708"
+                      href="tel:+16195480773"
                       className="link-underline text-ink"
                     >
-                      (619) 439-6708
+                      (619) 548-0773
                     </a>
                     . Sometimes texts don't make it through and we hate to keep
                     you waiting.

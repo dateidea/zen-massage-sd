@@ -66,12 +66,12 @@ export default function Nav() {
           ))}
           <li>
             <a
-              href="tel:+16194396708"
+              href="tel:+16196395282"
               className={`text-[14px] tracking-[0.01em] ${
                 scrolled ? "text-ink-soft" : "text-cream/85"
               }`}
             >
-              (619) 439-6708
+              (619) 639-5282
             </a>
           </li>
           <li>
@@ -142,10 +142,10 @@ export default function Nav() {
           </ul>
           <div className="flex flex-col gap-4">
             <a
-              href="tel:+16194396708"
+              href="tel:+16196395282"
               className="display text-[28px] text-ink"
             >
-              (619) 439-6708
+              (619) 639-5282
             </a>
             <a
               href="#booking"
@@ -155,7 +155,7 @@ export default function Nav() {
               Book a session
             </a>
             <p className="text-[12px] text-mid">
-              7900 El Cajon Blvd, Ste C · La Mesa · Open daily, 10 AM – 9:30 PM
+              5575 Baltimore Dr, La Mesa · Open 9 AM – 10 PM, daily
             </p>
           </div>
         </div>

@@ -9,7 +9,7 @@ export default function Footer() {
             <Logo />
             <p className="mt-6 max-w-[36ch] text-[14px] leading-[1.7] text-ink-soft">
               A small, family-run massage studio on El Cajon Boulevard. Open
-              every day, 10 AM to 9:30 PM. Walk-ins welcome. 10% off for active
+              every day, 9:30 AM to 10 PM. Walk-ins welcome. 10% off for active
               duty and veterans.
             </p>
             <a
@@ -25,14 +25,14 @@ export default function Footer() {
               Visit
             </p>
             <address className="mt-4 not-italic text-[14px] leading-[1.7] text-ink">
-              7900 El Cajon Blvd
+              7086 El Cajon Blvd
               <br />
               Suite C
               <br />
               La Mesa, CA
             </address>
             <a
-              href="https://maps.google.com/?q=7900+El+Cajon+Blvd+Suite+C+La+Mesa"
+              href="https://maps.google.com/?q=7086+El+Cajon+Blvd+San+Diego+CA"
               target="_blank"
               rel="noreferrer"
               className="link-underline mt-4 inline-block text-[13px] text-mid"
@@ -57,10 +57,10 @@ export default function Footer() {
               Reach us
             </p>
             <a
-              href="tel:+16194396708"
+              href="tel:+16195480773"
               className="display mt-3 block text-[28px] leading-none text-ink"
             >
-              (619) 439-6708
+              (619) 548-0773
             </a>
             <ul className="mt-6 flex flex-col gap-2 text-[13px] text-ink-soft">
               <li>
@@ -89,7 +89,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-[12px] text-mid md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} Oasis 8 Massage. All rights reserved.
+            © {new Date().getFullYear()} ZEN Massage. All rights reserved.
           </p>
           <p>Cash &amp; card accepted · Tipping never required</p>
         </div>

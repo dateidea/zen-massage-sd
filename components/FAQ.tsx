@@ -10,12 +10,11 @@ const faqs: QA[] = [
     q: "Do I need an appointment, or can I walk in?",
     a: (
       <>
-        Both are fine. Walk-ins are honestly welcome — there&rsquo;s almost always
-        an opening within thirty minutes if you arrive before 10 PM. If you
-        want a specific time or therapist (Kiwi or Luna get requested by
-        name), please call ahead at{" "}
-        <a className="link-underline" href="tel:+16265222888">
-          (626) 522-2888
+        Both are fine. Walk-ins are honestly welcome &mdash; there is almost
+        always an opening within thirty minutes if you arrive before 9 PM. If
+        you want a specific time or therapist, please call ahead at{" "}
+        <a className="link-underline" href="tel:+16194396708">
+          (619) 548-0773
         </a>
         .
       </>
@@ -25,11 +24,13 @@ const faqs: QA[] = [
     q: "How much does it cost? Are there hidden fees?",
     a: (
       <>
-        The Custom Hour — Swedish, deep tissue, or both — is $79.99 with free
-        essential oil and free hot stone work included. Foot reflexology is
-        $59.99. That&rsquo;s the whole price list. No membership fees, no booking
-        fees. Tipping is appreciated but never required and never appears on
-        the bill.
+        Our combo deals are the easiest entry point: $45 for 30 min foot + 30
+        min body, or $60 for 40 min foot + 40 min body. Foot massage starts
+        from $50 for the full hour, full body with hot stones from $60, deep
+        tissue from $55. Active duty and veterans get 10% off any service with
+        a valid ID &mdash; discounts cannot be combined. No membership fees,
+        no booking fees. Tipping is appreciated but never required and never
+        appears on the bill.
       </>
     ),
   },
@@ -37,31 +38,33 @@ const faqs: QA[] = [
     q: "What kind of pressure should I ask for?",
     a: (
       <>
-        If you&rsquo;re not sure, start with medium and tell us within the first ten
-        minutes if you want more or less. We&rsquo;d rather adjust five times than
-        leave you sore tomorrow. Deep work means slow-loaded forearms and
-        elbows on specific knots — not just &ldquo;harder pressure everywhere.&rdquo;
+        If you are not sure, start with medium and tell us within the first
+        ten minutes if you want more or less. We would rather adjust five
+        times than leave you sore tomorrow. Deep tissue means slow-loaded
+        forearms and elbows on specific knots &mdash; not just &ldquo;harder
+        pressure everywhere.&rdquo;
       </>
     ),
   },
   {
-    q: "Are you really open until 11 PM?",
+    q: "What hours are you open?",
     a: (
       <>
-        Yes — every day, including Sunday. The last appointment goes on the
-        table at 10 PM and the doors lock at 11 PM. If you&rsquo;re coming late
-        after a shift, please call so we can keep someone on for you.
+        Every day, ten in the morning until nine-thirty at night. Last
+        appointment is taken at 9 PM and the doors lock at 9:30 PM. If you are
+        coming late after a shift, please call so we can keep someone on for
+        you.
       </>
     ),
   },
   {
-    q: "What&rsquo;s actually included in the $79.99?",
+    q: "How does the couples room work?",
     a: (
       <>
-        A full sixty minutes on the table, your choice of Swedish, deep tissue,
-        or a combination of both. Free hot stones placed along the back and
-        shoulders. Free essential oil — lavender, eucalyptus, or unscented.
-        Hot tea before, hot tea after. Nothing extra to opt into.
+        Two practitioners, one quiet room, side-by-side tables. Same hour,
+        same warm towels, same cup of tea after. The couples room books up
+        before the rest of the studio &mdash; calling ahead is the difference
+        between a yes and a maybe.
       </>
     ),
   },
@@ -69,31 +72,30 @@ const faqs: QA[] = [
     q: "Where do I park?",
     a: (
       <>
-        Free parking lot directly in front of the studio at 7034 El Cajon Blvd,
-        between 70th and 71st. Street parking on either side if the lot fills
-        up. We&rsquo;re a five-minute drive from SDSU and on the 1 and 815 bus
-        lines.
+        Free parking lot directly in front of the studio at 7086 El Cajon
+        Blvd, Suite C, La Mesa, between 78th and 79th Street. We are a
+        five-minute drive from SDSU, on the 1 and 815 bus lines, and just
+        east of the College Area.
       </>
     ),
   },
   {
-    q: "Is it OK during pregnancy?",
+    q: "Do you take cards?",
     a: (
       <>
-        Yes — please mention it when you call so we can put you with a
-        practitioner who works with prenatal clients. Side-lying with bolsters
-        from the second trimester onward, gentle pressure, no deep abdominal
-        work.
+        Yes &mdash; we accept cash and all major cards. Tipping in cash is
+        appreciated. We do not auto-add gratuity to the bill or charge a
+        booking fee.
       </>
     ),
   },
   {
-    q: "What&rsquo;s your cancellation policy?",
+    q: "What is your cancellation policy?",
     a: (
       <>
-        Same-day cancellations are fine. We don&rsquo;t charge for them. If you
-        no-show three times in a row we&rsquo;ll ask for a card on file for the
-        next booking — that&rsquo;s the only enforcement we have.
+        Same-day cancellations are fine. We do not charge for them. If you
+        no-show three times in a row we will ask for a card on file for the
+        next booking &mdash; that is the only enforcement we have.
       </>
     ),
   },
