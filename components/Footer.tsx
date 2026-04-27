@@ -9,7 +9,7 @@ export default function Footer() {
             <Logo />
             <p className="mt-6 max-w-[36ch] text-[14px] leading-[1.7] text-ink-soft">
               A small, family-run massage studio on El Cajon Boulevard. Open
-              every day, 9:30 AM to 10 PM. Walk-ins welcome. 10% off for active
+              every day, 9 AM to 10 PM. Walk-ins welcome. 10% off for active
               duty and veterans.
             </p>
             <a
@@ -25,7 +25,7 @@ export default function Footer() {
               Visit
             </p>
             <address className="mt-4 not-italic text-[14px] leading-[1.7] text-ink">
-              7086 El Cajon Blvd
+              5575 Baltimore Dr #106-107, La Mesa
               <br />
               Suite C
               <br />
@@ -48,7 +48,7 @@ export default function Footer() {
             <p className="mt-4 text-[14px] leading-[1.7] text-ink">
               Mon – Sun
               <br />
-              10:00 AM – 9:30 PM
+              9:00 AM – 10 PM
             </p>
           </div>
 
@@ -57,10 +57,10 @@ export default function Footer() {
               Reach us
             </p>
             <a
-              href="tel:+16195480773"
+              href="tel:+16196395282"
               className="display mt-3 block text-[28px] leading-none text-ink"
             >
-              (619) 548-0773
+              (619) 639-5282
             </a>
             <ul className="mt-6 flex flex-col gap-2 text-[13px] text-ink-soft">
               <li>

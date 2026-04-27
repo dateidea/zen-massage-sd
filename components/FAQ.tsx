@@ -14,7 +14,7 @@ const faqs: QA[] = [
         always an opening within thirty minutes if you arrive before 9 PM. If
         you want a specific time or therapist, please call ahead at{" "}
         <a className="link-underline" href="tel:+16196395282">
-          (619) 548-0773
+          (619) 639-5282
         </a>
         .
       </>
@@ -51,7 +51,7 @@ const faqs: QA[] = [
     a: (
       <>
         Every day, ten in the morning until nine-thirty at night. Last
-        appointment is taken at 9 PM and the doors lock at 9:30 PM. If you are
+        appointment is taken at 9 PM and the doors lock at 10 PM. If you are
         coming late after a shift, please call so we can keep someone on for
         you.
       </>
@@ -72,8 +72,8 @@ const faqs: QA[] = [
     q: "Where do I park?",
     a: (
       <>
-        Free parking lot directly in front of the studio at 7086 El Cajon
-        Blvd, Suite C, La Mesa, between 78th and 79th Street. We are a
+        Free parking lot directly in front of the studio at 5575 Baltimore Dr
+        Blvd, La Mesa, between 78th and 79th Street. We are a
         five-minute drive from SDSU, on the 1 and 815 bus lines, and just
         east of the College Area.
       </>

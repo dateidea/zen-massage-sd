@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · Oasis 8 Massage",
   },
   description:
-    "Oasis 8 Massage at 5575 Baltimore Dr #106-107, Suite C, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 10 AM to 9:30 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
+    "Oasis 8 Massage at 5575 Baltimore Dr #106-107, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 9 AM to 10 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
   keywords: [
     "Oasis 8 Massage",
     "massage La Mesa",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title:
       "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
     description:
-      "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 10 AM to 9:30 PM at 5575 Baltimore Dr #106-107, Suite C, La Mesa.",
+      "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 9 AM to 10 PM at 5575 Baltimore Dr #106-107, La Mesa.",
     url: SITE_URL,
     siteName: "Oasis 8 Massage",
     locale: "en_US",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title:
       "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
     description:
-      "An honest hour for everywhere you carry it. Open every day, 10 AM to 9:30 PM.",
+      "An honest hour for everywhere you carry it. Open every day, 9 AM to 10 PM.",
     images: ["/images/og-01.jpg"],
   },
   alternates: { canonical: SITE_URL },
@@ -97,7 +97,7 @@ export default function RootLayout({
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "5575 Baltimore Dr #106-107, Suite C",
+                streetAddress: "5575 Baltimore Dr #106-107, Floor 1, Baltimore Plaza",
                 addressLocality: "La Mesa",
                 addressRegion: "CA",
                 postalCode: "91942",
@@ -120,8 +120,8 @@ export default function RootLayout({
                     "Saturday",
                     "Sunday",
                   ],
-                  opens: "10:00",
-                  closes: "21:30",
+                  opens: "09:00",
+                  closes: "22:00",
                 },
               ],
               paymentAccepted: "Cash, Credit Card",

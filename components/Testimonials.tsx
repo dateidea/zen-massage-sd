@@ -117,7 +117,7 @@ export default function Testimonials() {
             <span aria-hidden className="hidden md:inline">
               ·
             </span>
-            <span>7086 El Cajon Blvd, La Mesa · open daily, 10 – 9:30</span>
+            <span>5575 Baltimore Dr #106-107, La Mesa · open daily, 9 AM – 10 PM</span>
           </div>
         </Reveal>
       </div>

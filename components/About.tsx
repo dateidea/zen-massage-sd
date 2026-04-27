@@ -73,7 +73,7 @@ export default function About() {
               </div>
               <div>
                 <p className="text-mid">Hours</p>
-                <p className="mt-1 text-ink">Daily, 10 AM &ndash; 9:30 PM</p>
+                <p className="mt-1 text-ink">Daily, 10 AM &ndash; 10 PM</p>
               </div>
               <div>
                 <p className="text-mid">Combo deal</p>
