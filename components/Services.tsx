@@ -2,86 +2,162 @@ import Reveal from "./Reveal";
 import { asset } from "@/lib/asset";
 
 type Service = {
-  num: string; name: string; description: string; outcome: string; duration: string; price: string; image: string; alt: string;
+  num: string;
+  name: string;
+  description: string;
+  outcome: string;
+  duration: string;
+  price: string;
+  image: string;
+  alt: string;
 };
 
 const services: Service[] = [
-  { num: "01", name: "Foot Massage",
-    description: "Sixty minutes in a heated recliner — Epsom-salt soak, hot towel, warm oil. Targeted pressure through the arch, the calf, and the reflex points along the heel. Most clients close their eyes inside the first ten minutes.",
-    outcome: "For: nurses, servers, parents, anyone who has been on their feet.",
-    duration: "60 min", price: "From $50",
-    image: "/images/about-01.jpg",
-    alt: "A folded ivory linen towel set out on a cedar bench beside the recliner — the warm towel ready for the hour" },
-  { num: "02", name: "Full Body with Hot Stones",
-    description: "A full hour head-to-toe — back, neck, shoulders, glutes, legs, arms — with smooth basalt stones warmed in water and worked along the back to draw the deep stuff out. Medium pressure unless you say otherwise.",
-    outcome: "For: the long week, the bad chair, the shoulders that will not drop.",
-    duration: "60 min", price: "From $60",
+  {
+    num: "01",
+    name: "The Custom Hour",
+    description:
+      "Sixty minutes head-to-toe — Swedish strokes, deep tissue, or both, your call. Free essential oil and free hot stone work included, every time. The signature service. Most clients leave on this and rebook on the way out.",
+    outcome:
+      "For: the long week, the locked-up shoulders, the night you finally have to yourself.",
+    duration: "60 min",
+    price: "$79.99",
+    image: "/images/service-relax-01.jpg",
+    alt: "Architectural interior of a treatment room — midnight plaster walls, low cedar table dressed in ivory linen, single brass pendant overhead",
+  },
+  {
+    num: "02",
+    name: "Deep Tissue",
+    description:
+      "Slow-loaded forearm and elbow work into the layer beneath the surface. Not just \"harder pressure everywhere\" — the right knot, the right tool, the right amount of time. We pick the depth together at the ten-minute mark.",
+    outcome: "For: chronic knots, athletes, anyone who lifts things for a living.",
+    duration: "60 min",
+    price: "$79.99",
+    image: "/images/service-deep-02.jpg",
+    alt: "Architectural shot of a darkened treatment room — tungsten brass sconce throwing a warm pool of light across a folded linen, deep midnight shadow",
+  },
+  {
+    num: "03",
+    name: "Hot Stone Therapy",
+    description:
+      "Smooth basalt stones warmed in water, worked along the back and shoulders to draw the deep stuff out. Already included in The Custom Hour — call it out at the front desk and we will prep the stones before you arrive.",
+    outcome:
+      "For: cold-weather days, deep stress, the kind of week that sits in your back.",
+    duration: "Included with the hour",
+    price: "Included",
     image: "/images/service-stone-03.jpg",
-    alt: "Seven smooth dark basalt river stones arranged in a quiet line on folded ivory linen, beside a small ceramic bowl of warm oil" },
-  { num: "03", name: "Deep Tissue & Combo",
-    description: "Slow-loaded forearm and elbow work into the layer beneath the surface. Or split the hour: thirty on the feet, thirty on the body, for forty-five dollars. We pick the pressure together at the ten-minute mark.",
-    outcome: "For: chronic knots, athletes, people who lift things for a living.",
-    duration: "60 min · 30/30 from $45", price: "From $55",
-    image: "/images/service-thai-04.jpg",
-    alt: "A warm oil bowl and a single dark river stone on a wooden stool beside the cedar massage table — the tools warming before the work" },
-  { num: "04", name: "Couples Room",
-    description: "Two practitioners, one quiet room, side-by-side tables. Hot stones included on request, same warm towels, same cup of tea afterward. The couples room books up before the rest of the studio — calling ahead is the difference between a yes and a maybe.",
-    outcome: "For: anniversaries, post-flight, the rare night you both have free.",
-    duration: "60 min · per pair", price: "Call for current rate",
-    image: "/images/og-01.jpg",
-    alt: "A quiet warm treatment room with cedar-panelled walls, sheer linen curtains, hanging plant, and ivory linen on the table — set up for the hour" },
+    alt: "Studio still — six smooth dark basalt stones arranged on a brass tray, midnight backdrop, single warm spotlight, faint steam",
+  },
+  {
+    num: "04",
+    name: "Foot Reflexology",
+    description:
+      "Sixty minutes in a heated recliner with a hot towel and warm oil. Targeted pressure through the arch, the calf, and the reflex points along the heel. Most clients close their eyes inside the first ten minutes.",
+    outcome: "For: nurses, servers, parents — anyone on their feet all day.",
+    duration: "60 min",
+    price: "$59.99",
+    image: "/images/service-foot-04.jpg",
+    alt: "Architectural — heated recliner chair in a dim midnight-blue room, brass floor lamp casting a single warm pool of light onto a folded ivory towel",
+  },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="bg-cream py-24 md:py-32" aria-labelledby="services-heading">
+    <section
+      id="services"
+      className="bg-cream py-28 md:py-36"
+      aria-labelledby="services-heading"
+    >
       <div className="mx-auto max-w-[1320px] px-6 md:px-10">
         <Reveal>
-          <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-12 md:col-span-4"><p className="eyebrow">The menu</p></div>
+          <div className="grid grid-cols-12 gap-6 items-end">
+            <div className="col-span-12 md:col-span-4">
+              <p className="eyebrow">The menu</p>
+            </div>
             <div className="col-span-12 md:col-span-8">
-              <h2 id="services-heading" className="display text-[40px] leading-[1.02] md:text-[64px]">
-                Four services.<br />
-                <span className="italic font-light text-ink-soft">No memberships, no add-on traps,</span><br />
+              <h2
+                id="services-heading"
+                className="display text-[44px] leading-[1.02] md:text-[72px]"
+              >
+                A short menu.
+                <br />
+                <span className="italic font-light text-ink/55">
+                  No memberships, no add-on traps,
+                </span>
+                <br />
                 no upsell at the door.
               </h2>
-              <p className="mt-8 max-w-[58ch] text-[17px] text-ink-soft">
-                Most people walk in for one of these. Combo deals — foot plus body in the same hour — are how regulars come in. Walk-ins welcome until 9 PM. Calling ahead helps, especially for the couples room.
+              <p className="mt-8 max-w-[58ch] text-[16px] leading-[1.7] text-ink/70">
+                Most people walk in for the same reason — something hurts,
+                sleep has been bad, or the week was too long. Below is the
+                entire menu. Walk-ins welcome until 10 PM. Calling ahead helps.
               </p>
             </div>
           </div>
         </Reveal>
 
-        <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
-          {services.map((s) => (
-            <Reveal key={s.num}>
-              <article className="card-surface flex h-full flex-col overflow-hidden">
-                <div role="img" aria-label={s.alt}
-                  className="img-placeholder relative aspect-[4/3] w-full"
-                  style={{ backgroundImage: `url(${asset(s.image)})`, backgroundSize: "cover", backgroundPosition: "center" }} />
-                <div className="flex flex-1 flex-col p-8 md:p-10">
-                  <div className="flex items-baseline gap-4">
-                    <span className="display text-[14px] tracking-[0.16em] text-clay">{s.num}</span>
+        <div className="mt-24 flex flex-col">
+          {services.map((s, i) => {
+            const reverse = i % 2 === 1;
+            return (
+              <article
+                key={s.num}
+                className={`grid grid-cols-12 items-center gap-6 border-t border-hairline py-16 md:gap-12 md:py-24 ${
+                  reverse ? "md:[direction:rtl]" : ""
+                }`}
+              >
+                <div className="col-span-12 md:col-span-7 md:[direction:ltr]">
+                  <Reveal zoom className="aspect-[4/5] w-full md:aspect-[3/4]">
+                    <div
+                      role="img"
+                      aria-label={s.alt}
+                      className="zoom-img img-placeholder"
+                      style={{ backgroundImage: `url(${asset(s.image)})` }}
+                    />
+                  </Reveal>
+                </div>
+
+                <Reveal delay={120} className="col-span-12 md:col-span-5 md:[direction:ltr]">
+                  <div className="flex items-baseline gap-6">
+                    <span className="text-clay tracking-[0.18em] uppercase text-[11px]">
+                      {s.num}
+                    </span>
                     <span className="h-px flex-1 bg-hairline" />
                   </div>
-                  <h3 className="display mt-5 text-[28px] leading-[1.08] md:text-[34px]">{s.name}</h3>
-                  <p className="mt-5 max-w-[44ch] text-[15px] leading-[1.65] text-ink-soft">{s.description}</p>
-                  <p className="mt-4 max-w-[44ch] text-[13px] italic text-mid">{s.outcome}</p>
-                  <div className="mt-auto flex flex-wrap items-center gap-x-5 gap-y-2 pt-8 text-[13px] text-ink">
-                    <span className="display text-[20px] text-ink">{s.price}</span>
-                    <span className="text-mid">·</span>
-                    <span className="text-mid">{s.duration}</span>
-                    <a href="#booking" className="ml-auto link-underline tracking-[0.04em] uppercase text-[12px]">Book this →</a>
+                  <h3 className="display mt-6 text-[40px] leading-[1.02] md:text-[64px]">
+                    {s.name}
+                  </h3>
+                  <p className="mt-6 max-w-[42ch] text-[16px] leading-[1.7] text-ink/75">
+                    {s.description}
+                  </p>
+                  <p className="mt-5 max-w-[42ch] text-[14px] italic text-ink/45">
+                    {s.outcome}
+                  </p>
+                  <div className="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-[14px] text-ink">
+                    <span className="display text-[28px] text-clay">
+                      {s.price}
+                    </span>
+                    <span className="text-ink/45">·</span>
+                    <span className="text-ink/65">{s.duration}</span>
+                    <a
+                      href="#booking"
+                      className="ml-auto link-underline tracking-[0.04em] text-clay"
+                    >
+                      Book this →
+                    </a>
                   </div>
-                </div>
+                </Reveal>
               </article>
-            </Reveal>
-          ))}
+            );
+          })}
         </div>
 
         <Reveal>
-          <p className="mt-14 max-w-[60ch] text-[14px] text-mid">
-            Combo deals: 30 min foot + 30 min body for $45 · 40 min foot + 40 min body for $60. Active duty and veterans get 10% off any service with a valid ID — discounts cannot be combined. Cash and card both accepted. Tipping is appreciated but never required.
+          <p className="mt-16 max-w-[60ch] text-[13px] leading-[1.7] text-ink/55">
+            The Custom Hour at $79.99 is the limited-time house rate — Swedish,
+            deep tissue, or a combination, with free essential oil and free
+            hot stones included. Cash and card both accepted. Tipping is
+            appreciated but never required and never appears on the bill.
           </p>
         </Reveal>
       </div>

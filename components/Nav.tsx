@@ -32,23 +32,24 @@ export default function Nav() {
     <header
       className={`fixed inset-x-0 top-0 z-40 transition-[background,backdrop-filter,border-color] duration-500 ${
         scrolled || open
-          ? "bg-night/90 backdrop-blur-md border-b border-hairline"
+          ? "bg-cream/85 backdrop-blur-md border-b border-hairline"
           : "bg-transparent border-b border-transparent"
       }`}
     >
       <nav
-        className="mx-auto flex max-w-[1240px] items-center justify-between px-6 py-5 md:px-10 md:py-6"
+        className="mx-auto flex max-w-[1320px] items-center justify-between px-6 py-5 md:px-10 md:py-6"
         aria-label="Primary"
       >
-        <a href="#top" className="text-cream transition-colors">
+        <a href="#top" className="text-ink transition-colors">
           <Logo />
         </a>
-        <ul className="hidden items-center gap-8 md:flex text-cream">
+
+        <ul className="hidden items-center gap-10 md:flex text-ink/85">
           {links.map((l) => (
             <li key={l.href}>
               <a
                 href={l.href}
-                className="link-underline text-[12px] tracking-[0.16em] uppercase"
+                className="link-underline text-[13px] tracking-[0.04em] uppercase"
               >
                 {l.label}
               </a>
@@ -56,26 +57,27 @@ export default function Nav() {
           ))}
           <li>
             <a
-              href="tel:+16195480773"
-              className="text-[12px] tracking-[0.14em] uppercase text-cream/70 hover:text-brass"
+              href="tel:+16265222888"
+              className="text-[13px] tracking-[0.04em] uppercase text-clay"
             >
-              (619) 548-0773
+              (626) 522-2888
             </a>
           </li>
           <li>
             <a
               href="#booking"
-              className="btn-primary inline-flex items-center rounded-full px-5 py-2.5 text-[11px] tracking-[0.18em] uppercase"
+              className="btn-primary inline-flex items-center rounded-none px-5 py-2.5 text-[12px] tracking-[0.18em] uppercase"
             >
               Book a session
             </a>
           </li>
         </ul>
+
         <button
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
           onClick={() => setOpen((s) => !s)}
-          className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden text-cream"
+          className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden text-ink"
         >
           <span className="sr-only">Menu</span>
           <span className="relative block h-3 w-6">
@@ -94,7 +96,7 @@ export default function Nav() {
       </nav>
 
       <div
-        className={`fixed inset-0 z-40 bg-night md:hidden ${
+        className={`fixed inset-0 z-40 bg-cream md:hidden ${
           open ? "pointer-events-auto" : "pointer-events-none"
         }`}
         aria-hidden={!open}
@@ -109,16 +111,16 @@ export default function Nav() {
               <li
                 key={l.href}
                 style={{
-                  transition: "all 700ms var(--ease-curtain)",
-                  transitionDelay: open ? `${100 + i * 70}ms` : "0ms",
-                  transform: open ? "scale(1)" : "scale(1.04)",
+                  transition: "all 600ms var(--ease-editorial)",
+                  transitionDelay: open ? `${100 + i * 60}ms` : "0ms",
+                  transform: open ? "translateY(0)" : "translateY(20px)",
                   opacity: open ? 1 : 0,
                 }}
               >
                 <a
                   href={l.href}
                   onClick={() => setOpen(false)}
-                  className="display block text-[48px] tracking-[-0.01em] text-cream"
+                  className="display block text-[44px] tracking-[-0.015em] text-ink"
                 >
                   {l.label}
                 </a>
@@ -126,21 +128,18 @@ export default function Nav() {
             ))}
           </ul>
           <div className="flex flex-col gap-4">
-            <a
-              href="tel:+16195480773"
-              className="display text-[32px] text-brass"
-            >
-              (619) 548-0773
+            <a href="tel:+16265222888" className="display text-[28px] text-clay">
+              (626) 522-2888
             </a>
             <a
               href="#booking"
               onClick={() => setOpen(false)}
-              className="btn-primary inline-flex w-full items-center justify-center rounded-full px-6 py-4 text-[11px] tracking-[0.18em] uppercase"
+              className="btn-primary inline-flex w-full items-center justify-center rounded-none px-6 py-4 text-[12px] tracking-[0.18em] uppercase"
             >
               Book a session
             </a>
-            <p className="text-[11px] tracking-[0.16em] uppercase text-cream/55">
-              7086 El Cajon Blvd &middot; San Diego &middot; Daily, 10 AM &ndash; 9:30 PM
+            <p className="text-[12px] text-mid">
+              7034 El Cajon Blvd · San Diego · Open every day, 9 AM – 11 PM
             </p>
           </div>
         </div>

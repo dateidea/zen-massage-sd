@@ -1,56 +1,55 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type Props = {
-  children: React.ReactNode;
-  delay?: number;
+  as?: "div" | "li" | "section";
   className?: string;
-  as?: "div" | "section" | "article" | "li" | "header";
+  delay?: number;
+  zoom?: boolean;
+  children: React.ReactNode;
 };
 
+/**
+ * Single reveal primitive. Defaults to a quiet fade.
+ * Pass `zoom` to use the signature slow image-zoom (the new motion
+ * direction). Components compose `Reveal zoom` around image frames
+ * to opt in.
+ */
 export default function Reveal({
-  children,
-  delay = 0,
+  as = "div",
   className = "",
-  as: Tag = "div",
+  delay = 0,
+  zoom = false,
+  children,
 }: Props) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [shown, setShown] = useState(false);
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setShown(true);
-      return;
-    }
     const obs = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
+        for (const e of entries) {
           if (e.isIntersecting) {
-            setShown(true);
-            obs.disconnect();
+            (e.target as HTMLElement).style.transitionDelay = `${delay}ms`;
+            e.target.classList.add("is-in");
+            obs.unobserve(e.target);
           }
-        });
+        }
       },
-      { threshold: 0.1, rootMargin: "0px 0px -8% 0px" }
+      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
     );
     obs.observe(node);
     return () => obs.disconnect();
-  }, []);
+  }, [delay]);
 
-  const Element = Tag as React.ElementType;
+  const Tag = as as keyof JSX.IntrinsicElements;
+  const cls = `${zoom ? "zoom-frame" : "reveal"} ${className}`;
   return (
-    <Element
-      ref={ref}
-      className={`reveal ${shown ? "is-in" : ""} ${className}`}
-      style={{ transitionDelay: shown ? `${delay}ms` : "0ms" }}
-    >
+    // @ts-expect-error - dynamic tag, ref typing
+    <Tag ref={ref} className={cls}>
       {children}
-    </Element>
+    </Tag>
   );
 }

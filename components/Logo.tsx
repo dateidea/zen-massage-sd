@@ -3,11 +3,13 @@ type Props = { className?: string };
 export default function Logo({ className = "" }: Props) {
   return (
     <span
-      className={`display text-[26px] tracking-[0.04em] uppercase leading-none ${className}`}
-      aria-label="ZEN Massage"
+      className={`display text-[22px] tracking-[-0.015em] leading-none ${className}`}
+      aria-label="Blue Moon Spa"
     >
-      ZEN
-      <span className="text-brass"> &middot; </span>Massage
+      Blue
+      <span className="italic font-light"> </span>Moon
+      <span className="text-clay font-light"> · </span>
+      <span className="opacity-70 font-light tracking-[0.02em] text-[18px]">SD</span>
     </span>
   );
 }

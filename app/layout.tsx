@@ -1,66 +1,66 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
-const display = Cormorant_Garamond({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-  style: ["normal", "italic"],
-  variable: "--font-display-google",
-});
-
-const body = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   display: "swap",
   weight: ["300", "400", "500", "600"],
-  variable: "--font-sans-google",
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
 });
 
-const SITE_URL = "https://navajo-spa.vercel.app";
+const manrope = Manrope({
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-manrope",
+});
+
+const SITE_URL = "https://dateidea.github.io/blue-moon-spa";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Navajo Spa — An Honest Hour in Baltimore Plaza, La Mesa",
-    template: "%s · Navajo Spa",
+    default: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard, San Diego",
+    template: "%s · Blue Moon Spa",
   },
   description:
-    "A small, family-run massage spa in Baltimore Plaza, La Mesa. Full body, foot reflexology, deep tissue, hot stone — fair prices, private rooms, stamp cards. Open every day, 9 AM to 10 PM. Walk-ins welcome.",
+    "A small, Asian-owned massage studio on El Cajon Boulevard. The Custom Hour: Swedish, deep tissue, or both — with hot stones and essential oil included, $79.99. Open every day, 9 AM to 11 PM. Walk-ins welcome.",
   keywords: [
-    "massage La Mesa",
-    "Navajo Spa",
-    "Baltimore Plaza massage",
-    "foot reflexology La Mesa",
-    "deep tissue massage La Mesa",
+    "Blue Moon Spa",
+    "massage San Diego",
+    "El Cajon Blvd massage",
+    "deep tissue massage San Diego",
+    "Swedish massage San Diego",
     "hot stone massage San Diego",
-    "Grossmont massage spa",
-    "couples massage La Mesa",
-    "walk-in massage La Mesa",
+    "Asian-owned massage",
+    "College Area massage",
+    "foot reflexology San Diego",
   ],
   openGraph: {
-    title: "Navajo Spa — An Honest Hour in Baltimore Plaza, La Mesa",
+    title: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard",
     description:
-      "An honest hour your shoulders have been waiting for. Full body, foot, deep tissue, hot stone. Open daily 9–10 in La Mesa. Walk-ins welcome.",
+      "Swedish, deep tissue, or both — with hot stones and essential oil included. $79.99 Custom Hour. Open daily 9–11 in San Diego.",
     url: SITE_URL,
-    siteName: "Navajo Spa",
+    siteName: "Blue Moon Spa",
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/images/og-01.jpg",
+        url: "/images/og-01.png",
         width: 1200,
         height: 630,
-        alt: "Navajo Spa — quiet treatment room in Baltimore Plaza, La Mesa",
+        alt: "Blue Moon Spa — quiet, brass-lit treatment room on El Cajon Boulevard",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Navajo Spa — An Honest Hour in La Mesa",
+    title: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard",
     description:
-      "An honest hour your shoulders have been waiting for. Open daily 9–10.",
-    images: ["/images/og-01.jpg"],
+      "Swedish, deep tissue, or both — with hot stones included. $79.99. Open daily 9–11.",
+    images: ["/images/og-01.png"],
   },
   alternates: { canonical: SITE_URL },
   robots: { index: true, follow: true },
@@ -70,11 +70,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${display.variable} ${body.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
       <body className="bg-cream text-ink antialiased">
         <a
           href="#booking"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-cream"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-clay focus:px-4 focus:py-2 focus:text-cream"
         >
           Skip to booking
         </a>
@@ -86,23 +86,23 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MassageTherapy",
               "@id": `${SITE_URL}/#business`,
-              name: "Navajo Spa",
+              name: "Blue Moon Spa",
               image: `${SITE_URL}/images/hero-01.jpg`,
               url: SITE_URL,
-              telephone: "+16196395282",
+              telephone: "+16265222888",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "5575 Baltimore Dr #106-107",
-                addressLocality: "La Mesa",
+                streetAddress: "7034 El Cajon Blvd",
+                addressLocality: "San Diego",
                 addressRegion: "CA",
-                postalCode: "91942",
+                postalCode: "92115",
                 addressCountry: "US",
               },
               geo: {
                 "@type": "GeoCoordinates",
-                latitude: 32.7803468,
-                longitude: -117.0321235,
+                latitude: 32.7691869,
+                longitude: -117.0461041,
               },
               openingHoursSpecification: [
                 {
@@ -117,15 +117,15 @@ export default function RootLayout({
                     "Sunday",
                   ],
                   opens: "09:00",
-                  closes: "22:00",
+                  closes: "23:00",
                 },
               ],
-              paymentAccepted: "Cash, Card, Apple Pay",
-              hasMap: "https://maps.app.goo.gl/3bFERDjYsj1cpB3c6",
+              paymentAccepted: "Cash, Credit Card",
+              hasMap: "https://maps.app.goo.gl/4wrpXnSY2Wy9iGuD9",
               aggregateRating: {
                 "@type": "AggregateRating",
-                ratingValue: "4.7",
-                reviewCount: "26",
+                ratingValue: "4.5",
+                reviewCount: "11",
               },
             }),
           }}
