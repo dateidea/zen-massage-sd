@@ -1,38 +1,52 @@
 "use client";
 
-import { useEffect, useRef, useState, type ElementType } from "react";
+import { useEffect, useRef, createElement } from "react";
+import type { ElementType, ReactNode } from "react";
+
+type Variant = "fade" | "curtain" | "curtain-up";
 
 type Props = {
-  children: React.ReactNode;
-  delay?: number;
-  className?: string;
   as?: ElementType;
+  className?: string;
+  delay?: number;
+  variant?: Variant;
+  children: ReactNode;
 };
 
-export default function Reveal({ children, delay = 0, className = "", as: Tag = "div" }: Props) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [shown, setShown] = useState(false);
+/**
+ * Reveal primitive. Default variant is `curtain` — the signature
+ * Heritage Classic gesture: a left-to-right clip-path wipe, like
+ * pulling back a velvet curtain. `curtain-up` wipes top-to-bottom,
+ * `fade` is the quiet fallback for type blocks.
+ */
+export default function Reveal({
+  as = "div",
+  className = "",
+  delay = 0,
+  variant = "curtain",
+  children,
+}: Props) {
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setShown(true);
-      return;
-    }
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) { setShown(true); obs.disconnect(); }
-      });
-    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
+    const obs = new IntersectionObserver(
+      (entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting) {
+            (e.target as HTMLElement).style.transitionDelay = `${delay}ms`;
+            e.target.classList.add("is-in");
+            obs.unobserve(e.target);
+          }
+        }
+      },
+      { rootMargin: "0px 0px -8% 0px", threshold: 0.05 }
+    );
     obs.observe(node);
     return () => obs.disconnect();
-  }, []);
+  }, [delay]);
 
-  const Element = Tag;
-  return (
-    <Element ref={ref} className={"reveal " + (shown ? "is-in " : "") + className} style={{ transitionDelay: shown ? delay + "ms" : "0ms" }}>
-      {children}
-    </Element>
-  );
+  const cls = `${variant} ${className}`;
+  return createElement(as, { ref, className: cls }, children);
 }

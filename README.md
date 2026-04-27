@@ -1,26 +1,30 @@
-# ZEN Massage — Marketing Site
+# Blue Moon Spa — Marketing Site
 
-A marketing site for **ZEN Massage**, an independently run massage studio at
-**7086 El Cajon Blvd, San Diego, CA 92115**. Built with **Next.js 15
-(App Router)**, **Tailwind CSS v4**, **TypeScript**.
+A high-converting marketing site for **Blue Moon Spa**, a small, Asian-owned
+massage studio at **7034 El Cajon Blvd, San Diego, CA 92115**.
 
-**Live**: <https://navajo-spa.vercel.app/>
-**Repo**: <https://github.com/dateidea/zen-massage-sd>
+Live at: https://dateidea.github.io/blue-moon-spa/
 
 ---
 
-## Design DNA — current iteration
+## Visual DNA — current redesign
 
-| Dimension | OLD (Architectural Apothecary) | NEW (Editorial Minimal · Aesop-meets-Apothecary) |
+| Dimension | Old DNA (Midnight Apothecary) | **New DNA — "Heritage Classic"** |
 | --- | --- | --- |
-| Aesthetic | Architectural (museum-calm, sticky rails) | **Editorial Minimal** (calm, restrained, slow) |
-| Type pairing | Cormorant Garamond + Space Grotesk | **Fraunces + Inter** (generous line-height) |
-| Palette | Cream `#F1EDE3` / Forest `#1F3A2F` / Copper `#B27746` | **Off-white `#F4EFE6` / Ink `#1F1A14` / Eucalyptus `#6F7F66`** (single accent) |
-| Layout | Sidebar Anchored (sticky `No. 0X` left rails) | **Centered Editorial Grid** (lockup-on-axis, 96–160 px section padding, lots of negative space) |
-| Motion | Sticky Reveal + lateral slide-from-left | **Subtle Fade-Up Only** (`translateY(16px)` + opacity, 700 ms ease-out) |
-| Imagery | Architectural/Spatial sticky-positioned | **Macro Detail** (hands, oils, neutral linen, soft diffused window light, slight grain — no faces in hero) |
+| Aesthetic | Dark Luxe (Tokyo onsen) | **Heritage Classic** (a 100-year-old hammam reopened by a young owner) |
+| Type | Cormorant + Manrope | **Newsreader + Source Serif 4** (Tiempos system, Google equivalents) |
+| Palette | Midnight Brass | **Heritage Cream** — cream `#F2EBDB` / deep ink `#2A1A1F` / burgundy accent `#5C1F23` |
+| Layout | Stacked Hero Blocks | **Sidebar Anchored** — fixed left rail with logo + section nav, content scrolls right |
+| Motion | Slow Image Zoom | **Curtain Reveal** — left-to-right clip-path wipe between sections and on every image frame |
+| Imagery | Architectural / spatial | **Heritage Classic** — warm tungsten interiors, marble, weathered brass, faint steam, classic tilework, hands wringing a hot towel |
 
-Copy, section order, business info, prices, CTAs, and form fields are 100% unchanged across iterations.
+**What changed:** colour tokens, font families, motion language, sidebar
+chrome, all image art-direction. Small caps for nav (heritage editorial
+detail). Body shifts right by `--sidebar` width on `lg+`.
+
+**What stayed:** every word of copy, every section, the section order, every
+CTA, every link, the form, the JSON-LD schema, the NAP, the price list,
+the Google review excerpts. Diff is tokens / components / images only.
 
 ---
 
@@ -28,85 +32,45 @@ Copy, section order, business info, prices, CTAs, and form fields are 100% uncha
 
 ```bash
 npm install
-npm run dev   # http://localhost:3000
-npm run build && npm start   # production
+npm run dev
+```
+
+Visit http://localhost:3000.
+
+```bash
+npm run build && npm start          # production
+GITHUB_PAGES=true npm run build      # static export to ./out for Pages
 ```
 
 ---
 
 ## Where to swap copy & colors
 
-- **Copy** lives inside each component file.
-- **Color tokens** are at the top of [`app/globals.css`](app/globals.css) inside `@theme { ... }`. Change `--color-eucalyptus` to swap the accent.
-- **Fonts** are loaded once in [`app/layout.tsx`](app/layout.tsx) via `next/font/google`.
-- **NAP, phone, hours** appear in `Nav.tsx`, `Hero.tsx`, `Footer.tsx`, `Booking.tsx`, `FAQ.tsx`, and the JSON-LD schema in `layout.tsx`.
+- **Copy** lives inside each component file. Search for the section name
+  (e.g. `components/Services.tsx` → the `services` array).
+- **Palette tokens** live at the top of `app/globals.css` inside `@theme`.
+  Change `--color-clay` to swap the burgundy accent across the entire site.
+- **Type variables** also in `globals.css` (`--font-display`, `--font-text`).
+  Font import lives in `app/layout.tsx`.
+- **NAP, hours, phone** appear in `Sidebar.tsx`, `Nav.tsx`, `Hero.tsx`,
+  `Footer.tsx`, `Booking.tsx`, FAQ, and the JSON-LD schema in `layout.tsx`.
+  Phone: `(626) 522-2888`.
 
 ---
 
-## Imagery — regeneration brief
+## Imagery — heritage hammam
 
-Macro detail, photoreal, soft diffused window light, slight grain. No people's
-faces in the hero. Carry-over images from prior iterations still match the
-brief subject; to re-roll for the new palette, the prompt template is:
-
-```
-Photorealistic macro detail for a premium massage studio website.
-[SUBJECT — practitioner's hands resting beside a small dark glass bottle of
-warm oil on neutral linen / a folded ivory linen towel / an open hand
-arranging botanical sprigs / hot stones cooling on a folded towel beside
-amber oil].
-Lighting: soft, diffused, daylight from a high window. Slight 35 mm film
-grain, gentle shallow depth of field.
-Color palette: warm off-white (#F4EFE6), deep ink (#1F1A14), single accent
-of eucalyptus green (#6F7F66) — no other colors.
-Composition: centered or rule-of-thirds, generous negative space.
-Mood: calm, restrained, slow, apothecary-quiet.
-Shot on a 50 mm full-frame lens.
-No text, no logos, no watermarks, no AI artifacts, no oversaturation, no
-people's faces in frame.
-Aspect ratio: [3:2 / 4:5 / 1:1].
-```
-
-After generation, run `python3 scripts/strip-watermark.py` to remove the
-ChatGPT sparkle.
-
----
-
-## Conversion logic per section (unchanged)
-
-- **Nav** — Transparent over hero; solidifies on scroll.
-- **Hero** — Centered headline names the customer outcome.
-- **Trust Bar** — Four hard numbers: combo price, hours, military discount, walk-ins.
-- **Services** — Four services with real prices and a one-sentence outcome line.
-- **Process** — Four numbered steps reduce uncertainty.
-- **Testimonials** — Long-form quotes with first name, role, and neighborhood.
-- **About** — First-person voice with a quiet still life.
-- **FAQ** — Eight questions handle real walk-in objections.
-- **Booking** — Minimum-field form + repeated phone number.
-- **Footer** — Quiet, complete NAP and one last booking CTA.
-
----
-
-## SEO / accessibility / performance
-
-- Semantic HTML, single `<h1>`, hierarchical `<h2>`/`<h3>` per section
-- `<a href="tel:">` on every visible phone number
-- WCAG AA color contrast (ink on off-white tested at 13:1+)
-- Focus rings via `:focus-visible` (eucalyptus outline)
-- `prefers-reduced-motion` disables parallax + reveal animations
-- JSON-LD `MassageTherapy` LocalBusiness schema in `app/layout.tsx`
-- `app/sitemap.ts` and `app/robots.ts`
-- OG card configured (`/images/og-01.jpg`)
-- `next/font` for Fraunces + Inter — no FOIT/FOUT
+Every photograph is generated via ChatGPT (GPT-4o image generation). The
+brief is in `scripts/apply-heritage.sh` comments. Subjects across the set:
+warm tungsten interiors, marble walls, weathered brass fixtures, faint
+steam, classic Moorish/hammam tilework, hot towels, copper bowls, hands
+wringing a hot towel. NO portraits, NO faces.
 
 ---
 
 ## Deploy
 
-```bash
-npx vercel deploy --prod --yes --name zen-massage-sd
-```
+GitHub Pages via `.github/workflows/pages.yml`. Push to `main` and the
+workflow builds + deploys automatically.
 
----
-
-**Confirmation: Copy unchanged. Structure unchanged. Only visual layer redesigned.**
+Confirmation: **Copy unchanged. Structure unchanged. Only visual layer redesigned.**

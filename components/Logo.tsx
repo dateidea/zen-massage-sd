@@ -1,8 +1,17 @@
 type Props = { className?: string };
+
 export default function Logo({ className = "" }: Props) {
   return (
-    <span className={`display text-[22px] tracking-[-0.04em] leading-none font-bold ${className}`} aria-label="Oasis 8 Massage">
-      Oasis<span className="text-clay-deep font-medium"> · </span>8
+    <span
+      className={`display text-[26px] tracking-[-0.01em] leading-none ${className}`}
+      aria-label="Blue Moon Spa"
+    >
+      Blue
+      <span className="italic font-light"> </span>Moon
+      <span className="text-clay"> · </span>
+      <span className="smallcaps text-[14px] tracking-[0.18em] opacity-70">
+        Spa
+      </span>
     </span>
   );
 }

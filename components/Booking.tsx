@@ -4,72 +4,177 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 
 const services = [
-  "Foot Massage — from $50 (60 min)",
-  "Full Body with Hot Stones — from $60 (60 min)",
-  "Deep Tissue — from $55 (60 min)",
-  "Combo: 30 foot + 30 body — $45",
-  "Combo: 40 foot + 40 body — $60",
-  "Couples Room — call for current rate",
+  "The Custom Hour, 60 min — $79.99",
+  "Deep Tissue, 60 min — $79.99",
+  "Foot Reflexology, 60 min — $59.99",
+  "Hot Stone (included with the hour)",
+  "Couples — call us, please",
   "Not sure — recommend something",
 ];
 
 export default function Booking() {
   const [submitted, setSubmitted] = useState(false);
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) { e.preventDefault(); setSubmitted(true); }
+
+  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
   return (
-    <section id="booking" className="relative overflow-hidden bg-cream-deep py-24 md:py-32" aria-labelledby="booking-heading">
-      <div className="mx-auto max-w-[1320px] px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-x-6 gap-y-12">
-          <Reveal className="col-span-12 md:col-span-5">
+    <section
+      id="booking"
+      className="relative overflow-hidden bg-cream-deep py-28 md:py-36"
+      aria-labelledby="booking-heading"
+    >
+      <div className="mx-auto max-w-[1180px] px-6 md:px-10">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-16">
+          <Reveal variant="fade" className="col-span-12 md:col-span-5">
             <p className="eyebrow">Book a session</p>
-            <h2 id="booking-heading" className="display mt-4 text-[40px] leading-[1.04] text-ink font-medium md:text-[60px]">Let us pick<br /><span className="text-clay-deep font-normal">a time.</span></h2>
-            <p className="mt-8 max-w-[44ch] text-[17px] leading-[1.7] text-ink-soft">Tell us when you are thinking and what hurts. We will reply within one business day. Most messages get a same-day text. No spam, no follow-up sequence, no sales pressure.</p>
-            <div className="mt-10 flex flex-col gap-4">
-              <div className="card p-6">
-                <p className="text-[10px] tracking-[0.20em] uppercase text-mid">Or, faster</p>
-                <a href="tel:+16195480773" className="display mt-3 block text-[32px] leading-none text-ink font-medium hover:text-clay-deep md:text-[40px]">(619) 548-0773</a>
-                <p className="mt-3 text-[14px] text-ink-soft">Picked up by a real person, every day, 10 AM &ndash; 9:30 PM.</p>
+            <h2
+              id="booking-heading"
+              className="display mt-4 text-[44px] leading-[1.04] md:text-[72px]"
+            >
+              Let&rsquo;s pick
+              <br />
+              <span className="italic font-light text-ink/55">a time.</span>
+            </h2>
+            <p className="mt-8 max-w-[44ch] text-[16px] leading-[1.8] text-ink/75">
+              Tell us when you&rsquo;re thinking and what hurts. We&rsquo;ll reply within
+              one business day. Most messages get a same-day text. No spam, no
+              follow-up sequence, no sales pressure.
+            </p>
+
+            <div className="mt-12 space-y-8 border-t border-hairline pt-8">
+              <div>
+                <p className="eyebrow">Or, faster</p>
+                <a
+                  href="tel:+16265222888"
+                  className="display mt-3 block text-[40px] leading-none text-clay hover:text-clay-deep md:text-[52px]"
+                >
+                  (626) 522-2888
+                </a>
+                <p className="mt-3 text-[14px] text-ink/55">
+                  Picked up by a real person, every day, 9 AM – 11 PM.
+                </p>
               </div>
-              <div className="card p-6">
-                <p className="text-[10px] tracking-[0.20em] uppercase text-mid">Walk-ins</p>
-                <p className="mt-3 text-[15px] text-ink-soft">7086 El Cajon Blvd, Suite C, La Mesa, CA 91942. Free lot in front. We can almost always fit you in within 30 minutes &mdash; try us.</p>
-              </div>
-              <div className="card p-6">
-                <p className="text-[10px] tracking-[0.20em] uppercase text-mid">Email</p>
-                <a href="mailto:oasis8massage@gmail.com" className="link-underline mt-3 inline-block text-[15px] text-ink">oasis8massage@gmail.com</a>
+
+              <div>
+                <p className="eyebrow">Walk-ins</p>
+                <p className="mt-3 text-[15px] text-ink/75">
+                  7034 El Cajon Blvd, San Diego, CA 92115. Free lot in front.
+                  We can almost always fit you in within thirty minutes — try us.
+                </p>
               </div>
             </div>
           </Reveal>
-          <Reveal delay={120} className="col-span-12 md:col-span-6 md:col-start-7">
-            <div className="card p-8 md:p-12">
+
+          <Reveal variant="curtain" delay={120} className="col-span-12 md:col-span-6 md:col-start-7">
+            <div
+              className="p-8 md:p-12"
+              style={{
+                background: "var(--color-cream-soft)",
+                border: "1px solid var(--color-hairline)",
+              }}
+            >
               {!submitted ? (
-                <form onSubmit={onSubmit} className="flex flex-col gap-6">
+                <form onSubmit={onSubmit} className="flex flex-col gap-7">
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="name" className="text-[10px] tracking-[0.18em] uppercase text-mid">Your name</label>
-                    <input id="name" name="name" required autoComplete="name" className="rounded-xl border border-hairline bg-cream px-4 py-3 text-[16px] text-ink placeholder:text-mid/60 focus:border-clay-deep focus:outline-none" placeholder="First and last" />
+                    <label
+                      htmlFor="name"
+                      className="text-[11px] tracking-[0.22em] uppercase text-clay smallcaps"
+                    >
+                      Your name
+                    </label>
+                    <input
+                      id="name"
+                      name="name"
+                      required
+                      autoComplete="name"
+                      className="border-b border-hairline bg-transparent py-3 text-[18px] text-ink placeholder:text-ink/30 focus:border-clay focus:outline-none"
+                      placeholder="First and last"
+                    />
                   </div>
+
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="contact" className="text-[10px] tracking-[0.18em] uppercase text-mid">Phone or email</label>
-                    <input id="contact" name="contact" required className="rounded-xl border border-hairline bg-cream px-4 py-3 text-[16px] text-ink placeholder:text-mid/60 focus:border-clay-deep focus:outline-none" placeholder="Whatever is easiest" />
+                    <label
+                      htmlFor="contact"
+                      className="text-[11px] tracking-[0.22em] uppercase text-clay smallcaps"
+                    >
+                      Phone or email
+                    </label>
+                    <input
+                      id="contact"
+                      name="contact"
+                      required
+                      className="border-b border-hairline bg-transparent py-3 text-[18px] text-ink placeholder:text-ink/30 focus:border-clay focus:outline-none"
+                      placeholder="Whatever's easiest"
+                    />
                   </div>
+
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="service" className="text-[10px] tracking-[0.18em] uppercase text-mid">What you are thinking</label>
-                    <select id="service" name="service" defaultValue={services[0]} className="rounded-xl border border-hairline bg-cream px-4 py-3 text-[16px] text-ink focus:border-clay-deep focus:outline-none">
-                      {services.map((s) => (<option key={s} className="bg-cream text-ink">{s}</option>))}
+                    <label
+                      htmlFor="service"
+                      className="text-[11px] tracking-[0.22em] uppercase text-clay smallcaps"
+                    >
+                      What you&rsquo;re thinking
+                    </label>
+                    <select
+                      id="service"
+                      name="service"
+                      defaultValue={services[0]}
+                      className="border-b border-hairline bg-transparent py-3 text-[18px] text-ink focus:border-clay focus:outline-none"
+                    >
+                      {services.map((s) => (
+                        <option key={s}>{s}</option>
+                      ))}
                     </select>
                   </div>
+
                   <div className="flex flex-col gap-2">
-                    <label htmlFor="message" className="text-[10px] tracking-[0.18em] uppercase text-mid">When works &middot; what hurts (optional)</label>
-                    <textarea id="message" name="message" rows={4} className="rounded-xl border border-hairline bg-cream px-4 py-3 text-[16px] text-ink placeholder:text-mid/60 focus:border-clay-deep focus:outline-none" placeholder="e.g. Tuesday after 6 — lower back, side sleeper. First visit." />
+                    <label
+                      htmlFor="message"
+                      className="text-[11px] tracking-[0.22em] uppercase text-clay smallcaps"
+                    >
+                      When works · what hurts (optional)
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      className="border-b border-hairline bg-transparent py-3 text-[18px] text-ink placeholder:text-ink/30 focus:border-clay focus:outline-none"
+                      placeholder="e.g. Tuesday after 6 — lower back, side sleeper. First visit."
+                    />
                   </div>
-                  <button type="submit" className="btn-primary mt-2 inline-flex items-center justify-center self-start px-7 py-3.5 text-[14px] font-medium">Request a time</button>
-                  <p className="text-[12px] text-mid">We will respond within 1 business day. No spam. No sales pressure. Your info does not go anywhere else.</p>
+
+                  <button
+                    type="submit"
+                    className="btn-primary mt-2 inline-flex items-center justify-center self-start rounded-none px-8 py-4 text-[12px] tracking-[0.22em] uppercase"
+                  >
+                    Request a time
+                  </button>
+
+                  <p className="text-[12px] text-ink/55">
+                    We&rsquo;ll respond within 1 business day. No spam. No sales
+                    pressure. Your info doesn&rsquo;t go anywhere else.
+                  </p>
                 </form>
               ) : (
                 <div className="flex min-h-[420px] flex-col justify-center">
-                  <p className="eyebrow">Got it</p>
-                  <h3 className="display mt-3 text-[30px] leading-[1.1] text-ink font-medium md:text-[36px]">Thanks. We will text you back today.</h3>
-                  <p className="mt-6 max-w-[44ch] text-[16px] text-ink-soft">If you do not hear from us by tomorrow morning, please call <a href="tel:+16195480773" className="link-underline text-clay-deep">(619) 548-0773</a>.</p>
+                  <p className="eyebrow text-clay">Got it</p>
+                  <h3 className="display mt-3 text-[34px] leading-[1.1] md:text-[44px]">
+                    Thanks. We&rsquo;ll text you back today.
+                  </h3>
+                  <p className="mt-6 max-w-[44ch] text-[16px] text-ink/75">
+                    If you don&rsquo;t hear from us by tomorrow morning, please call{" "}
+                    <a
+                      href="tel:+16265222888"
+                      className="link-underline text-clay"
+                    >
+                      (626) 522-2888
+                    </a>
+                    . Sometimes texts don&rsquo;t make it through and we hate to keep
+                    you waiting.
+                  </p>
                 </div>
               )}
             </div>

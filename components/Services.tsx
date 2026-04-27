@@ -14,48 +14,50 @@ type Service = {
 
 const services: Service[] = [
   {
-    num: "01",
-    name: "Foot Massage",
+    num: "I",
+    name: "The Custom Hour",
     description:
-      "Sixty minutes in a heated recliner — Epsom-salt soak, hot towel, warm oil. Targeted pressure through the arch, the calf, and the reflex points along the heel. Most clients close their eyes inside the first ten minutes.",
-    outcome: "For: nurses, servers, parents, anyone who has been on their feet.",
+      "Sixty minutes head-to-toe — Swedish strokes, deep tissue, or both, your call. Free essential oil and free hot stone work included, every time. The signature service. Most clients leave on this and rebook on the way out.",
+    outcome:
+      "For: the long week, the locked-up shoulders, the night you finally have to yourself.",
     duration: "60 min",
-    price: "From $50",
-    image: "/images/service-foot-04.jpg",
-    alt: "Close-up detail of warm oil and a polished river stone on a folded ivory linen towel",
-  },
-  {
-    num: "02",
-    name: "Full Body with Hot Stones",
-    description:
-      "A full hour head-to-toe — back, neck, shoulders, glutes, legs, arms — with smooth basalt stones warmed in water and worked along the back to draw the deep stuff out. Medium pressure unless you say otherwise.",
-    outcome: "For: the long week, the bad chair, the shoulders that will not drop.",
-    duration: "60 min",
-    price: "From $60",
+    price: "$79.99",
     image: "/images/service-relax-01.jpg",
-    alt: "Cedar massage table dressed with neatly folded ivory linen, soft window light",
+    alt: "Architectural interior of a hammam treatment room — heavy marble, hot towels stacked on a marble bench, warm tungsten light, faint steam",
   },
   {
-    num: "03",
-    name: "Deep Tissue & Combo",
+    num: "II",
+    name: "Deep Tissue",
     description:
-      "Slow-loaded forearm and elbow work into the layer beneath the surface. Or split the hour: thirty on the feet, thirty on the body, for forty-five dollars. We pick the pressure together at the ten-minute mark.",
-    outcome: "For: chronic knots, athletes, people who lift things for a living.",
-    duration: "60 min · 30/30 from $45",
-    price: "From $55",
+      "Slow-loaded forearm and elbow work into the layer beneath the surface. Not just \"harder pressure everywhere\" — the right knot, the right tool, the right amount of time. We pick the depth together at the ten-minute mark.",
+    outcome: "For: chronic knots, athletes, anyone who lifts things for a living.",
+    duration: "60 min",
+    price: "$79.99",
     image: "/images/service-deep-02.jpg",
-    alt: "Warm tungsten light across a treatment table, deep shadow, neatly arranged towels",
+    alt: "Hands wringing a hot towel over a copper basin, painterly tungsten light, warm steam rising, marble and brass surroundings",
   },
   {
-    num: "04",
-    name: "Couples Room",
+    num: "III",
+    name: "Hot Stone Therapy",
     description:
-      "Two practitioners, one quiet room, side-by-side tables. Hot stones included on request, same warm towels, same cup of tea afterward. The couples room books up before the rest of the studio — calling ahead is the difference between a yes and a maybe.",
-    outcome: "For: anniversaries, post-flight, the rare night you both have free.",
-    duration: "60 min · per pair",
-    price: "Call for current rate",
+      "Smooth basalt stones warmed in water, worked along the back and shoulders to draw the deep stuff out. Already included in The Custom Hour — call it out at the front desk and we will prep the stones before you arrive.",
+    outcome:
+      "For: cold-weather days, deep stress, the kind of week that sits in your back.",
+    duration: "Included with the hour",
+    price: "Included",
     image: "/images/service-stone-03.jpg",
-    alt: "Six smooth basalt stones arranged on a folded ivory linen towel, faint steam rising",
+    alt: "Six smooth dark basalt stones arranged on a brass tray atop classic marble tilework, single warm spotlight, faint steam",
+  },
+  {
+    num: "IV",
+    name: "Foot Reflexology",
+    description:
+      "Sixty minutes in a heated recliner with a hot towel and warm oil. Targeted pressure through the arch, the calf, and the reflex points along the heel. Most clients close their eyes inside the first ten minutes.",
+    outcome: "For: nurses, servers, parents — anyone on their feet all day.",
+    duration: "60 min",
+    price: "$59.99",
+    image: "/images/service-foot-04.jpg",
+    alt: "Heated recliner chair in a tiled hammam alcove — warm brass floor lamp, folded ivory towel, classic geometric tile floor",
   },
 ];
 
@@ -63,99 +65,106 @@ export default function Services() {
   return (
     <section
       id="services"
-      className="bg-cream py-24 md:py-32"
+      className="bg-cream py-28 md:py-36"
       aria-labelledby="services-heading"
     >
-      <div className="mx-auto max-w-[1320px] px-6 md:px-10">
-        <Reveal>
-          <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-12 md:col-span-4">
-              <p className="eyebrow">The menu</p>
-            </div>
-            <div className="col-span-12 md:col-span-8">
-              <h2
-                id="services-heading"
-                className="display text-[40px] leading-[1.04] md:text-[64px]"
-              >
-                Four services.
-                <br />
-                <span className="display-italic text-clay-deep">
-                  No memberships, no add-on traps,
-                </span>
-                <br />
-                no upsell at the door.
-              </h2>
-              <p className="mt-8 max-w-[58ch] text-[17px] text-ink-soft">
-                Most people walk in for one of these. Combo deals — foot plus
-                body in the same hour — are how regulars come in. Walk-ins
-                welcome until 9 PM. Calling ahead helps, especially for the
-                couples room.
-              </p>
-            </div>
-          </div>
-        </Reveal>
-      </div>
-
-      <p className="mx-auto mt-12 max-w-[1320px] px-6 text-[11px] uppercase tracking-[0.28em] text-mid md:px-10">
-        Drag · scroll · swipe →
-      </p>
-
-      <div className="mt-6 md:mt-8">
-        <div
-          role="region"
-          aria-label="Service menu, horizontally scrollable"
-          className="h-scroll px-6 md:px-10"
-        >
-          {services.map((s) => (
-            <article key={s.num} className="group flex flex-col">
-              <div className="relative overflow-hidden">
-                <div
-                  role="img"
-                  aria-label={s.alt}
-                  className="img-placeholder image-soft relative aspect-[4/5] w-full"
-                  style={{
-                    backgroundImage: `url(${asset(s.image)})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                  }}
-                />
-                <span className="absolute left-4 top-4 inline-flex items-center bg-cream/90 px-3 py-1 text-[11px] tracking-[0.18em] uppercase text-ink-soft">
-                  No. {s.num}
-                </span>
-              </div>
-              <div className="mt-6 flex items-baseline gap-4">
-                <h3 className="display text-[28px] leading-[1.05] text-ink md:text-[34px]">
-                  {s.name}
-                </h3>
-                <span className="ml-auto display text-[18px] text-clay-deep md:text-[20px]">
-                  {s.price}
-                </span>
-              </div>
-              <p className="mt-2 text-[11px] uppercase tracking-[0.18em] text-mid">
-                {s.duration}
-              </p>
-              <p className="mt-5 text-[15px] leading-[1.65] text-ink-soft">
-                {s.description}
-              </p>
-              <p className="mt-3 text-[13px] italic text-mid">{s.outcome}</p>
-              <a
-                href="#booking"
-                className="mt-6 link-underline self-start text-[12px] tracking-[0.16em] uppercase text-ink"
-              >
-                Book this →
-              </a>
-            </article>
-          ))}
+      <div className="mx-auto max-w-[1180px] px-6 md:px-10">
+        <div className="grid grid-cols-12 gap-6 items-end">
+          <Reveal variant="fade" className="col-span-12 md:col-span-4">
+            <p className="eyebrow">The menu</p>
+          </Reveal>
+          <Reveal variant="curtain-up" className="col-span-12 md:col-span-8">
+            <h2
+              id="services-heading"
+              className="display text-[44px] leading-[1.04] md:text-[72px]"
+            >
+              A short menu.
+              <br />
+              <span className="italic font-light text-ink/55">
+                No memberships, no add-on traps,
+              </span>
+              <br />
+              no upsell at the door.
+            </h2>
+            <p className="mt-8 max-w-[58ch] text-[16px] leading-[1.75] text-ink/70">
+              Most people walk in for the same reason — something hurts,
+              sleep has been bad, or the week was too long. Below is the
+              entire menu. Walk-ins welcome until 10 PM. Calling ahead helps.
+            </p>
+          </Reveal>
         </div>
-      </div>
 
-      <div className="mx-auto max-w-[1320px] px-6 md:px-10">
-        <Reveal>
-          <p className="mt-20 max-w-[60ch] text-[14px] leading-[1.7] text-ink-soft">
-            Combo deals: 30 min foot + 30 min body for $45 · 40 min foot + 40
-            min body for $60. Active duty and veterans get 10% off any service
-            with a valid ID — discounts cannot be combined. Cash and card both
-            accepted. Tipping is appreciated but never required.
+        <div className="mt-24 flex flex-col">
+          {services.map((s, i) => {
+            const reverse = i % 2 === 1;
+            return (
+              <article
+                key={s.num}
+                className={`grid grid-cols-12 items-center gap-6 border-t border-hairline py-16 md:gap-12 md:py-24 ${
+                  reverse ? "md:[direction:rtl]" : ""
+                }`}
+              >
+                <Reveal
+                  variant="curtain"
+                  className="col-span-12 md:col-span-7 md:[direction:ltr] aspect-[4/5] w-full md:aspect-[3/4]"
+                >
+                  <div
+                    role="img"
+                    aria-label={s.alt}
+                    className="img-placeholder h-full w-full"
+                    style={{
+                      backgroundImage: `url(${asset(s.image)})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }}
+                  />
+                </Reveal>
+
+                <Reveal
+                  variant="fade"
+                  delay={120}
+                  className="col-span-12 md:col-span-5 md:[direction:ltr]"
+                >
+                  <div className="flex items-baseline gap-6">
+                    <span className="display text-[20px] text-clay tracking-[0.18em]">
+                      {s.num}
+                    </span>
+                    <span className="h-px flex-1 bg-hairline" />
+                  </div>
+                  <h3 className="display mt-6 text-[40px] leading-[1.04] md:text-[64px]">
+                    {s.name}
+                  </h3>
+                  <p className="mt-6 max-w-[42ch] text-[16px] leading-[1.75] text-ink/75">
+                    {s.description}
+                  </p>
+                  <p className="mt-5 max-w-[42ch] text-[14px] italic text-ink/45">
+                    {s.outcome}
+                  </p>
+                  <div className="mt-8 flex flex-wrap items-baseline gap-x-6 gap-y-2 text-[14px] text-ink">
+                    <span className="display text-[28px] text-clay">
+                      {s.price}
+                    </span>
+                    <span className="text-ink/45">·</span>
+                    <span className="text-ink/65">{s.duration}</span>
+                    <a
+                      href="#booking"
+                      className="ml-auto link-underline tracking-[0.04em] text-clay"
+                    >
+                      Book this →
+                    </a>
+                  </div>
+                </Reveal>
+              </article>
+            );
+          })}
+        </div>
+
+        <Reveal variant="fade">
+          <p className="mt-16 max-w-[60ch] text-[13px] leading-[1.75] text-ink/55">
+            The Custom Hour at $79.99 is the limited-time house rate — Swedish,
+            deep tissue, or a combination, with free essential oil and free
+            hot stones included. Cash and card both accepted. Tipping is
+            appreciated but never required and never appears on the bill.
           </p>
         </Reveal>
       </div>
