@@ -6,8 +6,12 @@ export default function Logo({ className = "" }: Props) {
       className={`display text-[22px] tracking-[-0.02em] leading-none ${className}`}
       aria-label="Blue Moon Spa"
     >
-      Navajo
-      <span className="display-italic"> &middot; </span>Massage
+      Blue
+      <span className="italic font-light"> </span>Moon
+      <span className="text-clay"> · </span>
+      <span className="smallcaps text-[14px] tracking-[0.18em] opacity-70">
+        Spa
+      </span>
     </span>
   );
 }
