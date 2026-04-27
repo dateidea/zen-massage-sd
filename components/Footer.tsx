@@ -80,7 +80,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-[12px] text-mid md:flex-row md:items-center">
           <p>
-            &copy; {new Date().getFullYear()} Oasis 8 Massage. All rights
+            &copy; {new Date().getFullYear()} ZEN Massage. All rights
             reserved.
           </p>
           <p>Cash &amp; card &middot; Walk-ins welcome &middot; 10% off military</p>

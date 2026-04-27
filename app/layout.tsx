@@ -16,19 +16,19 @@ const inter = Inter({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://oasis8massage.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://dateidea.github.io/zen-massage-sd";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default:
-      "Navajo Spa — An Honest Hour on Baltimore Plaza, La Mesa",
-    template: "%s · Navajo Spa",
+      "ZEN Massage — An Honest Hour on Baltimore Plaza, La Mesa",
+    template: "%s · ZEN Massage",
   },
   description:
-    "Navajo Spa at 5575 Baltimore Dr #106-107, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 9 AM to 10 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
+    "ZEN Massage at 5575 Baltimore Dr #106-107, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 9 AM to 10 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
   keywords: [
-    "Navajo Spa",
+    "ZEN Massage",
     "massage La Mesa",
     "Baltimore Plaza massage",
     "foot massage La Mesa",
@@ -41,11 +41,11 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "Navajo Spa — An Honest Hour on Baltimore Plaza, La Mesa",
+      "ZEN Massage — An Honest Hour on Baltimore Plaza, La Mesa",
     description:
       "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 9 AM to 10 PM at 5575 Baltimore Dr #106-107, La Mesa.",
     url: SITE_URL,
-    siteName: "Navajo Spa",
+    siteName: "ZEN Massage",
     locale: "en_US",
     type: "website",
     images: [
@@ -53,14 +53,14 @@ export const metadata: Metadata = {
         url: "/images/og-01.jpg",
         width: 1200,
         height: 630,
-        alt: "Navajo Spa — quiet, warm treatment room on Baltimore Plaza",
+        alt: "ZEN Massage — quiet, warm treatment room on Baltimore Plaza",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Navajo Spa — An Honest Hour on Baltimore Plaza, La Mesa",
+      "ZEN Massage — An Honest Hour on Baltimore Plaza, La Mesa",
     description:
       "An honest hour for everywhere you carry it. Open every day, 9 AM to 10 PM.",
     images: ["/images/og-01.jpg"],
@@ -89,7 +89,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MassageTherapy",
               "@id": `${SITE_URL}/#business`,
-              name: "Navajo Spa",
+              name: "ZEN Massage",
               image: `${SITE_URL}/images/hero-01.jpg`,
               url: SITE_URL,
               telephone: "+16196395282",

@@ -13,7 +13,7 @@ export default function About() {
           <Reveal className="col-span-12 md:col-span-5">
             <div
               role="img"
-              aria-label="The treatment room of Navajo Spa — cedar table dressed with neatly folded ivory linen, soft late-afternoon window light"
+              aria-label="The treatment room of ZEN Massage — cedar table dressed with neatly folded ivory linen, soft late-afternoon window light"
               className="img-placeholder relative aspect-[4/5] w-full overflow-hidden"
               style={{
                 backgroundImage: `url(${asset("/images/about-01.jpg")})`,
@@ -45,7 +45,7 @@ export default function About() {
             </h2>
             <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-soft">
               <p>
-                Navajo Spa sits at the corner of Baltimore Plaza and 79th Street
+                ZEN Massage sits at the corner of Baltimore Plaza and 79th Street
                 in La Mesa, two blocks east of the College Area. A small front
                 room with warm decor. Comfortable rooms with crisp white sheets
                 and neatly arranged towels. Hot stones warming on the counter
