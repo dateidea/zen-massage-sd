@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const isPagesBuild = process.env.GITHUB_PAGES === "true";
-const basePath = isPagesBuild ? "/blue-moon-spa" : "";
+const basePath = isPagesBuild ? "/zen-massage-sd" : "";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
