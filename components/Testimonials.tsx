@@ -4,7 +4,7 @@ type Quote = { body: string; name: string; role: string; };
 
 const quotes: Quote[] = [
   { body: "Spacious, bright lobby with warm decor. Comfortable room, crisp white sheets, neatly arranged towels. The most relaxing massage I have had on this side of San Diego — I will be back.",
-    name: "David Z.", role: "Returning guest · La Mesa" },
+    name: "David Z.", role: "Returning guest" },
   { body: "I have been a frequent customer for several months. The staff is polite and professional. The price is fair compared to an orthopedic clinic — and the back and neck aches are resolved every visit.",
     name: "Jose S.", role: "Local Guide · Rolando" },
   { body: "Found this place after a long shift. The masseuse is professional and the price is honest — forty-five dollars for a real combo. We have come back as a couple twice. Very, very relaxed afterward.",
@@ -54,9 +54,9 @@ export default function Testimonials() {
         <Reveal>
           <div className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-cream/15 pt-10 text-[13px] text-cream/60">
             <span className="display text-[28px] text-cream">★★★★★</span>
-            <span>Google &amp; Yelp regulars · College Area, La Mesa, SDSU</span>
+            <span>Google &amp; Yelp regulars · College Area, San Diego, SDSU</span>
             <span aria-hidden className="hidden md:inline">·</span>
-            <span>7900 El Cajon Blvd, La Mesa · daily, 10 AM – 9:30 PM</span>
+            <span>7086 El Cajon Blvd, San Diego · daily, 9:30 AM – 10 PM</span>
           </div>
         </Reveal>
       </div>

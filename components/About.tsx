@@ -7,7 +7,7 @@ export default function About() {
       <div className="mx-auto max-w-[1320px] px-6 md:px-10">
         <div className="grid grid-cols-12 gap-x-6 gap-y-12">
           <Reveal className="col-span-12 md:col-span-5">
-            <div role="img" aria-label="The treatment room of Oasis 8 Massage — cedar table dressed with neatly folded ivory linen, soft late-afternoon window light"
+            <div role="img" aria-label="The treatment room of ZEN Massage — cedar table dressed with neatly folded ivory linen, soft late-afternoon window light"
               className="img-placeholder relative aspect-[4/5] w-full overflow-hidden"
               style={{ backgroundImage: `url(${asset("/images/about-01.jpg")})`, backgroundSize: "cover", backgroundPosition: "center" }} />
             <p className="mt-4 text-[12px] text-mid">The room before the door opens.</p>
@@ -20,7 +20,7 @@ export default function About() {
               on El Cajon Boulevard.
             </h2>
             <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-soft">
-              <p>Oasis 8 sits at the corner of El Cajon Boulevard and 79th Street in La Mesa, two blocks east of the College Area. A small front room with warm decor. Comfortable rooms with crisp white sheets and neatly arranged towels. Hot stones warming on the counter most days.</p>
+              <p>ZEN Massage sits at the corner of El Cajon Boulevard and 79th Street in San Diego, two blocks east of the College Area. A small front room with warm decor. Comfortable rooms with crisp white sheets and neatly arranged towels. Hot stones warming on the counter most days.</p>
               <p>We do not sell memberships. We do not push add-ons. There is no points program. The price you see at the door is the price you pay, and a real hour means sixty minutes on the table. Active duty and veterans get ten percent off &mdash; say so when you call, that is the only paperwork.</p>
               <p>What we are trying to do is straightforward: give people an honest hour. The kind your shoulders remember three days later.</p>
             </div>

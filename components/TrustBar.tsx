@@ -2,7 +2,7 @@ import Reveal from "./Reveal";
 
 const stats = [
   { value: "$45", label: "30 min foot + 30 min body, all-in" },
-  { value: "10–9:30", label: "Open every day, seven days a week" },
+  { value: "9:30–10", label: "Open every day, seven days a week" },
   { value: "10% off", label: "Active duty & veterans, with valid ID" },
   { value: "Walk-ins", label: "Almost always an opening — try us" },
 ];

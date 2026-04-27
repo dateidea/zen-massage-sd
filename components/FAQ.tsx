@@ -7,7 +7,7 @@ type QA = { q: string; a: React.ReactNode };
 
 const faqs: QA[] = [
   { q: "Do I need an appointment, or can I walk in?",
-    a: (<>Both are fine. Walk-ins are honestly welcome &mdash; there is almost always an opening within thirty minutes if you arrive before 9 PM. If you want a specific time or therapist, please call ahead at <a className="link-underline" href="tel:+16194396708">(619) 439-6708</a>.</>) },
+    a: (<>Both are fine. Walk-ins are honestly welcome &mdash; there is almost always an opening within thirty minutes if you arrive before 9 PM. If you want a specific time or therapist, please call ahead at <a className="link-underline" href="tel:+16195480773">(619) 548-0773</a>.</>) },
   { q: "How much does it cost? Are there hidden fees?",
     a: (<>Combo deals are the easiest entry point: $45 for 30 min foot + 30 min body, or $60 for 40 min foot + 40 min body. Foot massage starts from $50 for the full hour, full body with hot stones from $60, deep tissue from $55. Active duty and veterans get 10% off any service with a valid ID &mdash; discounts cannot be combined. No membership fees, no booking fees. Tipping is appreciated but never required and never appears on the bill.</>) },
   { q: "What kind of pressure should I ask for?",
@@ -17,7 +17,7 @@ const faqs: QA[] = [
   { q: "How does the couples room work?",
     a: (<>Two practitioners, one quiet room, side-by-side tables. Same hour, same warm towels, same cup of tea after. The couples room books up before the rest of the studio &mdash; calling ahead is the difference between a yes and a maybe.</>) },
   { q: "Where do I park?",
-    a: (<>Free parking lot directly in front of the studio at 7900 El Cajon Blvd, Suite C, La Mesa, between 78th and 79th Street. We are a five-minute drive from SDSU, on the 1 and 815 bus lines, and just east of the College Area.</>) },
+    a: (<>Free parking lot directly in front of the studio at 7086 El Cajon Blvd, San Diego, between 78th and 79th Street. We are a five-minute drive from SDSU, on the 1 and 815 bus lines, and just east of the College Area.</>) },
   { q: "Do you take cards?",
     a: (<>Yes &mdash; we accept cash and all major cards. Tipping in cash is appreciated. We do not auto-add gratuity to the bill or charge a booking fee.</>) },
   { q: "What is your cancellation policy?",

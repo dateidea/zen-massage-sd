@@ -47,8 +47,8 @@ export default function Nav() {
             </li>
           ))}
           <li>
-            <a href="tel:+16194396708" className={`text-[14px] tracking-[0.01em] ${scrolled ? "text-ink-soft" : "text-cream/85"}`}>
-              (619) 439-6708
+            <a href="tel:+16195480773" className={`text-[14px] tracking-[0.01em] ${scrolled ? "text-ink-soft" : "text-cream/85"}`}>
+              (619) 548-0773
             </a>
           </li>
           <li>
@@ -80,9 +80,9 @@ export default function Nav() {
             ))}
           </ul>
           <div className="flex flex-col gap-4">
-            <a href="tel:+16194396708" className="display text-[28px] text-ink">(619) 439-6708</a>
+            <a href="tel:+16195480773" className="display text-[28px] text-ink">(619) 548-0773</a>
             <a href="#booking" onClick={() => setOpen(false)} className="btn-primary inline-flex w-full items-center justify-center rounded-full px-6 py-4 text-[13px] tracking-[0.04em] uppercase">Book a session</a>
-            <p className="text-[12px] text-mid">7900 El Cajon Blvd, Ste C &middot; La Mesa &middot; Daily, 10 AM &ndash; 9:30 PM</p>
+            <p className="text-[12px] text-mid">7086 El Cajon Blvd &middot; San Diego &middot; Daily, 10 AM &ndash; 9:30 PM</p>
           </div>
         </div>
       </div>
