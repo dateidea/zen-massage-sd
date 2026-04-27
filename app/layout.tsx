@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s · Oasis 8 Massage",
   },
   description:
-    "Oasis 8 Massage at 7900 El Cajon Blvd, Suite C, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 10 AM to 9:30 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
+    "Oasis 8 Massage at 5575 Baltimore Dr #106-107, Suite C, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 10 AM to 9:30 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome.",
   keywords: [
     "Oasis 8 Massage",
     "massage La Mesa",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title:
       "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
     description:
-      "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 10 AM to 9:30 PM at 7900 El Cajon Blvd, Suite C, La Mesa.",
+      "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 10 AM to 9:30 PM at 5575 Baltimore Dr #106-107, Suite C, La Mesa.",
     url: SITE_URL,
     siteName: "Oasis 8 Massage",
     locale: "en_US",
@@ -92,12 +92,12 @@ export default function RootLayout({
               name: "Oasis 8 Massage",
               image: `${SITE_URL}/images/hero-01.jpg`,
               url: SITE_URL,
-              telephone: "+16194396708",
+              telephone: "+16196395282",
               email: "oasis8massage@gmail.com",
               priceRange: "$$",
               address: {
                 "@type": "PostalAddress",
-                streetAddress: "7900 El Cajon Blvd, Suite C",
+                streetAddress: "5575 Baltimore Dr #106-107, Suite C",
                 addressLocality: "La Mesa",
                 addressRegion: "CA",
                 postalCode: "91942",

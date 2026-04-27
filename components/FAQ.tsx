@@ -13,7 +13,7 @@ const faqs: QA[] = [
         Both are fine. Walk-ins are honestly welcome &mdash; there is almost
         always an opening within thirty minutes if you arrive before 9 PM. If
         you want a specific time or therapist, please call ahead at{" "}
-        <a className="link-underline" href="tel:+16194396708">
+        <a className="link-underline" href="tel:+16196395282">
           (619) 548-0773
         </a>
         .

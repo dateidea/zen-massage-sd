@@ -3,7 +3,8 @@ import type { MetadataRoute } from "next";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://zen-massage-sd.vercel.app";
+  const base =
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://oasis8massage.vercel.app";
   return [
     {
       url: base,
