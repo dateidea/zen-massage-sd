@@ -27,12 +27,12 @@ export default function Booking() {
             <div className="mt-10 flex flex-col gap-4">
               <div className="card p-6">
                 <p className="text-[10px] tracking-[0.20em] uppercase text-mid">Or, faster</p>
-                <a href="tel:+16194396708" className="display mt-3 block text-[32px] leading-none text-ink font-medium hover:text-clay-deep md:text-[40px]">(619) 439-6708</a>
+                <a href="tel:+16195480773" className="display mt-3 block text-[32px] leading-none text-ink font-medium hover:text-clay-deep md:text-[40px]">(619) 548-0773</a>
                 <p className="mt-3 text-[14px] text-ink-soft">Picked up by a real person, every day, 10 AM &ndash; 9:30 PM.</p>
               </div>
               <div className="card p-6">
                 <p className="text-[10px] tracking-[0.20em] uppercase text-mid">Walk-ins</p>
-                <p className="mt-3 text-[15px] text-ink-soft">7900 El Cajon Blvd, Suite C, La Mesa, CA 91942. Free lot in front. We can almost always fit you in within 30 minutes &mdash; try us.</p>
+                <p className="mt-3 text-[15px] text-ink-soft">7086 El Cajon Blvd, Suite C, La Mesa, CA 91942. Free lot in front. We can almost always fit you in within 30 minutes &mdash; try us.</p>
               </div>
               <div className="card p-6">
                 <p className="text-[10px] tracking-[0.20em] uppercase text-mid">Email</p>
@@ -69,7 +69,7 @@ export default function Booking() {
                 <div className="flex min-h-[420px] flex-col justify-center">
                   <p className="eyebrow">Got it</p>
                   <h3 className="display mt-3 text-[30px] leading-[1.1] text-ink font-medium md:text-[36px]">Thanks. We will text you back today.</h3>
-                  <p className="mt-6 max-w-[44ch] text-[16px] text-ink-soft">If you do not hear from us by tomorrow morning, please call <a href="tel:+16194396708" className="link-underline text-clay-deep">(619) 439-6708</a>.</p>
+                  <p className="mt-6 max-w-[44ch] text-[16px] text-ink-soft">If you do not hear from us by tomorrow morning, please call <a href="tel:+16195480773" className="link-underline text-clay-deep">(619) 548-0773</a>.</p>
                 </div>
               )}
             </div>

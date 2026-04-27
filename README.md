@@ -1,31 +1,26 @@
-# Blue Moon Spa — Marketing Site
+# ZEN Massage — Marketing Site
 
-A high-converting marketing site for **Blue Moon Spa**, a small, Asian-owned
-massage studio at **7034 El Cajon Blvd, San Diego, CA 92115**.
+A marketing site for **ZEN Massage**, an independently run massage studio at
+**7086 El Cajon Blvd, San Diego, CA 92115**. Built with **Next.js 15
+(App Router)**, **Tailwind CSS v4**, **TypeScript**.
 
-Live at: https://dateidea.github.io/blue-moon-spa/
+**Live**: <https://navajo-spa.vercel.app/>
+**Repo**: <https://github.com/dateidea/zen-massage-sd>
 
 ---
 
-## Visual DNA — current redesign
+## Design DNA — current iteration
 
-| Dimension | Old DNA (Warm Artisan) | **New DNA — "Midnight Apothecary"** |
+| Dimension | OLD (Architectural Apothecary) | NEW (Editorial Minimal · Aesop-meets-Apothecary) |
 | --- | --- | --- |
-| Aesthetic | Warm Artisan (Aesop / Kinfolk) | **Dark Luxe** (late-night Tokyo onsen) |
-| Type | Fraunces + Inter | **Cormorant Garamond + Manrope** |
-| Palette | Sandstone (cream / charcoal / terracotta) | **Midnight Brass** — `#0E1620` / `#F1ECDF` / `#B58A4A` |
-| Layout | Asymmetric Editorial Grid | **Stacked Hero Blocks** + asymmetric service stack |
-| Motion | Subtle fade-up + parallax | **Slow Image Zoom** (signature gesture on every image) |
-| Imagery | Studio Still-Life (close hands, towels, stones) | **Architectural / Spatial** (wide moody interiors) |
+| Aesthetic | Architectural (museum-calm, sticky rails) | **Editorial Minimal** (calm, restrained, slow) |
+| Type pairing | Cormorant Garamond + Space Grotesk | **Fraunces + Inter** (generous line-height) |
+| Palette | Cream `#F1EDE3` / Forest `#1F3A2F` / Copper `#B27746` | **Off-white `#F4EFE6` / Ink `#1F1A14` / Eucalyptus `#6F7F66`** (single accent) |
+| Layout | Sidebar Anchored (sticky `No. 0X` left rails) | **Centered Editorial Grid** (lockup-on-axis, 96–160 px section padding, lots of negative space) |
+| Motion | Sticky Reveal + lateral slide-from-left | **Subtle Fade-Up Only** (`translateY(16px)` + opacity, 700 ms ease-out) |
+| Imagery | Architectural/Spatial sticky-positioned | **Macro Detail** (hands, oils, neutral linen, soft diffused window light, slight grain — no faces in hero) |
 
-**What changed:** colour tokens, font families, motion language, hero block
-structure, all image art-direction. The Testimonials section is intentionally
-*inverted* to ivory — the only bright section in an otherwise dark site —
-giving the page a strong rhythm break.
-
-**What stayed:** every word of copy, every section, the section order, every
-CTA, every link, the form, the JSON-LD schema, the NAP, the price list,
-the Google review excerpts. Diff is tokens / components / images only.
+Copy, section order, business info, prices, CTAs, and form fields are 100% unchanged across iterations.
 
 ---
 
@@ -33,45 +28,85 @@ the Google review excerpts. Diff is tokens / components / images only.
 
 ```bash
 npm install
-npm run dev
-```
-
-Visit http://localhost:3000.
-
-```bash
-npm run build && npm start          # production
-GITHUB_PAGES=true npm run build      # static export to ./out for Pages
+npm run dev   # http://localhost:3000
+npm run build && npm start   # production
 ```
 
 ---
 
 ## Where to swap copy & colors
 
-- **Copy** lives inside each component file. Search for the section name
-  (e.g. `components/Services.tsx` → the `services` array).
-- **Palette tokens** live at the top of `app/globals.css` inside `@theme`.
-  Change `--color-brass` to swap the accent across the entire site.
-  Change `--color-midnight` to swap the dominant background.
-- **Type variables** also in `globals.css` (`--font-display`, `--font-sans`).
-  Font import lives in `app/layout.tsx`.
-- **NAP, hours, phone** appear in `Nav.tsx`, `Hero.tsx`, `Footer.tsx`,
-  `Booking.tsx`, FAQ, and the JSON-LD schema in `layout.tsx`.
-  Phone: `(626) 522-2888`.
+- **Copy** lives inside each component file.
+- **Color tokens** are at the top of [`app/globals.css`](app/globals.css) inside `@theme { ... }`. Change `--color-eucalyptus` to swap the accent.
+- **Fonts** are loaded once in [`app/layout.tsx`](app/layout.tsx) via `next/font/google`.
+- **NAP, phone, hours** appear in `Nav.tsx`, `Hero.tsx`, `Footer.tsx`, `Booking.tsx`, `FAQ.tsx`, and the JSON-LD schema in `layout.tsx`.
 
 ---
 
-## Imagery — no people, architectural
+## Imagery — regeneration brief
 
-Every photograph is a moody, no-people **architectural / spatial** shot
-generated via ChatGPT (GPT-4o image generation). The brief is in the script
-that calls them — every prompt inherits the Midnight Brass palette and a
-single warm tungsten light source so the whole set looks like one shoot.
+Macro detail, photoreal, soft diffused window light, slight grain. No people's
+faces in the hero. Carry-over images from prior iterations still match the
+brief subject; to re-roll for the new palette, the prompt template is:
+
+```
+Photorealistic macro detail for a premium massage studio website.
+[SUBJECT — practitioner's hands resting beside a small dark glass bottle of
+warm oil on neutral linen / a folded ivory linen towel / an open hand
+arranging botanical sprigs / hot stones cooling on a folded towel beside
+amber oil].
+Lighting: soft, diffused, daylight from a high window. Slight 35 mm film
+grain, gentle shallow depth of field.
+Color palette: warm off-white (#F4EFE6), deep ink (#1F1A14), single accent
+of eucalyptus green (#6F7F66) — no other colors.
+Composition: centered or rule-of-thirds, generous negative space.
+Mood: calm, restrained, slow, apothecary-quiet.
+Shot on a 50 mm full-frame lens.
+No text, no logos, no watermarks, no AI artifacts, no oversaturation, no
+people's faces in frame.
+Aspect ratio: [3:2 / 4:5 / 1:1].
+```
+
+After generation, run `python3 scripts/strip-watermark.py` to remove the
+ChatGPT sparkle.
+
+---
+
+## Conversion logic per section (unchanged)
+
+- **Nav** — Transparent over hero; solidifies on scroll.
+- **Hero** — Centered headline names the customer outcome.
+- **Trust Bar** — Four hard numbers: combo price, hours, military discount, walk-ins.
+- **Services** — Four services with real prices and a one-sentence outcome line.
+- **Process** — Four numbered steps reduce uncertainty.
+- **Testimonials** — Long-form quotes with first name, role, and neighborhood.
+- **About** — First-person voice with a quiet still life.
+- **FAQ** — Eight questions handle real walk-in objections.
+- **Booking** — Minimum-field form + repeated phone number.
+- **Footer** — Quiet, complete NAP and one last booking CTA.
+
+---
+
+## SEO / accessibility / performance
+
+- Semantic HTML, single `<h1>`, hierarchical `<h2>`/`<h3>` per section
+- `<a href="tel:">` on every visible phone number
+- WCAG AA color contrast (ink on off-white tested at 13:1+)
+- Focus rings via `:focus-visible` (eucalyptus outline)
+- `prefers-reduced-motion` disables parallax + reveal animations
+- JSON-LD `MassageTherapy` LocalBusiness schema in `app/layout.tsx`
+- `app/sitemap.ts` and `app/robots.ts`
+- OG card configured (`/images/og-01.jpg`)
+- `next/font` for Fraunces + Inter — no FOIT/FOUT
 
 ---
 
 ## Deploy
 
-GitHub Pages via `.github/workflows/pages.yml`. Push to `main` and the
-workflow builds + deploys automatically.
+```bash
+npx vercel deploy --prod --yes --name zen-massage-sd
+```
 
-Confirmation: **Copy unchanged. Structure unchanged. Only visual layer redesigned.**
+---
+
+**Confirmation: Copy unchanged. Structure unchanged. Only visual layer redesigned.**

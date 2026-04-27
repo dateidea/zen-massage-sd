@@ -34,7 +34,7 @@ export default function Nav() {
           {links.map((l) => (
             <li key={l.href}><a href={l.href} className="link-underline text-[14px] tracking-[-0.005em] text-ink/80 hover:text-ink">{l.label}</a></li>
           ))}
-          <li><a href="tel:+16194396708" className="text-[13px] tracking-[-0.005em] text-ink/65">(619) 439-6708</a></li>
+          <li><a href="tel:+16195480773" className="text-[13px] tracking-[-0.005em] text-ink/65">(619) 548-0773</a></li>
           <li><a href="#booking" className="btn-primary inline-flex items-center px-5 py-2.5 text-[13px] font-medium">Book a session</a></li>
         </ul>
         <button aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen((s) => !s)} className="relative z-50 flex h-10 w-10 items-center justify-center md:hidden text-ink">
@@ -55,9 +55,9 @@ export default function Nav() {
             ))}
           </ul>
           <div className="flex flex-col gap-4">
-            <a href="tel:+16194396708" className="display text-[28px] text-ink font-medium">(619) 439-6708</a>
+            <a href="tel:+16195480773" className="display text-[28px] text-ink font-medium">(619) 548-0773</a>
             <a href="#booking" onClick={() => setOpen(false)} className="btn-primary inline-flex w-full items-center justify-center px-6 py-4 text-[14px] font-medium">Book a session</a>
-            <p className="text-[12px] text-mid">7900 El Cajon Blvd, Ste C &middot; La Mesa &middot; Daily, 10 AM &ndash; 9:30 PM</p>
+            <p className="text-[12px] text-mid">7086 El Cajon Blvd, Ste C &middot; La Mesa &middot; Daily, 10 AM &ndash; 9:30 PM</p>
           </div>
         </div>
       </div>

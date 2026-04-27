@@ -9,7 +9,7 @@ export default function Hero() {
       <div className="mx-auto w-full max-w-[1320px] px-6 md:px-10">
         <div className="grid grid-cols-12 gap-8 pb-12 md:gap-12 md:pb-16">
           <Reveal className="col-span-12 md:col-span-7">
-            <p className="eyebrow mb-6">Oasis 8 Massage &middot; 7900 El Cajon Blvd &middot; La Mesa</p>
+            <p className="eyebrow mb-6">Oasis 8 Massage &middot; 7086 El Cajon Blvd &middot; La Mesa</p>
             <h1 className="display text-[44px] leading-[1.04] sm:text-[60px] md:text-[80px] lg:text-[96px] font-medium">
               An honest hour
               <br />
@@ -24,7 +24,7 @@ export default function Hero() {
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <a href="#booking" className="btn-primary inline-flex items-center px-7 py-4 text-[14px] font-medium">Book a session</a>
-              <a href="tel:+16194396708" className="link-underline text-[14px] tracking-[-0.005em] text-ink/80">Or call (619) 439-6708</a>
+              <a href="tel:+16195480773" className="link-underline text-[14px] tracking-[-0.005em] text-ink/80">Or call (619) 548-0773</a>
             </div>
           </Reveal>
         </div>

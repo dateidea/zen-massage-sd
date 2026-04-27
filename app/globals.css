@@ -1,138 +1,204 @@
 @import "tailwindcss";
 
 @theme {
-  --color-cream: #F5ECE6;
-  --color-cream-deep: #ECE0D7;
-  --color-shadow: #2A1F22;
-  --color-ink: #3B2A2E;
-  --color-ink-soft: #5B454A;
-  --color-mid: #8E7A7E;
-  --color-hairline: #E2D3C8;
-  --color-clay: #A8B89A;
-  --color-clay-deep: #88997B;
-  --font-display: "DM Sans", "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --font-sans: "DM Sans", "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  /* ── Coastal Clean palette ──────────────────────────────── */
+  --color-cream: #f5f3ee;        /* salt white */
+  --color-cream-deep: #ebe8df;   /* shaded salt */
+  --color-shadow: #1b252c;       /* night sea */
+  --color-ink: #2e3a42;          /* deep sea */
+  --color-ink-soft: #475a65;     /* softer sea */
+  --color-mid: #8c9aa2;          /* muted blue-grey */
+  --color-hairline: #dcd7cb;     /* sand hairline */
+  --color-clay: #d8c7a7;         /* sand accent */
+  --color-clay-deep: #b8a47f;    /* deeper sand */
+  --color-night: #1b252c;
+  --color-brass: #d8c7a7;
+  --color-eucalyptus: #d8c7a7;
+  --color-eucalyptus-deep: #b8a47f;
+
+  /* ── Typography (Newsreader display + Inter body) ────────── */
+  --font-display: "Newsreader", "Cormorant Garamond", "Times New Roman", Georgia, serif;
+  --font-sans: "Inter", "Inter Tight", "Neue Haas Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
   --ease-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --radius-card: 20px;
-  --radius-button: 14px;
-  --shadow-card: 0 1px 2px rgba(59,42,46,0.04), 0 12px 32px -16px rgba(59,42,46,0.18);
-  --shadow-card-hover: 0 1px 2px rgba(59,42,46,0.04), 0 24px 48px -20px rgba(59,42,46,0.22);
+  --ease-architectural: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-curtain: cubic-bezier(0.65, 0.05, 0.36, 1);
+
+  --radius-card: 0px;
+  --radius-button: 0px;
+  --shadow-card: 0 0 0 1px var(--color-hairline);
+  --shadow-card-hover: 0 0 0 1px var(--color-clay-deep);
 }
 
 html, body {
   background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
 }
 
-body { font-size: 16px; line-height: 1.6; letter-spacing: -0.005em; }
+body { font-size: 16px; line-height: 1.65; letter-spacing: 0; font-weight: 400; }
 
+/* Display — Newsreader serif, airy weight */
 .display {
   font-family: var(--font-display);
-  font-weight: 500;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  letter-spacing: -0.012em;
   line-height: 1.04;
+  font-optical-sizing: auto;
 }
+.display-italic { font-style: italic; font-weight: 300; }
 
 .eyebrow {
   font-family: var(--font-sans);
   font-size: 11px;
-  letter-spacing: 0.20em;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: var(--color-clay-deep);
+  color: var(--color-mid);
   font-weight: 500;
+  font-feature-settings: "tnum";
 }
 
-.reveal { opacity: 0; transform: translateY(12px); transition: opacity 800ms var(--ease-soft), transform 800ms var(--ease-soft); will-change: opacity, transform; }
-.reveal.is-in { opacity: 1; transform: translateY(0); }
+.col-prose, .measure-prose { max-width: 64ch; }
+.measure-tight { max-width: 52ch; }
+.rule { height: 1px; background: var(--color-hairline); width: 100%; }
+
+/* ── Reveal — opacity-only, mostly still ─────────────────── */
+.reveal { opacity: 1; transform: none; transition: opacity 600ms var(--ease-editorial); }
+@media (prefers-reduced-motion: no-preference) { .reveal:not(.is-in) { opacity: 0; } }
+.reveal.is-in { opacity: 1; }
+.rail-sticky { position: static; }
+
+.img-placeholder {
+  background: var(--color-cream-deep);
+  overflow: hidden;
+}
+.image-soft { filter: saturate(0.94) brightness(1.04) contrast(0.96); }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-::selection { background: var(--color-clay); color: var(--color-shadow); }
+::selection { background: var(--color-ink); color: var(--color-cream); }
 
-:focus-visible { outline: 2px solid var(--color-clay-deep); outline-offset: 3px; border-radius: 6px; }
+:focus-visible { outline: 2px solid var(--color-clay-deep); outline-offset: 3px; border-radius: 1px; }
 
 .hairline { border-color: var(--color-hairline); }
 
-.image-soft { filter: saturate(0.94) brightness(1.04) contrast(0.96); }
-
-.img-placeholder {
-  background:
-    radial-gradient(at 30% 20%, rgba(168, 184, 154, 0.22), transparent 60%),
-    radial-gradient(at 70% 80%, rgba(59, 42, 46, 0.06), transparent 50%),
-    var(--color-cream-deep);
-}
-
-/* Soft Modernist primary CTA — sage on mauve, full radius, magnetic-ready */
 .btn-primary {
   background: var(--color-ink);
   color: var(--color-cream);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.18em;
   border-radius: var(--radius-button);
-  transition: background 350ms var(--ease-soft),
-    color 350ms var(--ease-soft),
-    box-shadow 350ms var(--ease-soft),
-    transform 250ms var(--ease-soft);
-  box-shadow: 0 1px 2px rgba(59, 42, 46, 0.08);
-  will-change: transform;
+  transition: background 350ms var(--ease-editorial), color 350ms var(--ease-editorial), transform 350ms var(--ease-editorial);
+  font-family: var(--font-sans);
+  font-weight: 500;
 }
-.btn-primary:hover {
-  background: var(--color-clay);
-  color: var(--color-shadow);
-  box-shadow: 0 8px 24px -8px rgba(59, 42, 46, 0.25);
-}
+.btn-primary:hover { background: var(--color-clay-deep); color: var(--color-ink); transform: translateY(-1px); }
 
 .btn-secondary {
-  background: var(--color-cream);
+  background: transparent;
   color: var(--color-ink);
-  border: 1px solid var(--color-hairline);
-  letter-spacing: 0.02em;
+  border: 1px solid var(--color-ink);
+  letter-spacing: 0.18em;
   border-radius: var(--radius-button);
-  transition: all 350ms var(--ease-soft);
-  will-change: transform;
+  transition: all 350ms var(--ease-editorial);
 }
-.btn-secondary:hover { border-color: var(--color-ink); background: var(--color-cream-deep); }
+.btn-secondary:hover { background: var(--color-ink); color: var(--color-cream); }
 
 .link-underline {
   background-image: linear-gradient(currentColor, currentColor);
   background-size: 100% 1px;
   background-position: 0 100%;
   background-repeat: no-repeat;
-  transition: background-size 400ms var(--ease-soft);
+  transition: background-size 400ms var(--ease-editorial);
 }
 .link-underline:hover { background-size: 0% 1px; background-position: 100% 100%; }
 
-/* Soft Modernist card */
-.card {
+.card, .card-surface {
   background: var(--color-cream);
   border: 1px solid var(--color-hairline);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
-  transition: box-shadow 500ms var(--ease-soft), transform 500ms var(--ease-soft);
+  transition: box-shadow 400ms var(--ease-editorial), transform 400ms var(--ease-editorial);
 }
-.card:hover { box-shadow: var(--shadow-card-hover); }
-.card-img { border-radius: calc(var(--radius-card) - 4px); overflow: hidden; }
+.card:hover, .card-surface:hover { box-shadow: var(--shadow-card-hover); transform: translateY(-1px); }
+.card-img { border-radius: 0; overflow: hidden; }
 
-/* Cursor follower dot */
-.cursor-dot {
-  position: fixed;
-  top: 0; left: 0;
-  width: 12px; height: 12px;
-  border-radius: 999px;
-  background: var(--color-clay);
-  pointer-events: none;
-  mix-blend-mode: multiply;
-  transform: translate(-50%, -50%) scale(0);
-  transition: transform 400ms var(--ease-soft), background 400ms var(--ease-soft);
-  z-index: 60;
+.index-badge {
+  font-family: var(--font-sans);
+  font-feature-settings: "tnum";
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  color: var(--color-mid);
+  text-transform: uppercase;
 }
-.cursor-dot.is-active { transform: translate(-50%, -50%) scale(1); }
-.cursor-dot.is-hover { transform: translate(-50%, -50%) scale(2.2); background: var(--color-ink); }
 
-@media (max-width: 768px) { .cursor-dot { display: none; } }
+/* ── Horizontal-scroll moment (Services) ─────────────────── */
+.h-scroll {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 24px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+.h-scroll::-webkit-scrollbar { display: none; }
+.h-scroll > * {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+}
+@media (min-width: 768px)  { .h-scroll > * { flex: 0 0 46%; } }
+@media (min-width: 1100px) { .h-scroll > * { flex: 0 0 32%; } }
+
+/* full-bleed horizon band — escapes parent container */
+.horizon-band {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  display: block;
+}
+
+.cursor-dot { display: none; }
+
+.dropcap::first-letter {
+  font-family: var(--font-display);
+  float: left;
+  font-size: 4.6em;
+  line-height: 0.9;
+  padding: 0.05em 0.08em 0 0;
+  font-weight: 400;
+  color: var(--color-clay-deep);
+}
+
+.ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: var(--color-mid);
+  font-family: var(--font-display);
+  font-size: 18px;
+  letter-spacing: 0.2em;
+}
+.ornament::before, .ornament::after {
+  content: "";
+  width: 64px;
+  height: 1px;
+  background: var(--color-hairline);
+}

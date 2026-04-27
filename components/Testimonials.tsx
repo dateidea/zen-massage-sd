@@ -49,7 +49,7 @@ export default function Testimonials() {
             <span className="display text-[24px] text-clay-deep font-medium">★★★★★</span>
             <span>Google &amp; Yelp regulars · College Area, La Mesa, SDSU</span>
             <span aria-hidden className="hidden md:inline">·</span>
-            <span>7900 El Cajon Blvd, La Mesa · daily, 10 AM – 9:30 PM</span>
+            <span>7086 El Cajon Blvd, La Mesa · daily, 10 AM – 9:30 PM</span>
           </div>
         </Reveal>
       </div>
