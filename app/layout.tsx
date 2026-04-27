@@ -20,13 +20,13 @@ const SITE_URL = "https://dateidea.github.io/blue-moon-spa";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard, San Diego",
-    template: "%s · Blue Moon Spa",
+    default: "ZEN Massage — An Honest Hour on El Cajon Boulevard, San Diego",
+    template: "%s · ZEN Massage",
   },
   description:
     "A small, Asian-owned massage studio on El Cajon Boulevard. The Custom Hour: Swedish, deep tissue, or both — with hot stones and essential oil included, $79.99. Open every day, 9 AM to 11 PM. Walk-ins welcome.",
   keywords: [
-    "Blue Moon Spa",
+    "ZEN Massage",
     "massage San Diego",
     "El Cajon Blvd massage",
     "deep tissue massage San Diego",
@@ -37,11 +37,11 @@ export const metadata: Metadata = {
     "foot reflexology San Diego",
   ],
   openGraph: {
-    title: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard",
+    title: "ZEN Massage — An Honest Hour on El Cajon Boulevard",
     description:
       "Swedish, deep tissue, or both — with hot stones and essential oil included. $79.99 Custom Hour. Open daily 9–11 in San Diego.",
     url: SITE_URL,
-    siteName: "Blue Moon Spa",
+    siteName: "ZEN Massage",
     locale: "en_US",
     type: "website",
     images: [
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
         url: "/images/og-01.png",
         width: 1200,
         height: 630,
-        alt: "Blue Moon Spa — quiet, warm treatment room on El Cajon Boulevard",
+        alt: "ZEN Massage — quiet, warm treatment room on El Cajon Boulevard",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard",
+    title: "ZEN Massage — An Honest Hour on El Cajon Boulevard",
     description:
       "Swedish, deep tissue, or both — with hot stones included. $79.99. Open daily 9–11.",
     images: ["/images/og-01.png"],
@@ -84,7 +84,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "MassageTherapy",
               "@id": `${SITE_URL}/#business`,
-              name: "Blue Moon Spa",
+              name: "ZEN Massage",
               image: `${SITE_URL}/images/hero-01.jpg`,
               url: SITE_URL,
               telephone: "+16265222888",

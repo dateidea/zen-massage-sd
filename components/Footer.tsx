@@ -67,7 +67,7 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-[12px] text-mid md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} Blue Moon Spa. All rights reserved.
+            © {new Date().getFullYear()} ZEN Massage. All rights reserved.
           </p>
           <p>Asian-owned · LGBTQ+ friendly · Tipping never required</p>
         </div>
