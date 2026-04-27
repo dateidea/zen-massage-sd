@@ -1,190 +1,53 @@
 @import "tailwindcss";
 
 @theme {
-  /* ── Midnight Apothecary palette ─────────────────────────────
-     The whole site is dark-luxe. `cream` (the legacy token name)
-     now maps to a warm ivory used for INVERTED light sections
-     like Testimonials. `ink` is the dominant midnight background. */
-
-  /* Surface */
-  --color-midnight: #0E1620;
-  --color-midnight-deep: #060B12;
-  --color-midnight-soft: #161F2C;
-
-  /* Ivory (used as the inverted-section ground and as primary type colour) */
-  --color-ivory: #F1ECDF;
-  --color-ivory-soft: #DAD3C3;
-  --color-ivory-mute: #8C8475;
-
-  /* Brass accent */
-  --color-brass: #B58A4A;
-  --color-brass-deep: #8C6531;
-
-  /* Hairlines */
-  --color-edge: #2A323D;
-  --color-edge-light: #C7BFAE;
-
-  /* ── Legacy aliases (so existing class names in components still
-     resolve while we redesign in place) ───────────────────────── */
-  --color-cream: #0E1620;          /* was warm cream → now midnight */
-  --color-cream-deep: #060B12;     /* was deeper cream → deeper midnight */
-  --color-ink: #F1ECDF;            /* was charcoal → now ivory */
-  --color-ink-soft: #DAD3C3;       /* was soft ink → soft ivory */
-  --color-mid: #8C8475;            /* muted */
-  --color-hairline: #2A323D;       /* was hairline cream → edge midnight */
-  --color-clay: #B58A4A;           /* was terracotta → brass */
-  --color-clay-deep: #8C6531;      /* deep brass */
-
-  /* ── Typography ─────────────────────────────────────────────── */
-  --font-display: "Cormorant Garamond", "GT Sectra", "Times New Roman", Georgia, serif;
-  --font-sans: "Manrope", "Söhne", ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", Roboto, sans-serif;
-
-  /* ── Motion ─────────────────────────────────────────────────── */
-  --ease-editorial: cubic-bezier(0.22, 0.61, 0.36, 1);
-  --ease-zoom: cubic-bezier(0.16, 0.84, 0.32, 1);
+  --color-cream: #0E1620;
+  --color-cream-deep: #15202C;
+  --color-shadow: #07101A;
+  --color-ink: #F1ECDF;
+  --color-ink-soft: #C9C2B0;
+  --color-mid: #7A8290;
+  --color-hairline: #1F2A36;
+  --color-clay: #B58A4A;
+  --color-clay-deep: #8C6A37;
+  --font-display: "Bodoni Moda", "Didot", "Times New Roman", Georgia, serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --ease-luxe: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── Base resets ──────────────────────────────────────────────── */
-html,
-body {
-  background: var(--color-midnight);
-  color: var(--color-ivory);
-  font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv11";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-}
+html, body { background: var(--color-cream); color: var(--color-ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; text-rendering: optimizeLegibility; }
 
-body {
-  font-size: 16px;
-  line-height: 1.65;
-  letter-spacing: 0;
-}
+body { font-size: 16px; line-height: 1.6; letter-spacing: 0.005em; }
 
-/* Display headings */
-.display {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.04;
-}
+.display { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.022em; line-height: 1.04; font-optical-sizing: auto; }
 
-.eyebrow {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--color-brass);
-  font-weight: 500;
-}
+.eyebrow { font-family: var(--font-sans); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--color-clay); font-weight: 500; }
 
-/* ── Reveal: signature gesture is SLOW IMAGE ZOOM ───────────── */
-/* Text reveals: quiet fade only, no translate (different from before). */
-.reveal {
-  opacity: 0;
-  transition: opacity 1100ms var(--ease-editorial);
-  will-change: opacity;
-}
-.reveal.is-in {
-  opacity: 1;
-}
+.reveal { opacity: 0; transition: opacity 1200ms var(--ease-luxe); will-change: opacity; }
+.reveal.is-in { opacity: 1; }
 
-/* Images get the signature slow zoom-out as they enter view. */
-.zoom-frame {
-  overflow: hidden;
-  position: relative;
-}
-.zoom-frame > .zoom-img {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  transform: scale(1.12);
-  transition: transform 2200ms var(--ease-zoom),
-    filter 2200ms var(--ease-zoom);
-  filter: brightness(0.92);
-  will-change: transform, filter;
-}
-.zoom-frame.is-in > .zoom-img {
-  transform: scale(1);
-  filter: brightness(1);
-}
+.zoom { transform: scale(1.06); transition: transform 2400ms var(--ease-luxe); will-change: transform; }
+.zoom.is-in { transform: scale(1); }
 
 @media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transition: none; }
-  .zoom-frame > .zoom-img {
-    transform: none;
-    filter: none;
-    transition: none;
-  }
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
+  .reveal, .zoom { opacity: 1 !important; transform: none !important; transition: none !important; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
 }
 
-/* ── Selection ────────────────────────────────────────────────── */
-::selection {
-  background: var(--color-brass);
-  color: var(--color-midnight);
-}
+::selection { background: var(--color-clay); color: var(--color-shadow); }
 
-/* ── Focus ring ───────────────────────────────────────────────── */
-:focus-visible {
-  outline: 2px solid var(--color-brass);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
+:focus-visible { outline: 2px solid var(--color-clay); outline-offset: 3px; border-radius: 2px; }
 
-.hairline {
-  border-color: var(--color-edge);
-}
+.hairline { border-color: var(--color-hairline); }
 
-/* ── Image placeholder fallback (deep night) ──────────────────── */
-.img-placeholder {
-  background:
-    radial-gradient(at 30% 20%, rgba(181, 138, 74, 0.18), transparent 60%),
-    radial-gradient(at 70% 80%, rgba(241, 236, 223, 0.05), transparent 50%),
-    var(--color-midnight-soft);
-}
+.image-luxe { filter: saturate(0.78) brightness(0.78) contrast(1.06) hue-rotate(-12deg); }
 
-/* ── Buttons: brass-on-midnight by default, ghost on dark ────── */
-.btn-primary {
-  background: var(--color-brass);
-  color: var(--color-midnight);
-  transition: transform 350ms var(--ease-editorial),
-    background 350ms var(--ease-editorial),
-    color 350ms var(--ease-editorial);
-}
-.btn-primary:hover {
-  background: var(--color-ivory);
-  color: var(--color-midnight);
-  transform: translateY(-1px);
-}
-.btn-ghost {
-  background: transparent;
-  color: var(--color-ivory);
-  border: 1px solid var(--color-edge);
-  transition: border-color 350ms var(--ease-editorial),
-    color 350ms var(--ease-editorial);
-}
-.btn-ghost:hover {
-  border-color: var(--color-brass);
-  color: var(--color-brass);
-}
+.img-placeholder { background: radial-gradient(at 30% 20%, rgba(181, 138, 74, 0.16), transparent 60%), radial-gradient(at 70% 80%, rgba(241, 236, 223, 0.04), transparent 50%), var(--color-cream-deep); }
 
-.link-underline {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 100% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 400ms var(--ease-editorial);
-}
-.link-underline:hover {
-  background-size: 0% 1px;
-  background-position: 100% 100%;
-}
+.btn-primary { background: var(--color-clay); color: var(--color-shadow); letter-spacing: 0.08em; transition: background 500ms var(--ease-luxe), color 500ms var(--ease-luxe), transform 500ms var(--ease-luxe); }
+.btn-primary:hover { background: var(--color-ink); color: var(--color-shadow); transform: translateY(-1px); }
+
+.link-underline { background-image: linear-gradient(currentColor, currentColor); background-size: 100% 1px; background-position: 0 100%; background-repeat: no-repeat; transition: background-size 600ms var(--ease-luxe); }
+.link-underline:hover { background-size: 0% 1px; background-position: 100% 100%; }
+
+.brass-rule { height: 1px; background: linear-gradient(90deg, transparent, var(--color-clay), transparent); width: 100%; }

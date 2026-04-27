@@ -3,86 +3,26 @@ import { asset } from "@/lib/asset";
 
 export default function About() {
   return (
-    <section
-      id="about"
-      className="bg-cream py-28 md:py-36"
-      aria-labelledby="about-heading"
-    >
+    <section id="about" className="bg-cream py-24 md:py-32" aria-labelledby="about-heading">
       <div className="mx-auto max-w-[1320px] px-6 md:px-10">
-        <div className="grid grid-cols-12 gap-x-6 gap-y-16">
-          <Reveal className="col-span-12 md:col-span-5">
+        <div className="grid grid-cols-12 gap-x-6 gap-y-12">
+          <Reveal className="col-span-12 md:col-span-5" zoom>
+            <div role="img" aria-label="The treatment room of Oasis 8 Massage — cedar table dressed with neatly folded ivory linen, soft late-afternoon window light" className="img-placeholder image-luxe relative aspect-[4/5] w-full overflow-hidden" style={{ backgroundImage: `url(${asset("/images/about-01.jpg")})`, backgroundSize: "cover", backgroundPosition: "center" }} />
+            <p className="mt-4 text-[11px] tracking-[0.20em] uppercase text-mid">The room before the door opens.</p>
+          </Reveal>
+          <Reveal delay={120} className="col-span-12 md:col-span-6 md:col-start-7">
             <p className="eyebrow">About</p>
-            <h2
-              id="about-heading"
-              className="display mt-4 text-[44px] leading-[1.04] md:text-[64px]"
-            >
-              A small,
-              <br />
-              <span className="italic font-light text-ink/55">
-                Asian-owned studio
-              </span>
-              <br />
-              on El Cajon Boulevard.
-            </h2>
-          </Reveal>
-
-          <Reveal
-            zoom
-            className="col-span-12 md:col-span-7 md:col-start-6 aspect-[4/3] md:aspect-[5/4]"
-          >
-            <div
-              role="img"
-              aria-label="Architectural wide of Blue Moon Spa front room — midnight plaster walls, ivory linen on a bench, a hanging trailing pothos catching warm brass light"
-              className="zoom-img img-placeholder"
-              style={{ backgroundImage: `url(${asset("/images/about-01.png")})` }}
-            />
-          </Reveal>
-
-          <Reveal delay={120} className="col-span-12 md:col-span-7 md:col-start-1">
-            <div className="space-y-6 text-[16px] leading-[1.75] text-ink/75">
-              <p>
-                Blue Moon Spa is the kind of place we wished existed when we were
-                the ones working twelve-hour shifts. A small front room with
-                warm decor. Quiet treatment rooms with crisp linen and neatly
-                folded towels. Hot stones warming on the counter most days,
-                hot tea in the kettle every day.
-              </p>
-              <p>
-                Our practitioners — Kiwi, Luna, and the team — are trained in
-                Swedish, deep tissue, hot stone, and foot reflexology. We don&rsquo;t
-                sell memberships. We don&rsquo;t push add-ons. We don&rsquo;t have a
-                points program. The price you see at the door is the price you
-                pay, and a real hour means sixty minutes on the table.
-              </p>
-              <p>
-                What we are trying to do is straightforward: give people an
-                honest hour. The kind your shoulders remember three days later.
-              </p>
+            <h2 id="about-heading" className="display mt-4 text-[40px] leading-[1.05] text-ink md:text-[56px]">A small neighborhood<br /><span className="italic font-light text-clay">massage studio</span><br />on El Cajon Boulevard.</h2>
+            <div className="mt-10 space-y-6 text-[17px] leading-[1.7] text-ink-soft">
+              <p>Oasis 8 sits at the corner of El Cajon Boulevard and 79th Street in La Mesa, two blocks east of the College Area. A small front room with warm decor. Comfortable rooms with crisp white sheets and neatly arranged towels. Hot stones warming on the counter most days.</p>
+              <p>We do not sell memberships. We do not push add-ons. There is no points program. The price you see at the door is the price you pay, and a real hour means sixty minutes on the table. Active duty and veterans get ten percent off &mdash; say so when you call, that is the only paperwork.</p>
+              <p>What we are trying to do is straightforward: give people an honest hour. The kind your shoulders remember three days later.</p>
             </div>
-
-            <div className="mt-12 grid grid-cols-2 gap-8 border-t border-hairline pt-8 text-[13px]">
-              <div>
-                <p className="eyebrow">Specialties</p>
-                <p className="mt-2 text-ink/85">
-                  Swedish, deep tissue, hot stone, foot
-                </p>
-              </div>
-              <div>
-                <p className="eyebrow">Hours</p>
-                <p className="mt-2 text-ink/85">Daily, 9 AM – 11 PM</p>
-              </div>
-              <div>
-                <p className="eyebrow">Address</p>
-                <p className="mt-2 text-ink/85">
-                  7034 El Cajon Blvd, San Diego, CA 92115
-                </p>
-              </div>
-              <div>
-                <p className="eyebrow">House rate</p>
-                <p className="mt-2 text-ink/85">
-                  $79.99 / hour, all-in &middot; LGBTQ+ friendly
-                </p>
-              </div>
+            <div className="mt-10 grid grid-cols-2 gap-6 border-t border-hairline pt-8 text-[13px]">
+              <div><p className="text-mid uppercase tracking-[0.16em] text-[11px]">Specialties</p><p className="mt-2 text-ink">Hot stone, deep tissue, foot reflexology, couples</p></div>
+              <div><p className="text-mid uppercase tracking-[0.16em] text-[11px]">Hours</p><p className="mt-2 text-ink">Daily, 10 AM &ndash; 9:30 PM</p></div>
+              <div><p className="text-mid uppercase tracking-[0.16em] text-[11px]">Combo deal</p><p className="mt-2 text-ink">$45 &mdash; 30 min foot + 30 min body</p></div>
+              <div><p className="text-mid uppercase tracking-[0.16em] text-[11px]">Military</p><p className="mt-2 text-ink">10% off active duty &amp; veterans</p></div>
             </div>
           </Reveal>
         </div>

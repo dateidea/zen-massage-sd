@@ -1,79 +1,46 @@
 "use client";
 
-import { useEffect, useRef, createElement } from "react";
-import type { ElementType, ReactNode } from "react";
+import { useEffect, useRef, useState, type ElementType } from "react";
 
 type Props = {
-  as?: ElementType;
-  className?: string;
+  children: React.ReactNode;
   delay?: number;
+  className?: string;
+  as?: ElementType;
   zoom?: boolean;
-  children: ReactNode;
 };
 
-/**
- * Single reveal primitive.
- * - For elements ABOVE the fold (or already in view at observe time),
- *   sets `is-in` immediately — no IntersectionObserver race on hydration.
- * - For elements below the fold, uses IntersectionObserver to add `is-in`
- *   when scrolled into view.
- * - Hard fallback: if anything goes sideways, every reveal still becomes
- *   `is-in` 800ms after mount so content can never get stuck invisible.
- */
-export default function Reveal({
-  as = "div",
-  className = "",
-  delay = 0,
-  zoom = false,
-  children,
-}: Props) {
-  const ref = useRef<HTMLElement | null>(null);
+export default function Reveal({ children, delay = 0, className = "", as: Tag = "div", zoom = false }: Props) {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [shown, setShown] = useState(false);
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
-
-    node.style.transitionDelay = `${delay}ms`;
-
-    // Hard fallback — never let content stay invisible.
-    const safety = window.setTimeout(() => {
-      node.classList.add("is-in");
-    }, 800);
-
-    // If already in viewport on mount, reveal immediately.
-    const rect = node.getBoundingClientRect();
-    const vh = window.innerHeight || document.documentElement.clientHeight;
-    if (rect.top < vh && rect.bottom > 0) {
-      node.classList.add("is-in");
-      window.clearTimeout(safety);
-      return () => {};
+    if (typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShown(true);
+      return;
     }
-
-    if (typeof IntersectionObserver === "undefined") {
-      node.classList.add("is-in");
-      window.clearTimeout(safety);
-      return () => {};
-    }
-
-    const obs = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            (e.target as HTMLElement).classList.add("is-in");
-            obs.unobserve(e.target);
-            window.clearTimeout(safety);
-          }
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          setShown(true);
+          obs.disconnect();
         }
-      },
-      { rootMargin: "0px 0px -5% 0px", threshold: 0.01 }
-    );
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -10% 0px" });
     obs.observe(node);
-    return () => {
-      obs.disconnect();
-      window.clearTimeout(safety);
-    };
-  }, [delay]);
+    return () => obs.disconnect();
+  }, []);
 
-  const cls = `${zoom ? "zoom-frame" : "reveal"} ${className}`;
-  return createElement(as, { ref, className: cls }, children);
+  const Element = Tag;
+  return (
+    <Element
+      ref={ref}
+      className={"reveal " + (zoom ? "zoom " : "") + (shown ? "is-in " : "") + className}
+      style={{ transitionDelay: shown ? delay + "ms" : "0ms" }}
+    >
+      {children}
+    </Element>
+  );
 }

@@ -1,135 +1,43 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Bodoni_Moda, Manrope } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--font-cormorant",
-});
+const bodoni = Bodoni_Moda({ subsets: ["latin"], display: "swap", weight: ["400", "500", "700"], style: ["normal", "italic"], variable: "--font-bodoni" });
+const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-manrope" });
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600"],
-  variable: "--font-manrope",
-});
-
-const SITE_URL = "https://dateidea.github.io/blue-moon-spa";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://oasis8massage.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard, San Diego",
-    template: "%s · Blue Moon Spa",
-  },
-  description:
-    "A small, Asian-owned massage studio on El Cajon Boulevard. The Custom Hour: Swedish, deep tissue, or both — with hot stones and essential oil included, $79.99. Open every day, 9 AM to 11 PM. Walk-ins welcome.",
-  keywords: [
-    "Blue Moon Spa",
-    "massage San Diego",
-    "El Cajon Blvd massage",
-    "deep tissue massage San Diego",
-    "Swedish massage San Diego",
-    "hot stone massage San Diego",
-    "Asian-owned massage",
-    "College Area massage",
-    "foot reflexology San Diego",
-  ],
+  title: { default: "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa", template: "%s · Oasis 8 Massage" },
+  description: "Oasis 8 Massage at 7900 El Cajon Blvd, Suite C, La Mesa. Foot, hot stone, deep tissue, and combo work. Open every day, 10 AM to 9:30 PM. Combo: 30 min foot + 30 min body for $45. 10% off active duty and veterans. Walk-ins welcome. Call (619) 439-6708.",
+  keywords: ["Oasis 8 Massage","massage La Mesa","El Cajon Blvd massage","foot massage La Mesa","deep tissue massage San Diego","hot stone massage La Mesa","combo massage El Cajon Blvd","couples massage La Mesa","walk-in massage La Mesa","military discount massage"],
   openGraph: {
-    title: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard",
-    description:
-      "Swedish, deep tissue, or both — with hot stones and essential oil included. $79.99 Custom Hour. Open daily 9–11 in San Diego.",
-    url: SITE_URL,
-    siteName: "Blue Moon Spa",
-    locale: "en_US",
-    type: "website",
-    images: [
-      {
-        url: "/images/og-01.png",
-        width: 1200,
-        height: 630,
-        alt: "Blue Moon Spa — quiet, brass-lit treatment room on El Cajon Boulevard",
-      },
-    ],
+    title: "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa",
+    description: "An honest hour for everywhere you carry it. Foot, hot stone, deep tissue, combo. Open every day, 10 AM to 9:30 PM at 7900 El Cajon Blvd, Suite C, La Mesa.",
+    url: SITE_URL, siteName: "Oasis 8 Massage", locale: "en_US", type: "website",
+    images: [{ url: "/images/og-01.jpg", width: 1200, height: 630, alt: "Oasis 8 Massage — quiet, warm treatment room on El Cajon Boulevard" }],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Blue Moon Spa — An Honest Hour on El Cajon Boulevard",
-    description:
-      "Swedish, deep tissue, or both — with hot stones included. $79.99. Open daily 9–11.",
-    images: ["/images/og-01.png"],
-  },
+  twitter: { card: "summary_large_image", title: "Oasis 8 Massage — An Honest Hour on El Cajon Boulevard, La Mesa", description: "An honest hour for everywhere you carry it. Open every day, 10 AM to 9:30 PM.", images: ["/images/og-01.jpg"] },
   alternates: { canonical: SITE_URL },
   robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${manrope.variable}`}>
+    <html lang="en" className={`${bodoni.variable} ${manrope.variable}`}>
       <body className="bg-cream text-ink antialiased">
-        <a
-          href="#booking"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-clay focus:px-4 focus:py-2 focus:text-cream"
-        >
-          Skip to booking
-        </a>
+        <a href="#booking" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded focus:bg-clay focus:px-4 focus:py-2 focus:text-shadow">Skip to booking</a>
         {children}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "MassageTherapy",
-              "@id": `${SITE_URL}/#business`,
-              name: "Blue Moon Spa",
-              image: `${SITE_URL}/images/hero-01.jpg`,
-              url: SITE_URL,
-              telephone: "+16265222888",
-              priceRange: "$$",
-              address: {
-                "@type": "PostalAddress",
-                streetAddress: "7034 El Cajon Blvd",
-                addressLocality: "San Diego",
-                addressRegion: "CA",
-                postalCode: "92115",
-                addressCountry: "US",
-              },
-              geo: {
-                "@type": "GeoCoordinates",
-                latitude: 32.7691869,
-                longitude: -117.0461041,
-              },
-              openingHoursSpecification: [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  dayOfWeek: [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday",
-                  ],
-                  opens: "09:00",
-                  closes: "23:00",
-                },
-              ],
-              paymentAccepted: "Cash, Credit Card",
-              hasMap: "https://maps.app.goo.gl/4wrpXnSY2Wy9iGuD9",
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "4.5",
-                reviewCount: "11",
-              },
-            }),
-          }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org", "@type": "MassageTherapy", "@id": `${SITE_URL}/#business`,
+          name: "Oasis 8 Massage", image: `${SITE_URL}/images/hero-01.jpg`, url: SITE_URL,
+          telephone: "+16194396708", email: "oasis8massage@gmail.com", priceRange: "$$",
+          address: { "@type": "PostalAddress", streetAddress: "7900 El Cajon Blvd, Suite C", addressLocality: "La Mesa", addressRegion: "CA", postalCode: "91942", addressCountry: "US" },
+          geo: { "@type": "GeoCoordinates", latitude: 32.7696314, longitude: -117.0269936 },
+          openingHoursSpecification: [{ "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"], opens: "10:00", closes: "21:30" }],
+          paymentAccepted: "Cash, Credit Card", hasMap: "https://maps.app.goo.gl/BzZuUZrvG5NLdQzK6",
+        }) }} />
       </body>
     </html>
   );
