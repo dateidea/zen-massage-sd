@@ -30,12 +30,12 @@ function Item({ qa, idx }: { qa: QA; idx: number }) {
   return (
     <li className="border-t border-hairline">
       <button aria-expanded={open} aria-controls={id} onClick={() => setOpen((s) => !s)} className="group flex w-full items-start justify-between gap-6 py-7 text-left">
-        <span className="display text-[22px] leading-[1.25] text-ink md:text-[26px]">{qa.q}</span>
+        <span className="display text-[24px] leading-[1.2] text-cream md:text-[30px]">{qa.q}</span>
         <span aria-hidden className={`mt-2 inline-block h-3 w-3 shrink-0 transition-transform duration-500 ${open ? "rotate-45" : ""}`}
-          style={{ background: "linear-gradient(currentColor, currentColor) center/100% 1px no-repeat, linear-gradient(currentColor, currentColor) center/1px 100% no-repeat", color: "var(--color-ink)" }} />
+          style={{ background: "linear-gradient(currentColor, currentColor) center/100% 1px no-repeat, linear-gradient(currentColor, currentColor) center/1px 100% no-repeat", color: "var(--color-brass)" }} />
       </button>
       <div id={id} role="region" className="grid transition-[grid-template-rows] duration-500 ease-out" style={{ gridTemplateRows: open ? "1fr" : "0fr" }}>
-        <div className="overflow-hidden"><p className="max-w-[64ch] pb-8 text-[16px] leading-[1.7] text-ink-soft">{qa.a}</p></div>
+        <div className="overflow-hidden"><p className="max-w-[64ch] pb-8 text-[16px] leading-[1.75] text-cream/75">{qa.a}</p></div>
       </div>
     </li>
   );
@@ -43,20 +43,19 @@ function Item({ qa, idx }: { qa: QA; idx: number }) {
 
 export default function FAQ() {
   return (
-    <section id="faq" className="bg-cream py-24 md:py-32" aria-labelledby="faq-heading">
-      <div className="mx-auto max-w-[1320px] px-6 md:px-10">
+    <section id="faq" className="bg-night py-28 md:py-40" aria-labelledby="faq-heading">
+      <div className="mx-auto max-w-[1080px] px-6 md:px-10">
         <Reveal>
-          <div className="grid grid-cols-12 gap-6">
-            <div className="col-span-12 md:col-span-4"><p className="eyebrow">Things people ask</p></div>
-            <div className="col-span-12 md:col-span-8">
-              <h2 id="faq-heading" className="display text-[40px] leading-[1.02] md:text-[56px]">
-                The honest answers,<br />
-                <span className="italic font-light text-ink-soft">before you have to ask.</span>
-              </h2>
-            </div>
-          </div>
+          <p className="eyebrow">Things people ask</p>
         </Reveal>
-        <Reveal>
+        <Reveal delay={120}>
+          <h2 id="faq-heading" className="display mt-6 text-[44px] leading-[1.02] md:text-[80px]">
+            The honest answers,
+            <br />
+            <span className="italic font-light text-brass">before you have to ask.</span>
+          </h2>
+        </Reveal>
+        <Reveal delay={200}>
           <ul className="mt-16 border-b border-hairline">
             {faqs.map((qa, i) => (<Item key={qa.q} qa={qa} idx={i} />))}
           </ul>
