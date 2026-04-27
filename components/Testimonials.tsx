@@ -119,10 +119,10 @@ export default function Testimonials() {
 
         <Reveal variant="fade">
           <div className="mt-24 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-hairline pt-10 text-[13px] text-ink/65">
-            <span className="display text-[32px] text-ink">4.5★</span>
+            <span className="display text-[32px] text-ink">4.7★</span>
             <span>Across Google reviews · still growing by word of mouth</span>
             <span aria-hidden className="hidden md:inline">·</span>
-            <span>7034 El Cajon Blvd, San Diego · open daily 9 – 11</span>
+            <span>7086 El Cajon Blvd</span>
           </div>
         </Reveal>
       </div>

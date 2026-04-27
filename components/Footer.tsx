@@ -23,8 +23,7 @@ export default function Footer() {
           <div className="col-span-6 md:col-span-2 md:col-start-7">
             <p className="eyebrow">Visit</p>
             <address className="mt-4 not-italic text-[14px] leading-[1.8] text-ink/85">
-              7034 El Cajon Blvd
-              <br />
+              7086 El Cajon Blvd<br />
               San Diego, CA 92115
             </address>
             <a
@@ -49,10 +48,10 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-3">
             <p className="eyebrow">Reach us</p>
             <a
-              href="tel:+16265222888"
+              href="tel:+16195480773"
               className="display mt-3 block text-[32px] leading-none text-clay"
             >
-              (626) 522-2888
+              (619) 548-0773
             </a>
             <ul className="mt-6 flex flex-col gap-2 text-[13px] text-ink/70">
               <li><a className="link-underline" href="#services">Services</a></li>
@@ -65,7 +64,7 @@ export default function Footer() {
 
         <div className="mt-20 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-[12px] text-ink/55 md:flex-row md:items-center">
           <p>
-            © {new Date().getFullYear()} Blue Moon Spa. All rights reserved.
+            © {new Date().getFullYear()} ZEN Massage. All rights reserved.
           </p>
           <p>Asian-owned · LGBTQ+ friendly · Tipping never required</p>
         </div>
