@@ -104,3 +104,14 @@ section .mt-16, section .mt-24, section .mt-32 { margin-top: 2.5rem !important; 
 }
 /* Compress lone-paragraph spacing in long sections */
 section p + p { margin-top: 1rem; }
+
+/* Sidebar overlap fix — push main content right of the fixed sidebar */
+@media (min-width: 768px) {
+  main { padding-left: 320px; }
+  /* Tighten side gutters once we've reserved sidebar room */
+  main > section .max-w-\[1180px\], main > section .max-w-\[1320px\], main > section .max-w-\[1400px\] { padding-left: 1.5rem !important; padding-right: 1.5rem !important; }
+}
+/* Mobile: sidebar isn't fixed, no offset needed */
+@media (max-width: 767.98px) {
+  main { padding-left: 0; }
+}
