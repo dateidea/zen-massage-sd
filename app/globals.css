@@ -115,3 +115,10 @@ section p + p { margin-top: 1rem; }
 @media (max-width: 767.98px) {
   main { padding-left: 0; }
 }
+
+/* Hero is now a hero-image with overlay — relax the global #top tightening
+   so the image gets full breathing room */
+section#top { min-height: 100svh !important; padding-top: 0 !important; padding-bottom: 0 !important; display: flex !important; }
+section#top h1.display, main section#top h1.display { font-size: clamp(48px, 8vw, 112px) !important; line-height: 0.98 !important; color: var(--color-cream, #f5f3ee) !important; }
+section#top .eyebrow { color: rgba(245, 243, 238, 0.8) !important; }
+section#top p { color: rgba(245, 243, 238, 0.85) !important; }
