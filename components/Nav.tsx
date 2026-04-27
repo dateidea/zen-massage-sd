@@ -56,22 +56,19 @@ export default function Nav() {
         >
           {links.map((l) => (
             <li key={l.href}>
-              <a
-                href={l.href}
-                className="link-underline text-[14px] tracking-[0.01em]"
-              >
+              <a href={l.href} className="link-underline text-[14px] tracking-[0.01em]">
                 {l.label}
               </a>
             </li>
           ))}
           <li>
             <a
-              href="tel:+16196395282"
+              href="tel:+16265222888"
               className={`text-[14px] tracking-[0.01em] ${
                 scrolled ? "text-ink-soft" : "text-cream/85"
               }`}
             >
-              (619) 639-5282
+              (626) 522-2888
             </a>
           </li>
           <li>
@@ -141,11 +138,8 @@ export default function Nav() {
             ))}
           </ul>
           <div className="flex flex-col gap-4">
-            <a
-              href="tel:+16196395282"
-              className="display text-[28px] text-ink"
-            >
-              (619) 639-5282
+            <a href="tel:+16265222888" className="display text-[28px] text-ink">
+              (626) 522-2888
             </a>
             <a
               href="#booking"
@@ -155,7 +149,7 @@ export default function Nav() {
               Book a session
             </a>
             <p className="text-[12px] text-mid">
-              5575 Baltimore Dr, La Mesa · Open 9 AM – 10 PM, daily
+              7034 El Cajon Blvd · San Diego · Open every day, 9 AM – 11 PM
             </p>
           </div>
         </div>

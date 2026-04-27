@@ -4,11 +4,11 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 
 const services = [
-  "Foot Massage — from $50 (60 min)",
-  "Full Body with Hot Stones — from $60 (60 min)",
-  "Deep Tissue — from $55 (60 min)",
-  "Combo: 30 foot + 30 body — $45",
-  "Couples Room — call for current rate",
+  "The Custom Hour, 60 min — $79.99",
+  "Deep Tissue, 60 min — $79.99",
+  "Foot Reflexology, 60 min — $59.99",
+  "Hot Stone (included with the hour)",
+  "Couples — call us, please",
   "Not sure — recommend something",
 ];
 
@@ -34,14 +34,14 @@ export default function Booking() {
               id="booking-heading"
               className="display mt-4 text-[40px] leading-[1.02] md:text-[64px]"
             >
-              Let's pick
+              Let&rsquo;s pick
               <br />
               <span className="italic font-light text-ink-soft">a time.</span>
             </h2>
             <p className="mt-8 max-w-[44ch] text-[17px] leading-[1.7] text-ink-soft">
-              Tell us when you're thinking and what hurts. We'll reply within
-              one business day. Most messages get a same-day text. No spam,
-              no follow-up sequence, no sales pressure.
+              Tell us when you&rsquo;re thinking and what hurts. We&rsquo;ll reply within
+              one business day. Most messages get a same-day text. No spam, no
+              follow-up sequence, no sales pressure.
             </p>
 
             <div className="mt-10 space-y-6 border-t border-hairline pt-8">
@@ -50,13 +50,13 @@ export default function Booking() {
                   Or, faster
                 </p>
                 <a
-                  href="tel:+16196395282"
+                  href="tel:+16265222888"
                   className="display mt-3 block text-[36px] leading-none text-ink hover:text-clay md:text-[44px]"
                 >
-                  (619) 639-5282
+                  (626) 522-2888
                 </a>
                 <p className="mt-3 text-[14px] text-mid">
-                  Picked up by a real person, every day, 9 AM – 10 PM.
+                  Picked up by a real person, every day, 9 AM – 11 PM.
                 </p>
               </div>
 
@@ -65,18 +65,14 @@ export default function Booking() {
                   Walk-ins
                 </p>
                 <p className="mt-3 text-[15px] text-ink-soft">
-                  5575 Baltimore Dr #106-107, La Mesa. Free lot in the same
-                  plaza. We can almost always fit you in within 30 minutes —
-                  try us.
+                  7034 El Cajon Blvd, San Diego, CA 92115. Free lot in front.
+                  We can almost always fit you in within thirty minutes — try us.
                 </p>
               </div>
             </div>
           </Reveal>
 
-          <Reveal
-            delay={120}
-            className="col-span-12 md:col-span-6 md:col-start-7"
-          >
+          <Reveal delay={120} className="col-span-12 md:col-span-6 md:col-start-7">
             <div className="bg-cream p-8 shadow-[0_1px_0_rgba(0,0,0,0.04)] md:p-12">
               {!submitted ? (
                 <form onSubmit={onSubmit} className="flex flex-col gap-7">
@@ -118,7 +114,7 @@ export default function Booking() {
                       htmlFor="service"
                       className="text-[12px] tracking-[0.14em] uppercase text-mid"
                     >
-                      What you're thinking
+                      What you&rsquo;re thinking
                     </label>
                     <select
                       id="service"
@@ -156,25 +152,25 @@ export default function Booking() {
                   </button>
 
                   <p className="text-[12px] text-mid">
-                    We'll respond within 1 business day. No spam. No sales
-                    pressure. Your info doesn't go anywhere else.
+                    We&rsquo;ll respond within 1 business day. No spam. No sales
+                    pressure. Your info doesn&rsquo;t go anywhere else.
                   </p>
                 </form>
               ) : (
                 <div className="flex min-h-[420px] flex-col justify-center">
                   <p className="eyebrow text-clay">Got it</p>
                   <h3 className="display mt-3 text-[34px] leading-[1.1] md:text-[40px]">
-                    Thanks. We'll text you back today.
+                    Thanks. We&rsquo;ll text you back today.
                   </h3>
                   <p className="mt-6 max-w-[44ch] text-[16px] text-ink-soft">
-                    If you don't hear from us by tomorrow morning, please call{" "}
+                    If you don&rsquo;t hear from us by tomorrow morning, please call{" "}
                     <a
-                      href="tel:+16196395282"
+                      href="tel:+16265222888"
                       className="link-underline text-ink"
                     >
-                      (619) 639-5282
+                      (626) 522-2888
                     </a>
-                    . Sometimes texts don't make it through and we hate to keep
+                    . Sometimes texts don&rsquo;t make it through and we hate to keep
                     you waiting.
                   </p>
                 </div>

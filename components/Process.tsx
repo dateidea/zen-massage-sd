@@ -17,7 +17,7 @@ const steps = [
     n: "03",
     title: "An hour of quiet work.",
     body:
-      "Warm room, weighted blanket on the table, hot towel for the feet. The clock isn't on the wall on purpose. We'll tell you when there are five minutes left.",
+      "Warm room, weighted blanket on the table, hot towel for the feet. Hot stones, if you'd like them. The clock isn't on the wall on purpose. We'll tell you when there are five minutes left.",
   },
   {
     n: "04",

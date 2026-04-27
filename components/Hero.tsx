@@ -59,7 +59,7 @@ export default function Hero() {
         <div className="grid grid-cols-12 gap-6">
           <div className="col-span-12 md:col-span-9 lg:col-span-8">
             <p className="eyebrow mb-8 text-cream/70">
-              Massage Spa · Baltimore Plaza
+              Blue Moon Spa · 7034 El Cajon Blvd · San Diego
             </p>
             <h1 className="display text-[44px] leading-[0.98] sm:text-[64px] md:text-[88px] lg:text-[108px]">
               An honest hour
@@ -71,10 +71,10 @@ export default function Hero() {
               waiting for.
             </h1>
             <p className="mt-8 max-w-[46ch] text-[17px] leading-[1.65] text-cream/80 md:text-[19px]">
-              A calm, clean massage spa tucked into Baltimore Plaza in La Mesa.
-              Full body, foot reflexology, deep tissue, hot stone. Open every
-              day, 9 AM to 10 PM. Walk-ins welcome — private rooms, fair prices,
-              no upsell.
+              A small, Asian-owned massage studio on El Cajon Boulevard.
+              Sixty minutes of Swedish, deep tissue, or both — with hot
+              stones and warm essential oil included, every time. Open
+              every day, 9 AM to 11 PM. The Custom Hour, $79.99.
             </p>
 
             <div className="mt-10 flex flex-wrap items-center gap-6">
@@ -85,10 +85,10 @@ export default function Hero() {
                 Book a session
               </a>
               <a
-                href="tel:+16196395282"
+                href="tel:+16265222888"
                 className="link-underline text-[14px] tracking-[0.02em] text-cream/85"
               >
-                Or call (619) 639-5282
+                Or call (626) 522-2888
               </a>
             </div>
           </div>
@@ -96,10 +96,8 @@ export default function Hero() {
       </div>
 
       <div className="pointer-events-none absolute inset-x-0 bottom-6 mx-auto flex max-w-[1320px] items-end justify-between px-6 text-[11px] tracking-[0.18em] uppercase text-cream/55 md:px-10">
-        <span>Family-run · 5575 Baltimore Dr, Ste 106-107</span>
-        <span aria-hidden className="hidden md:inline">
-          Scroll ↓
-        </span>
+        <span>Asian-owned · Walk-ins welcome until 10 PM</span>
+        <span aria-hidden className="hidden md:inline">Scroll ↓</span>
       </div>
     </section>
   );

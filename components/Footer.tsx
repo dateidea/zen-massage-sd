@@ -8,9 +8,9 @@ export default function Footer() {
           <div className="col-span-12 md:col-span-5">
             <Logo />
             <p className="mt-6 max-w-[36ch] text-[14px] leading-[1.7] text-ink-soft">
-              A small neighborhood massage studio at 7086 El Cajon Blvd in San Diego. Hot stones, deep tissue, foot reflexology. Open every day,
-              9:30 AM to 10 PM. Walk-ins welcome. Cash and Apple Pay
-              accepted.
+              A small, Asian-owned massage studio on El Cajon Boulevard. Open
+              every day, 9 AM to 11 PM. Walk-ins welcome. Custom Hour: $79.99,
+              with hot stones and essential oil included.
             </p>
             <a
               href="#booking"
@@ -21,32 +21,28 @@ export default function Footer() {
           </div>
 
           <div className="col-span-6 md:col-span-2 md:col-start-7">
-            <p className="text-[12px] tracking-[0.18em] uppercase text-mid">
-              Visit
-            </p>
+            <p className="text-[12px] tracking-[0.18em] uppercase text-mid">Visit</p>
             <address className="mt-4 not-italic text-[14px] leading-[1.7] text-ink">
-              7086 El Cajon Blvd
+              7034 El Cajon Blvd
               <br />
               San Diego, CA 92115
             </address>
             <a
-              href="https://maps.app.goo.gl/JMd4asWRLgScwdAv7"
+              href="https://maps.app.goo.gl/4wrpXnSY2Wy9iGuD9"
               target="_blank"
               rel="noreferrer"
               className="link-underline mt-4 inline-block text-[13px] text-mid"
             >
-              Get directions &rarr;
+              Get directions →
             </a>
           </div>
 
           <div className="col-span-6 md:col-span-2">
-            <p className="text-[12px] tracking-[0.18em] uppercase text-mid">
-              Hours
-            </p>
+            <p className="text-[12px] tracking-[0.18em] uppercase text-mid">Hours</p>
             <p className="mt-4 text-[14px] leading-[1.7] text-ink">
-              Mon &ndash; Sun
+              Mon – Sun
               <br />
-              9:30 AM &ndash; 10 PM
+              9:00 AM – 11:00 PM
             </p>
           </div>
 
@@ -55,16 +51,10 @@ export default function Footer() {
               Reach us
             </p>
             <a
-              href="tel:+16195480773"
+              href="tel:+16265222888"
               className="display mt-3 block text-[28px] leading-none text-ink"
             >
-              (619) 548-0773
-            </a>
-            <a
-              href="mailto:hello@zenmassagesd.com"
-              className="link-underline mt-3 inline-block text-[13px] text-ink-soft"
-            >
-              hello@zenmassagesd.com
+              (626) 522-2888
             </a>
             <ul className="mt-6 flex flex-col gap-2 text-[13px] text-ink-soft">
               <li><a className="link-underline" href="#services">Services</a></li>
@@ -77,10 +67,9 @@ export default function Footer() {
 
         <div className="mt-16 flex flex-col items-start justify-between gap-4 border-t border-hairline pt-8 text-[12px] text-mid md:flex-row md:items-center">
           <p>
-            &copy; {new Date().getFullYear()} ZEN Massage. All rights
-            reserved.
+            © {new Date().getFullYear()} Blue Moon Spa. All rights reserved.
           </p>
-          <p>Cash &amp; Apple Pay accepted &middot; Tipping never required</p>
+          <p>Asian-owned · LGBTQ+ friendly · Tipping never required</p>
         </div>
       </div>
     </footer>

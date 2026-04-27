@@ -15,13 +15,13 @@ const quotes: Quote[] = [
   },
   {
     body:
-      "I came in with a sore back and tight shoulders, and the therapist worked pure magic. She had just the right mix of pressure and rhythm that made every muscle relax. You can tell she&rsquo;s really experienced — every move felt intentional and on target.",
+      "I came in with a sore back and tight shoulders, and the therapist worked pure magic. She had just the right mix of pressure and rhythm that made every muscle relax. You can tell she's really experienced — every move felt intentional and on target.",
     name: "Alyah H.",
     role: "Local Guide · Five months ago",
   },
   {
     body:
-      "I had a strain in my lower back and thought I&rsquo;d give an Asian massage a try. The place looks clean, well-maintained. Luna took me to a small private room — thorough, effective. I left feeling much, much better.",
+      "I had a strain in my lower back and thought I'd give an Asian massage a try. The place looks clean, well-maintained. Luna took me to a small private room — thorough, effective. I left feeling much, much better.",
     name: "Jimmy D.",
     role: "Verified Google review · Five months ago",
   },
@@ -90,7 +90,7 @@ export default function Testimonials() {
                   }`}
                 >
                   <span className="text-clay">&ldquo;</span>
-                  <span dangerouslySetInnerHTML={{ __html: q.body }} />
+                  {q.body}
                   <span className="text-clay">&rdquo;</span>
                 </blockquote>
                 <figcaption className="mt-8 flex items-center gap-4">
@@ -114,10 +114,8 @@ export default function Testimonials() {
           <div className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-3 border-t border-cream/15 pt-10 text-[13px] text-cream/60">
             <span className="display text-[28px] text-cream">4.5★</span>
             <span>Across Google reviews · still growing by word of mouth</span>
-            <span aria-hidden className="hidden md:inline">
-              ·
-            </span>
-            <span>5575 Baltimore Dr #106-107, La Mesa · open daily, 9 AM – 10 PM</span>
+            <span aria-hidden className="hidden md:inline">·</span>
+            <span>7034 El Cajon Blvd, San Diego · open daily 9 – 11</span>
           </div>
         </Reveal>
       </div>
